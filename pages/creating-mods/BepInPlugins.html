@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>BepInPlugins</title></head>
+<body><h1>BepInPlugins</h1>
+<p>BepInPlugins are a kind of game mod native to BepInEx [hyperlink to BepInEx page]. They are not compatible with Partiality. They should be placed in <code>Rain World/BepInEx/plugins</code>. </p>
+<hr />
+<h2>Creating a BepInPlugin</h2>
+<h3>Prerequisites</h3>
+<ul>
+<li><p>A solid understanding of some key concepts including C# syntax and environment, and Unity (good but not necessary)</p>
+</li>
+<li><p>Rain World with RW BepInEx set up - see here. [hyperlink to BepInEx page]</p>
+</li>
+<li><p>Some kind of .NET programming environment, probably Visual Studio if you&#39;re on Windows, or Visual Studio Code for Linux/Mac. The guide below will assume you&#39;re already comfortable with the first prerequisite and your editor and environment of choice. </p>
+<ul>
+<li>The .NET Development pack for Visual Studio (or similar for other environments - you need to be able to use .NET Framework 3.5)</li>
+
+</ul>
+</li>
+
+</ul>
+<p>&nbsp;</p>
+<h3>Step 1 - The project</h3>
+<p>Create a new C# .NET Framework 3.5 Class Library project in your IDE. You will then need to <a href='https://docs.microsoft.com/en-us/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager?view=vs-2019'>add some references</a>. </p>
+<p>It&#39;s recommended that you copy the files you need to reference to a safe location outside of the Rain World root directory before referencing them. Assuming you already have BepInEx installed and ready to go, the files (relative to the Rain World root directory) you should reference are:</p>
+<ul>
+<li><code>BepInEx/plugins/PartialityWrapper/HOOKS-Assembly-CSharp.dll</code></li>
+<li><code>BepInEx/core/BepInEx.dll</code></li>
+<li><code>RainWorld_Data/Managed/UnityEngine.dll</code></li>
+<li><code>RainWorld_Data/Managed/Assembly-CSharp.dll</code> - <em>note: you will need to modify this to access private members; see this section of the BepInEx page [hyperlink to section on BepInEx page for the publicity stunt alternative].</em></li>
+
+</ul>
+<p>&nbsp;</p>
+<h3>Step 2 - The BepInPlugin class</h3>
+<p>In a your new C# file, make a public class that has the <code>BepInEx.BepInPlugin</code> attribute and inherits from <code>BepInEx.BaseUnityPlugin</code> . The <code>BaseUnityPlugin</code> class inherits from <code>MonoBehaviour</code>, so you can use standard Unity script methods such as <code>OnEnable</code> and <code>OnDisable</code> in this class.</p>
+<pre><code class='language-c#' lang='c#'>using BepInEx;
+
+namespace SomeMod
+{
+    [BepInPlugin(&quot;author.my_mod_id&quot;, &quot;SomeModName&quot;, &quot;0.1.0&quot;)]	// (GUID, mod name, mod version)
+    public class MyModName : BaseUnityPlugin
+    {
+    }
+}
+</code></pre>
+<p>&nbsp;</p>
+<h3>Step 3 - Hooking</h3>
+<p>Hooks allow you to execute your own code when the method you are hooking from the game code is called.</p>
+<p>Hooking is the recommended way of modifying the functionality of the game, as your hooks will allow the hooks of other mods and the game code itself to run as expected (presuming you don&#39;t do something that they don&#39;t expect). From your class constructor or <code>OnEnable</code>, you can subscribe to the event that triggers when a method from the Rain World code is called. If you don&#39;t know how events work, here&#39;s a quick example:</p>
+<pre><code class='language-c#' lang='c#'>[BepInPlugin(&quot;author.my_mod_id&quot;, &quot;SomeModName&quot;, &quot;0.1.0&quot;)]
+public class MyMod : BaseUnityPlugin
+{
+    public MyMod()
+    {
+        /* This constructor is called when the mod is loaded. */
+        
+        // subscribe your PlayerUpdateHook to the Player.Update method from the game
+        // the subscriber should have the same parameters as the game&#39;s method, plus the orig
+        On.Player.Update += PlayerUpdateHook;
+    }
+    
+    void PlayerUpdateHook(On.Player.orig_Update orig, Player self, bool eu)
+    {
+        /* This method will be subscribed to Player.Update. */
+        
+	    // you should always call the orig - it lets other mods and the game do their thing
+        orig(self, eu);
+        // do other stuff before or after the orig call as necessary
+    }
+}
+</code></pre>
+<p>If you have many hooks, consider organising them, perhaps into classes. </p>
+<p><em>&quot;Where can I find these magical and elusive Rain World methods?&quot;</em>
+Since the source code for Rain World is not public, one must use a decompiler such as <a href='https://github.com/dnSpy/dnSpy/releases/latest'>dnSpy</a> or <a href='https://marketplace.visualstudio.com/items?itemName=SharpDevelopTeam.ILSpy'>ILSpy</a> to look through the <code>Assembly-CSharp.dll</code> file. </p>
+<p><em>Reminder: you should never distribute significant portions of the game&#39;s code, or that of any closed source mods unless you have explicit permission to do so from the mod author. Pay attention to licenses on public repositories too - see <a href='https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/licensing-a-repository'>GitHub&#39;s guide to code licensing</a> and if in doubt ask the author.</em></p>
+<p>&nbsp;</p>
+<h3>Testing your code</h3>
+<p>Build your code and copy the mod&#39;s DLL file from wherever your build output is to <code>Rain World/BepInEx/plugins/</code> and run Rain World. </p>
+<p>&nbsp;</p>
+<hr />
+<h2>Next steps</h2>
+<p>So... Where to now? The modding community in the <a href='https://discord.gg/rainworld'>Rain World Discord</a> would love to see what you can concoct! GitHub is a good place for hosting open source code and releases. RainDB is also a good place to share mods - for submission see <a href='https://www.raindb.net/upload.html'>this page</a>. </p>
+</body>
+</html>
