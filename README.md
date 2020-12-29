@@ -1,4 +1,4 @@
-# rain-world-modding
+# Rain World Modding Wiki Dump
 
 A repository proper collaboration on the [RW Modding wiki](https://rain-world-modding.fandom.com/wiki/Rain_World_Modding_Wiki).
 
