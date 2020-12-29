@@ -6,14 +6,13 @@
 	
 	font-family: "Verdana", sans-serif;
 	text-align: left;
-	
-	padding-top: 8px;
-	padding-bottom: 8px;
 
-	width: 90%;
-	margin: auto;
 	background-color: var(--back-light);
 	color: var(--text-light);
+}
+
+body {
+	margin: 0;
 }
 
 h1 {
@@ -25,6 +24,9 @@ h1 {
 div.nav {
 	padding-top: 0px;
 	background-color: var(--text-light);
+	position: fixed;
+	width: 100%;
+	top: 0;
 }
 div.nav ul {
 	overflow: hidden;
@@ -45,9 +47,14 @@ div.nav li a {
 }
 div.nav li a.active {
 	background-color: var(--back-dark);
+	color: var(--text-light);
 }
 div.nav li a:hover {
 	color: var(--text-light);
 	background-color: var(--back-dark);
 }
 /* end nav bar */
+
+div.main {
+	margin: 4%;
+}
