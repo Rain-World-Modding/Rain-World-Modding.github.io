@@ -17,7 +17,7 @@ BepInPlugins are a kind of game mod native to BepInEx [hyperlink to BepInEx page
 
 ### Step 1 - The project
 
-Create a new C# .NET Framework 3.5 project in your IDE. You will then need to [add some references](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager?view=vs-2019). 
+Create a new C# .NET Framework 3.5 Class Library project in your IDE. You will then need to [add some references](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager?view=vs-2019). 
 
 It's recommended that you copy the files you need to reference to a safe location outside of the Rain World root directory before referencing them. Assuming you already have BepInEx installed and ready to go, the files (relative to the Rain World root directory) you should reference are:
 
