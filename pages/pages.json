@@ -1,0 +1,9 @@
+{
+    "Using Mods": [
+        "BepInEx"
+    ],
+
+    "Creating Mods": [
+        "BepInPlugins"
+    ]
+}
