@@ -20,7 +20,7 @@ If you have installed a new region make sure you have started the game from a fr
 
 ## Custom Den Position
 
-Warp features an option you change which room the game considers as Slugcat's 'Den Position' -- the room they start in that cycle. Note that if you are using Extended Dev Tools, the 'Start Map' parameter in the edtSetup.json must be empty or it will overwrite Warp.
+Warp features an option to change which room the game considers as Slugcat's 'Den Position' -- the room they start in that cycle. Note that if you are using Extended Dev Tools, the 'Start Map' parameter in the edtSetup.json must be empty or it will overwrite Warp.
 
 - Hold Shift and click a room name to set the den position.
 - Press C to reset the den position to its default.
