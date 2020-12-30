@@ -1,0 +1,33 @@
+# This is a basic workflow to help you get started with Actions
+
+name: css-check
+
+on: [pull_request, workflow_dispatch]
+
+jobs:
+  add-article-css:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        
+      # check html files in pages dir for article.css reference. if css ref missing, it will be added
+      - name: check for css
+      - run: |
+          echo $(ls) > ls.txt
+          
+          echo a > test.txt
+          file=text.txt
+          lookfor="css/article.css"
+          match="<head>"
+          insert="<link rel='stylesheet' type='text/css' href='./css/main.css'/>\n<link rel='stylesheet' type='text/css' href='./css/article.css'/>"
+          
+          add_css () {
+              sed -i "s/$match/$match\n$insert/" $file
+          }
+
+          line_from_file=$(grep -i $lookfor $file)
+
+          if [[ -z "line_from_file" ]]
+          then
+              add_css
+          fi
