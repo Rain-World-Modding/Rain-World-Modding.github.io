@@ -2,8 +2,10 @@
 
 A repository for proper collaboration on the [RW Modding wiki](https://rain-world-modding.fandom.com/wiki/Rain_World_Modding_Wiki).
 
-Want to contribute? A quick contribution guide can be found [here](https://github.com/Rain-World-Modding/rain-world-modding/blob/main/contributing.md), 
+**Want to contribute?** A quick contribution guide can be found [here](https://github.com/Rain-World-Modding/rain-world-modding/blob/main/contributing.md), 
 and the Project progress can be viewed [here](https://github.com/Rain-World-Modding/rain-world-modding/projects/1).
+
+The website for this project can be found [here](https://rain-world-modding.github.io/rain-world-modding/)
 
 ---
 
