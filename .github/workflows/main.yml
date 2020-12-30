@@ -1,4 +1,4 @@
-# This is a basic workflow to help you get started with Actions
+# Custom workflow for adding appropriate css links for new article html pages
 
 name: css-check
 
@@ -12,22 +12,26 @@ jobs:
         
       # check html files in pages dir for article.css reference. if css ref missing, it will be added
       - name: check for css
-      - run: |
-          echo $(ls) > ls.txt
+        working-directory: .
+        run: |
+          PAGESPATH=./pages/*/
+          for dir in $PAGESPATH
+          do
+            for f in $dir*.html
+            do
+              echo $dir $f
+              lookfor='article.css'
+              match="<head>"
+              insert="<link rel='stylesheet' href='./css/main.css'/>\n<link rel='stylesheet' href='./css/article.css'/>"
+              if [[ -z "$(grep $lookfor $f)" ]]
+              then
+                sed -i "/$match/a $insert" $f
+              fi
+            done
+          done
           
-          echo a > test.txt
-          file=text.txt
-          lookfor="css/article.css"
-          match="<head>"
-          insert="<link rel='stylesheet' type='text/css' href='./css/main.css'/>\n<link rel='stylesheet' type='text/css' href='./css/article.css'/>"
-          
-          add_css () {
-              sed -i "s/$match/$match\n$insert/" $file
-          }
-
-          line_from_file=$(grep -i $lookfor $file)
-
-          if [[ -z "line_from_file" ]]
-          then
-              add_css
-          fi
+      - name: commit changes
+        uses: EndBug/add-and-commit@v6
+        with:
+          message: 'Automatically added CSS to article (gh action)'
+          add: pages
