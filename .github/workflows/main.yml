@@ -22,7 +22,7 @@ jobs:
               echo $dir $f
               lookfor='article.css'
               match="<head>"
-              insert="<link rel='stylesheet' href='/css/main.css'/>\n<link rel='stylesheet' href='/css/article.css'/>"
+              insert="<link rel='stylesheet' href='../../css/main.css'/>\n<link rel='stylesheet' href='../../css/article.css'/>"
               if [[ -z "$(grep $lookfor $f)" ]]
               then
                 sed -i "/$match/a $insert" $f
