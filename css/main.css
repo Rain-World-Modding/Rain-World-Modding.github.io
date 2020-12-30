@@ -61,14 +61,20 @@ div.main {
 	margin: 4%;
 }
 
+a {
+	color: var(--url);
+}
+a:hover {
+	color: var(--url-hover);
+}
+
+/* for page list on home page */
 div#page-list {
 	padding-left: 10%;
 }
 div#page-list li a {
 	text-decoration: none;
-	color: var(--url);
 }
 div#page-list li a:hover {
 	text-decoration: underline;
-	color: var(--url-hover);
 }
