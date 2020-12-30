@@ -3,6 +3,8 @@
 	--back-dark: #000103;
 	--text-light: #FFFFFA;
 	--text-dark: #515052;
+	--url: #bb8877;
+	--url-hover: #bb8844;
 	
 	font-family: "Verdana", sans-serif;
 	text-align: left;
@@ -57,4 +59,16 @@ div.nav li a:hover {
 
 div.main {
 	margin: 4%;
+}
+
+div#page-list {
+	padding-left: 10%;
+}
+div#page-list li a {
+	text-decoration: none;
+	color: var(--url);
+}
+div#page-list li a:hover {
+	text-decoration: underline;
+	color: var(--url-hover);
 }
