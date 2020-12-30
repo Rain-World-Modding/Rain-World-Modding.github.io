@@ -3,6 +3,10 @@
         "BepInEx"
     ],
 
+    "Utility Mods": [
+        "Warp"
+    ],
+
     "Creating Mods": [
         "BepInPlugins"
     ]
