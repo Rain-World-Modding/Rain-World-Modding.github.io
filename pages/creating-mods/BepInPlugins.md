@@ -1,6 +1,6 @@
 # BepInPlugins
 
-BepInPlugins are a kind of game mod native to BepInEx [hyperlink to BepInEx page]. They are not compatible with Partiality. They should be placed in `Rain World/BepInEx/plugins`. 
+BepInPlugins are a kind of game mod native to [BepInEx](https://rain-world-modding.github.io/rain-world-modding/pages/using-mods/BepInEx.html). They are not compatible with Partiality. They should be placed in `Rain World/BepInEx/plugins`. 
 
 ---
 
@@ -9,7 +9,7 @@ BepInPlugins are a kind of game mod native to BepInEx [hyperlink to BepInEx page
 ### Prerequisites
 
 - A solid understanding of some key concepts including C# syntax and environment, and Unity (good but not necessary)
-- Rain World with RW BepInEx set up - see here. [hyperlink to BepInEx page]
+- Rain World with RW BepInEx set up - see [here](https://rain-world-modding.github.io/rain-world-modding/pages/using-mods/BepInEx.html).
 - Some kind of .NET programming environment, probably Visual Studio if you're on Windows, or Visual Studio Code for Linux/Mac. The guide below will assume you're already comfortable with the first prerequisite and your editor and environment of choice. 
     - The .NET Development pack for Visual Studio (or similar for other environments - you need to be able to use .NET Framework 3.5)
 
@@ -24,7 +24,7 @@ It's recommended that you copy the files you need to reference to a safe locatio
 - `BepInEx/plugins/PartialityWrapper/HOOKS-Assembly-CSharp.dll`
 - `BepInEx/core/BepInEx.dll`
 - `RainWorld_Data/Managed/UnityEngine.dll`
-- `RainWorld_Data/Managed/Assembly-CSharp.dll` - *note: you will need to modify this to access private members; see this section of the BepInEx page [hyperlink to section on BepInEx page for the publicity stunt alternative].*
+- `RainWorld_Data/Managed/Assembly-CSharp.dll` - *note: you will need to modify this before accessing private members; see the section "Replacement of Publicity Stunt" on the [BepInEx page](https://rain-world-modding.github.io/rain-world-modding/pages/using-mods/BepInEx.html).*
 
 
 
@@ -81,7 +81,7 @@ If you have many hooks, consider organising them, perhaps into classes.
 *"Where can I find these magical and elusive Rain World methods?"*
 Since the source code for Rain World is not public, one must use a decompiler such as [dnSpy](https://github.com/dnSpy/dnSpy/releases/latest) or [ILSpy](https://marketplace.visualstudio.com/items?itemName=SharpDevelopTeam.ILSpy) to look through the `Assembly-CSharp.dll` file. 
 
-*Reminder: you should never distribute significant portions of the game's code, or that of any closed source mods unless you have explicit permission to do so from the mod author. Pay attention to licenses on public repositories too - see [GitHub's guide to code licensing](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/licensing-a-repository) and if in doubt ask the author.*
+*Reminder: you should never distribute significant portions of the game's code or the binaries, or that of any closed source mods unless you have explicit permission to do so from the mod author. Pay attention to licenses on public repositories too - see [GitHub's guide to code licensing](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/licensing-a-repository) and if in doubt ask the author.*
 
 
 
