@@ -1,5 +1,9 @@
 :root {
     --article-subheading-text: #a8a8a0;
+    
+    --code-font: Monospace;
+    --code-bg: #353230;
+    --code-fg: #e0e0f5;
 }
   
 body {
@@ -34,7 +38,14 @@ code {
     font-size: 1.2em;
     background-color: var(--code-bg);
     color: var(--code-fg);
+    padding: 0 0.3em;
 }
 pre code {
+    padding: 1em;
     font-size: 1.15em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 100%;
+    overflow-x: auto;
 }
