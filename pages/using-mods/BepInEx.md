@@ -36,3 +36,19 @@ BepInPlugins, as the name suggests, are plugins made for BepInEx. Simply put, th
 
 As mentioned at the top of the article, RW BepInEx supports the use of Partiality mods.
 
+
+
+---
+
+## Replacement of Publicity Stunt
+
+Publicity Stunt [link to pubstunt page] was discovered to cause issues when using BepInEx. This caused two issues that have now both been addressed...
+
+### Referencing private members
+
+To reference private members of the game's code, [download GeneratePublicAssembly.dll](https://beestuff.pythonanywhere.com/audb/api/mods/0/21/download/latest) , place it in `Rain World/BepInEx/patchers` , and run the game using RW BepInEx. A modified version of `Assembly-CSharp.dll` should appear in the root Rain World folder with its private members made public. *Do not distribute this - this is for your own use.* 
+
+### Accessing private members during gameplay
+
+The file `Dragons.PublicDragon` distributed with RW BepInEx deals with the seemingly random interaction of BepInEx and pubstunt by patching all mod assemblies with some code that tells them to ignore access modifiers. Because of this,  even if your mod requires access to the game's private members, end users are not required to do anything beyond using your mod with RW BepInEx to allow this.
+
