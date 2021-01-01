@@ -60,6 +60,12 @@ div.nav li a:hover {
 div.main {
 	margin: 4%;
 }
+div.main img#main-title {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 45%;
+}
 
 a {
 	color: var(--url);
