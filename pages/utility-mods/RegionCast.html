@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>RegionCast</title></head>
+<body><h1>RegionCast</h1>
+<p>RegionCast is a <a href='https://rain-world-modding.github.io/rain-world-modding/pages/creating-mods/BepInPlugins.html'>BepInPlugin</a> and side-app combo created by casheww that adds Discord Rich Presence to Rain World. The Rich Presence details the player&#39;s current location, the game mode, and the time elapsed from when they started that game mode. It also supports customisation from region pack creators and custom slugcat creators [hyperlinks to relevant pages] . </p>
+<p>The latest release of RegionCast can be found <a href='https://github.com/casheww/RW-RegionCast/releases/latest'>here</a> - be sure to read the README for installation instructions. </p>
+<p><img src="../../assets/regioncast/regcast-sporecat.png" referrerpolicy="no-referrer" alt="RegionCast demo"></p>
+<p>&nbsp;</p>
+<hr />
+<h2>Customisation for other modders</h2>
+<h3>Custom Region names</h3>
+<p>By default, RegionCast will use the (sub)region names already specified by the game (the ones read from the region&#39;s <code>Properties.txt</code> file). However, by installing a region with Garrakx&#39;s CRS [hyperlink when page exists] and adding a simple file, this can be overridden. Reasons to do this may include preventing spoilers for your region pack appearing in players&#39; or region developers&#39; Rich Presence, or shortening the name of a location that would otherwise be cut off by Discord&#39;s character limit.</p>
+<ol>
+<li>Navigate to <code>Rain World/Mods/CustomResources/&lt;region-pack-name&gt;/World/Regions/&lt;region-code&gt;/</code> and add a file called <code>RegionCast.txt</code>. </li>
+<li>For each of the location names your wish to change, add a line in the new file with the format <code>region-name:name-to-display</code>- e.g.: <code>Underbelly:Soggy Place</code> would display &quot;Soggy Place&quot; when the location would otherwise be called &quot;Underbelly&quot; (assuming the file location is correct).</li>
+
+</ol>
+<p>&nbsp;</p>
+<h3>Custom Region thumbnails</h3>
+<p>Due to the way Discord handles Rich Presence assets, the only way for a region pack to receive region thumbnail support is by submitting through casheww. An GitHub issue may be submitted for this using <a href='https://github.com/casheww/RW-RegionCast/issues/new?assignees=casheww&amp;labels=custom+region+req&amp;template=custom-region-request.md&amp;title=Custom+Region+%3A+%5BRegion+name%5D'>this issue template</a>. A list of the custom regions with custom thumbnail support on RegionCast can be found <a href='https://casheww.github.io/RW-RegionCast/'>here</a>. </p>
+<p>&nbsp;</p>
+<h3>Custom Slugcat names</h3>
+<p>Note: <em>this section refers to mods that add a new slugcat to the game, not those that just modify sprite atlases or overwrite existing character slots.</em></p>
+<p>Everyone loves slugcats!
+In the game&#39;s story mode, RegionCast reads and uses <code>Menu.SlugcatSelectMenu.SlugcatPage.colorName</code> to display on the Rich Presence. This is done from a hook to <code>Menu.SlugcatSelectMenu.SlugcatPage.Singal</code> if the... <em>singal</em> message is &quot;START&quot;, signifying that the gameplay is about to be loaded - RegionCast stores the <code>colorName</code> for later use.</p>
+</body>
+</html>
