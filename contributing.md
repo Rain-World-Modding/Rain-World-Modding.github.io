@@ -39,7 +39,7 @@ You can also take a peak at the source for other markdown articles in this repos
 
 - If a brief page summary is included after the h1, use `---` on a new line to add a divider before the main body of the article.
 
-- Feel free to use images and other media where they're helpful! You can place assets in the `/assets` folder - try to use relative paths when referencing assets in the repo.
+- Feel free to use images and other media where they're helpful! You can place assets in the `/assets` folder - try to use relative paths when referencing assets in the repo. If using many assets on your page, please add a folder for this page inside `/assets` and place your assets there instead.
 
 - Use headers of h2 and h3 where you think they're helpful for understanding the different sections of the article.
 
