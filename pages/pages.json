@@ -10,5 +10,9 @@
 
     "Creating Mods": [
         "BepInPlugins"
+    ],
+    
+    "Region Development": [
+        "Architecture-of-Rain-World"
     ]
 }
