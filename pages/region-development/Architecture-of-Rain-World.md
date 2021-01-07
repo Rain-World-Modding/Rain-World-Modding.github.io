@@ -1,6 +1,8 @@
 # The Architecture of Rain World
 
-## **<u>This article is outdated!</u>**
+---
+
+## **<u>This article is contains outdated information and needs to be updated!</u>**
 
 This article is a collection of guides dedicated on explaining how to get certain structures seen all throughout Rain World "just right." Anything from tips and tricks, to guides of how to make complex multi-tile machines. These guides are not limited to just vanilla Rain World, and any other unique and helpful structures are welcome to be added!
 
