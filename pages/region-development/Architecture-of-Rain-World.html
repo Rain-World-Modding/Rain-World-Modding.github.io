@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Architecture-of-Rain-World</title></head>
+<body><h1>The Architecture of Rain World</h1>
+<hr />
+<h2><strong><u>This article is contains outdated information and needs to be updated!</u></strong></h2>
+<p>This article is a collection of guides dedicated on explaining how to get certain structures seen all throughout Rain World &quot;just right.&quot; Anything from tips and tricks, to guides of how to make complex multi-tile machines. These guides are not limited to just vanilla Rain World, and any other unique and helpful structures are welcome to be added!</p>
+<h2>Sky Islands Data Boxes</h2>
+<p>&nbsp;</p>
+<p>Flashing blinking lights surrounded by kinked tubes and machines are used in a few isolated rooms in sky islands.</p>
+<h3>Basic Construction:</h3>
+<p><img src="../../assets/rwarchitecture/temp/DataboxSkyIsland_Tut1.png" referrerpolicy="no-referrer" alt="DataboxSkyIsland_Tut1"></p>
+<p>A large rectangle of &quot;SuperStructure&quot; material. With ZeroG tube props between it and the nearest walls. Can optionally be covered by machines or cement, and then washed over with slime effect to make it slightly more rough and broken down. In game, a &quot;superStructureFuses&quot; object needs to be placed and aligned with the holes on the material to properly display the blinking lights inside the machine. Various objects and machine can be placed around it to extend the object from being a simple blinking box, into some strange machine. The rooms palette and cloud cover helps to hide the simplicity of the actual construction.</p>
+<p><img src="../../assets/rwarchitecture/temp/Databox_Tut_2.gif" referrerpolicy="no-referrer" alt="Databox_Tut_2"></p>
+<h2>Custom Shelters</h2>
+<p>Constructing a simple shelter for Rain World. Shelter have some specific requirements. Most can only be constructed with single doors due to how the shelter&#39;s gate will automatically latch onto the first door as a &quot;root.&quot; This guide will only be for constructing the very basics of a shelter.</p>
+<h3>Basic Construction:</h3>
+<p><img src="../../assets/rwarchitecture/temp/Custom_shelterA.png" referrerpolicy="no-referrer" alt="Custom_shelterA"></p>
+<p>A shelter&#39;s required parts are under the shelter category in the tile editor. The dot on the shelter gate is the end that points towards the door of the shelter. This is not required however, but the dot should point away or toward the shelter, or the tunnel inside it will be rotated wrong. Only one set of locks will spawn in a shelter.</p>
+<p>The shelter&#39;s chamber only has one entrance from one of four directions. There is also a large and small variant to shelter chambers. The chamber is not required, however all vanilla shelters use these. Not placing a chamber will cause the save room to place you right against the wall opposite the door when you wake up. The shelter&#39;s lock will also start to close as soon as slugcat is no longer inside a crawlspace.</p>
+<p><img src="../../assets/rwarchitecture/temp/Custom_shelterB.png" referrerpolicy="no-referrer" alt="Custom_shelterB"></p>
+<p>Finally, when linking your room to the region. Place a SHELTER tag at the end of the line. An example from outskirts.</p>
+<ul>
+<li>SU_S03 : SU_B01 : SHELTER</li>
+
+</ul>
+<h2>The Wall - General Style Guide</h2>
+<p><em>NOTICE - The Wall is a very complex and multilayered area. Experience with the editor is heavily recommended!</em></p>
+<p><img src="../../assets/rwarchitecture/temp/Walltutorial1.png" referrerpolicy="no-referrer" alt="Walltutorial1"></p>
+<p>The wall&#39;s construction is a mix of large detail tiles from &quot;The Wall&quot; category. Cooling rods are assembled out of their component pieces, usually in order of large rod segments with one or two tip segments before their cap. However oddly ordered rods can spice up the look. Rods often have poles sticking out from their caps. The bases of cooling rods are always present in single or pairs. These rods are connected directly to the wall using three &quot;Giant screw&quot; tiles from the &quot;machines&quot; category, and then connected to giant pipes traveling into the wall.</p>
+<p>The Wall itself is constructed of cement, and dense pipes. Using huge pipes and other segments of the wall as spacers. The base of cooling rods can also attach to larger dome machines. These often have multiple segments of &quot;under cooler&quot; beneath them.</p>
+<p>If you need to pass between a cooling rod and the wall itself. The two segments are separated by three giant screws on each side. With huge pipes between them. Poles are used to climb between the gaps. Short cut entrances are very often wedged between wall segments, or directly attached to the tops of domes or pipes. Short cuts almost never come out from cooling rods themselves, but from the larger structures behind them.</p>
+<p>Cooling rods along the side of the wall are used as floors and ceilings to rooms. However the Wall&#39;s cooling rods never extend for more then room in width. The only segments of the wall that stick out from the wall itself are large spherical chambers with antennas on them. These will be done in a separate architecture guide.</p>
+<p>The far background of the Wall consists of thick pipes, cement, and rarely a &quot;very large beam&quot; from the &quot;metal&quot; category. The tips of these beams can be capped off with &quot;pillar beam connection&quot;s from the &quot;underhang&quot; category.</p>
+<p>The wall&#39;s materials are broken up into two segments. Certain areas having large chunks of &quot;random machines&quot; fitted with pipes. The tunnels through the machines using &quot;crawlspace&quot; tiles on top of them. Other tunnels outside of the machines use &quot;crawlhole&quot; tiles. The upper sections are dotted with &quot;Asian sign&quot; tiles. Usually mixed between dense pipes or scaffolding. These can be used to break up the color of the palette and make your walls seem less uniform. Huge chains are used as props to beak up the background itself. These are anchored to beams and the Wall&#39;s side by small blocks of &quot;random machine&quot; material.</p>
+<p>Plant life along the wall is very scarce. Mostly being various grasses and hanging roots. The rubble effect is also used here to create a more varied ground. However, using piles of large trash or dirt can also work to break up the straight lines that the cooling rods and domes create. Grasses often grow out of these. Food is also rare on the wall. Very few segments having hanging fruits. Slime and BlackGoo effects as always help to break up the more straight and dull segments of bare materials. The underside of cooling rods are slimier then the tops. Hanging chains can also be used to help break up the background. Just be sure none of the chains connect off the edge of the screen!</p>
+<p><img src="../../assets/rwarchitecture/temp/Walltutorial2.png" referrerpolicy="no-referrer" alt="Walltutorial2"></p>
+<p>Finally. The &quot;AboveCloudsView&quot; room setting in the <a href='https://rain-world-modding.fandom.com/wiki/Dev_Tools'>dev tools</a> is used to draw the giant sea of clouds view near the upper half of the wall. This however, requires your room to be at a certain height above 0 in the <a href='https://rain-world-modding.fandom.com/wiki/Map_Tab'>Map Tab</a>&#39;s &quot;canon view.&quot; An easy method to configure this is to simply drag the first room you want this effect to appear in upwards on the map. Save, and reload the room by dying. If the effect is not far enough up the wall yet, keep going. If it is too far, move it back down until you are happy with its elevation, and then build your map off of this room&#39;s elevation.</p>
+<p>The default palette of the wall is 19, with a very slight fade to 29. EffectA is 8 and effectB is 7. A heavy fog, a light bloom, wind sounds with the wall&#39;s own unique humming sound effects complete most of the region&#39;s ambience. Don&#39;t be afraid to explore some stranger twists to the region&#39;s structure however!</p>
+</body>
+</html>
