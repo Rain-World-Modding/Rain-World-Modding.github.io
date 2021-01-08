@@ -22,6 +22,8 @@ When adding to or editing the content of this repository, please follow the list
 6. Open `pages/pages.json` in a text editor and add the exact name of your .md file (minus the md file extension) to the list corresponding to the chosen category. Here is an example extract from the json file - note the usage of double quotes and commas:
 
     ![pages.json example](/assets/pagesJsonExample.png)
+    ![category example from pages.json](/assets/pagesExample.png)
+
 
 7. Once you're happy, use a git tool to commit your changes and push to your fork on GitHub.
 
