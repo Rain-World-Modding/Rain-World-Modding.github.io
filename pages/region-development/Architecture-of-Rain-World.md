@@ -1,14 +1,13 @@
 # The Architecture of Rain World
 
----
-
 ## **<u>This article is contains outdated information and needs to be updated!</u>**
 
 This article is a collection of guides dedicated on explaining how to get certain structures seen all throughout Rain World "just right." Anything from tips and tricks, to guides of how to make complex multi-tile machines. These guides are not limited to just vanilla Rain World, and any other unique and helpful structures are welcome to be added!
 
+
 ## Sky Islands Data Boxes
 
-
+---
 
 Flashing blinking lights surrounded by kinked tubes and machines are used in a few isolated rooms in sky islands.
 
@@ -20,7 +19,10 @@ A large rectangle of "SuperStructure" material. With ZeroG tube props between it
 
 ![Databox_Tut_2](../../assets/rwarchitecture/temp/Databox_Tut_2.gif)
 
+
 ## Custom Shelters
+
+---
 
 Constructing a simple shelter for Rain World. Shelter have some specific requirements. Most can only be constructed with single doors due to how the shelter's gate will automatically latch onto the first door as a "root." This guide will only be for constructing the very basics of a shelter.
 
@@ -38,7 +40,10 @@ Finally, when linking your room to the region. Place a SHELTER tag at the end of
 
 - SU_S03 : SU_B01 : SHELTER
 
+
 ## The Wall - General Style Guide
+
+---
 
 *NOTICE - The Wall is a very complex and multilayered area. Experience with the editor is heavily recommended!*
 
