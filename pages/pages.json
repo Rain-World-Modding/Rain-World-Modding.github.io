@@ -12,6 +12,16 @@
         "BepInPlugins"
     ],
     
+    "Level Editor": [
+        "Official-Level-Editor",
+        "Geometry-Editor",
+        "Tile-Editor",
+        "Effect-Editor",
+        "Prop-Editor",
+        "Camera-Editor",
+        "Light-Editor"
+    ],
+    
     "Region Development": [
         "Architecture-of-Rain-World"
     ]
