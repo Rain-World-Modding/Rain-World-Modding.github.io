@@ -5,7 +5,6 @@
 This article is a collection of guides dedicated on explaining how to get certain structures seen all throughout Rain World "just right." Anything from tips and tricks, to guides of how to make complex multi-tile machines. These guides are not limited to just vanilla Rain World, and any other unique and helpful structures are welcome to be added!
 
 
-
 ## Sky Islands Data Boxes
 
 ---
@@ -19,7 +18,6 @@ Flashing blinking lights surrounded by kinked tubes and machines are used in a f
 A large rectangle of "SuperStructure" material. With ZeroG tube props between it and the nearest walls. Can optionally be covered by machines or cement, and then washed over with slime effect to make it slightly more rough and broken down. In game, a "superStructureFuses" object needs to be placed and aligned with the holes on the material to properly display the blinking lights inside the machine. Various objects and machine can be placed around it to extend the object from being a simple blinking box, into some strange machine. The rooms palette and cloud cover helps to hide the simplicity of the actual construction.
 
 ![Databox_Tut_2](../../assets/rwarchitecture/temp/Databox_Tut_2.gif)
-
 
 
 ## Custom Shelters
@@ -41,7 +39,6 @@ The shelter's chamber only has one entrance from one of four directions. There i
 Finally, when linking your room to the region. Place a SHELTER tag at the end of the line. An example from outskirts.
 
 - SU_S03 : SU_B01 : SHELTER
-
 
 
 ## The Wall - General Style Guide

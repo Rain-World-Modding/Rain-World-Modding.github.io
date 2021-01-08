@@ -35,9 +35,9 @@ After some automated actions have taken place, everything on origin/main is then
 Check out [GitHub's markdown syntax guide](https://guides.github.com/features/mastering-markdown/) for reference. <br>
 You can also take a peak at the source for other markdown articles in this repository on GitHub by viewing the file and clicking the "Raw" button at the top-right of the file viewer.
 
-- Use an h1 at the top of the article for the title. This may be different to the file name if you wish. Reserve h1 for this purpose.
+- Use an h1 at the top of the article for the title. This may be different to the file name if you wish. Reserve h1 for this purpose. A divider line will be automatically added below this.
 
-- If a brief page summary is included after the h1, use `---` on a new line to add a divider before the main body of the article.
+- **If** a brief page summary is included after the h1, use `---` on a new line to add a divider before the main body of the article (but after the summary).
 
 - Feel free to use images and other media where they're helpful! You can place assets in the `/assets` folder - try to use relative paths when referencing assets in the repo. If using many assets on your page, please add a folder for this page inside `/assets` and place your assets there instead.
 
