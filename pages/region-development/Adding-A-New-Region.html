@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Adding-A-New-Region</title></head>
+<body><h1>Adding A New Region</h1>
+<h2><strong><em><u>This article is outdated and needs updating!</u></em></strong></h2>
+<p>## </p>
+<ol start='' >
+<li>Pick a two letter acronym for your region. For these examples we&#39;ll use XX</li>
+<li>Open the file &quot;Rain World/World/Regions/regions.txt&quot;</li>
+<li>Add your two letter acronym to the end of the file.</li>
+<li>Create a new folder in the Regions directory with your two letter acronym</li>
+<li>Copy files over from one of the other regions to use as a template</li>
+<li>Rename instances of the old region&#39;s acronym to your new region&#39;s acronym</li>
+
+</ol>
+<p>  6a. I recommend blanking out the map_XX file entirely</p>
+<p>  6b. Remove all Room_Attr lines from the Properties file</p>
+<p>  6c. Delete everything from the Rooms folder, leaving just one room to use as your start map to build off of.</p>
+<p>  6d. Blank out most of the ROOMS and CREATURES sections from the world_XX file.
+  		- If you want Vultures/Leviathans/Scavengers in your region, leave the OFFSCREEN section under CREATURES
+  		- You&#39;ll add a couple lines under ROOM for connecting the gate and your start room, so your region at least has SOMETHING in it (once you make the gate).</p>
+<p>&nbsp;</p>
+<h2>Adding the Gate</h2>
+<hr />
+<ol start='' >
+<li>Go to the &quot;Rain World/World/Gates&quot; folder</li>
+<li>Take one of the gates in here to use as a base, and copy/paste it</li>
+<li>Rename the copies to match your region connection. For example, if you&#39;re connecting to SU, name the files GATE_SU_XX</li>
+<li>You&#39;ll also need to open the GATE_YY_XX.txt file and edit the first line of the file to match</li>
+<li>Open the file &quot;Rain World/World/Gates/locks.txt&quot;</li>
+<li>Add a new line for your new gate, and specify the karma requirements for the two sides of the gate</li>
+<li>Go back to each of the two regions and add connections to the gate in their world_XX.txt files</li>
+
+</ol>
+</body>
+</html>

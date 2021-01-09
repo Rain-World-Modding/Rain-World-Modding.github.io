@@ -2,7 +2,7 @@
 
 ![tileEditor](../../assets/regionDevelopment/levelEditor/tileEditor.png)
 
-The Tile Editor is where you define the tiles and materials that provide the visual representation of the level geometry created in the [Geometry Editor](https://rain-world-modding.fandom.com/wiki/Geometry_Editor). Because the actual coloring of levels is done dynamically in-engine, Level creators are afforded incredible flexibility in the tiles and tile combinations that match. On top of that, the game shipped with a massive asset library which can be leveraged to create new and exciting styles. Tiles in the tile editor span the range from small nondescript square stones to the massive metal gates connecting regions.
+The Tile Editor is where you define the tiles and materials that provide the visual representation of the level geometry created in the [Geometry Editor](Geometry-Editor.html). Because the actual coloring of levels is done dynamically in-engine, Level creators are afforded incredible flexibility in the tiles and tile combinations that match. On top of that, the game shipped with a massive asset library which can be leveraged to create new and exciting styles. Tiles in the tile editor span the range from small nondescript square stones to the massive metal gates connecting regions.
 
 The base of your intended visual style stems from the tile choices you make here in the Tile Editor. Further refinement of the art and aesthetic style comes from later work in the Effects Editor, Light Editor, and Prop Editor.
 
