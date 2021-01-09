@@ -1,6 +1,5 @@
 # Level Editor: Prop Editor
 
-## ***<u>This article is a stub and needs to be updated!</u>***
 
 ![propEditor](../../assets/regionDevelopment/levelEditor/propEditor.png)
 
