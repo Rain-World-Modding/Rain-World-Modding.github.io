@@ -50,7 +50,7 @@ Starting from the top left, and going through each row.
 - Copy Backwards: Copies a rectangle of tiles on the current layer to the next layer. This does not wrap around back to layer 1 if you are on layer 3.
 - Short Cut Entrance: Places the entrance of a short cut into the room. Please see the tips and tricks section for details of how to properly connect entrances and doors together.
 - Short Cut: Places a short cut's travel dot. These go between short cut entrances, and specific entrance or den tiles.
-- Dragon Den: Places an enemy nest. These can be configured to spawn enemies in a region using the region's [World File](https://rain-world-modding.fandom.com/wiki/World_File_Format).
+- Dragon Den: Places an enemy nest. These can be configured to spawn enemies in a region using the region's [World File](../region-development/World-File-Format.html).
 - Entrance: Used to connect between rooms. Slugcat can use these short cuts as doors to different rooms. This is configured in the regions world file.
 - Forbid Fly Chains: Prevents bat flies from hanging together in specific locations to rest.
 - Spawn Fly: Does nothing.

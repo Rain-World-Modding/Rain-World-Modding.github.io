@@ -32,6 +32,9 @@
     ],
     
     "Region Development": [
-        "Architecture-of-Rain-World"
+        "Making-A-Region-From-The-Ground-Up",
+        "Architecture-of-Rain-World",
+        "Adding-A-New-Region",
+        "World-File-Format"
     ]
 }

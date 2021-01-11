@@ -1,5 +1,6 @@
 # Level Editor: Prop Editor
 
+
 ![propEditor](../../assets/regionDevelopment/levelEditor/propEditor.png)
 
 ## Controls:
