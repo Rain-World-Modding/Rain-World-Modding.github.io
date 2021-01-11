@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='../../css/main.css' />
+    <link rel='stylesheet' href='../../css/article.css' />
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width initial-scale=1'>
+    <title>GeneratedOI</title>
+</head>
+<body>
+
+    <h1 id="generatedoi">GeneratedOI</h1>
+<p><code>GeneratedOI</code> is a child class of <code>OptionInterface</code> that helps generating fixed-format GUI with less effort.</p>
+<hr />
+<h2 id="displaying-basic-profile">Displaying Basic Profile</h2>
+<p>Simply inheriting <code>GeneratedOI</code> instead of <code>OptionInterface</code> works.
+This does make your mod dependent to Config Machine,
+and Config Machine generates GUI to display the basic information of your mod without this dependency.
+So this is only useful when you're using OptionInterface for other features, like its <a href="Translation-Support.html">Translation API</a>.</p>
+<pre><code class="language-c#">public class MyOI : GeneratedOI
+{
+    private const string desc = &quot;Changes this thing and that thing&quot;;
+    
+    public MyOI() : base(plugin: MyPlugin.instance, desc)
+    { transFile = &quot;MyPlugin.Translation.txt&quot;; }
+}
+</code></pre>
+<p>The code above would generate a GUI like the following image:</p>
+<p><img src="../../../assets/configmachine/GeneratedOI-sample.png" alt="GeneratedOI Sample" /></p>
+<p>You can also use its static method <code>AddBasicProfile</code> for basic profiles on top of the canvas.
+This also has an overload that accepts <code>OpScrollBox</code> instead of <code>OpTab</code>,
+if you have <code>OpScrollBox</code> replacing <code>OpTab</code>.</p>
+<pre><code class="language-c#">public override void Initialize()
+{
+    base.Initialize();
+    Tabs = new OpTab[] { new OpTab() };
+    GeneratedOI.AddBasicProfile(Tabs[0], rwMod);
+    
+    Tabs[0].AddItems(new OpCheckBox(100f, 350f, &quot;EnableStuff&quot;, false) { description = &quot;Enables this stuff&quot; });
+}
+</code></pre>
+<hr />
+<h2 id="bepinex.configuration">BepInEx.Configuration</h2>
+<p>If you only need to have few configurable like simple <code>bool</code>s and you don't need special design for your GUI,
+you can simply use <code>BepInEx.Configuration</code> which is BepInEx's native configuration support.
+This generates a cfg file in <code>BepInEx/config</code> folder,
+and Config Machine will use that file instead of creating a new folder in <code>ModConfigs</code> folder.</p>
+<p>This method has several upsides and downsides.</p>
+<ul>
+<li>You don't need to reference Config Machine in your project, and this doesn't create a dependency for Config Machine.</li>
+<li>The users can configure the plugin by opening the cfg file in Notepad outside the game.</li>
+<li>However, you do not have control on detailed GUI design.</li>
+</ul>
+<p>First, we need <code>ConfigEntry</code> which you can bind to the <code>Config</code> property of <code>BaseUnityPlugin</code>.
+Consult <a href="https://bepinex.github.io/bepinex_docs/master/articles/dev_guide/plugin_tutorial/3_configuration.html">BepInEx Documentation</a> for farther detail.</p>
+<pre><code class="language-c#">public static ConfigEntry&lt;string&gt; cfgText;
+public static ConfigEntry&lt;bool&gt; cfgCheck;
+
+void Awake()
+{
+    cfgText = Config.Bind(
+            &quot;General&quot;, // section: defines which OpTab this will go
+            &quot;My Setting&quot;, // key: the name of setting
+            &quot;Hello, world!&quot; // defaultValue
+            &quot;This is a description. It does things.&quot;
+                // The description will be shown the right side of UIconfig
+                // When you hover your mouse on UIconfig,
+                // the first sentence will be displayed at the bottom of the screen
+        );
+    cfgCheck = Config.Bind(&quot;General&quot;, &quot;My Other Setting&quot;, true, &quot;Another description is this.&quot;);
+}
+</code></pre>
+<p>To access those settings, use <code>Value</code>.</p>
+<pre><code class="language-c#">if (cfgCheck.Value)
+{ Logger.LogMessage(cfgText.Value); }
+</code></pre>
+<h3 id="acceptable-types">Acceptable Types</h3>
+<p>As of Config Machine <code>v1.5.1</code>, it accepts the following types and uses provided UIconfig.
+(Height is the pixel height that how much this ConfigEntry would use.
+And each entry get 20 pixeled gaps in between)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">type</th>
+<th style="text-align: center;">UIconfig</th>
+<th style="text-align: right;">Height</th>
+<th style="text-align: left;">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: center;">OpCheckBox</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: right;">byte</td>
+<td style="text-align: center;">OpSliderSubtle</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: left;">Range: [0, 20]</td>
+</tr>
+<tr>
+<td style="text-align: right;">uint</td>
+<td style="text-align: center;">OpSlider</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: left;">Range: [0, 100]</td>
+</tr>
+<tr>
+<td style="text-align: right;">int</td>
+<td style="text-align: center;">OpTextBox</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: left;">Accepts: Int</td>
+</tr>
+<tr>
+<td style="text-align: right;">float</td>
+<td style="text-align: center;">OpTextBox</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: left;">Accepts: Float</td>
+</tr>
+<tr>
+<td style="text-align: right;">string(Hex)</td>
+<td style="text-align: center;">OpColorPicker</td>
+<td style="text-align: right;">170</td>
+<td style="text-align: left;">When defaultValue is Hex</td>
+</tr>
+<tr>
+<td style="text-align: right;">string</td>
+<td style="text-align: center;">OpTextBox</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: left;">When defaultValue is not Hex; Accepts: ASCII</td>
+</tr>
+<tr>
+<td style="text-align: right;">KeyCode</td>
+<td style="text-align: center;">OpKeyBinder</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: right;">enumType</td>
+<td style="text-align: center;">OpResourceSelector</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: right;">default</td>
+<td style="text-align: center;">N/A</td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;">Will warn the user that this plugin has ConfigEntry that's not supported by Config Machine</td>
+</tr>
+</tbody>
+</table>
+
+
+</body>
+</html>

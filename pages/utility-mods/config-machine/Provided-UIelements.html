@@ -1,0 +1,729 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Provided UIelements</title>
+</head>
+<body>
+
+    <h1 id="provided-uielements">Provided UIelements</h1>
+<p>This page explains what each provided <code>UIelement</code> is and how to use them.
+You can check out the source code of Config Machine from its <a href="https://github.com/metnias/CompletelyOptional">github page</a>,
+or have <code>ConfigMachine.xml</code> in your Reference folder for summaries.
+However there are functions left unused (mainly because the modders are unaware) so this page will cover them.</p>
+<p>This page is up to date with Config Machine <code>v1.5.1</code>.</p>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="##UIelement">UIelement</a>
+<ol>
+<li><a href="###OpLabel">OpLabel</a> &amp; <a href="####OpLabelLong">OpLabelLong</a></li>
+<li><a href="###OpRect">OpRect</a></li>
+<li><a href="###OpImage">OpImage</a></li>
+<li><a href="###OpScrollBox">OpScrollBox</a></li>
+<li><a href="###OpContainer">OpContainer</a></li>
+</ol>
+</li>
+<li><a href="##UIconfig">UIconfig</a>
+<ol>
+<li><a href="###OpCheckBox">OpCheckBox</a></li>
+<li><a href="###OpRadioButtonGroup">OpRadioButtonGroup</a> &amp; <a href="####OpRadioButton">OpRadioButton</a></li>
+<li><a href="###OpDragger">OpDragger</a></li>
+<li><a href="###OpSlider">OpSlider</a> &amp; <a href="####OpSliderSubtle">OpSliderSubtle</a></li>
+<li><a href="###OpKeyBinder">OpKeyBinder</a></li>
+<li><a href="###OpComboBox">OpComboBox</a> &amp; <a href="####OpResourceSelector">OpResourceSelector</a> &amp; <a href="####ListItem">ListItem</a></li>
+<li><a href="###OpColorPicker">OpColorPicker</a></li>
+<li><a href="###OpTextBox">OpTextBox</a></li>
+</ol>
+</li>
+<li><a href="##UItrigger">UItrigger</a>
+<ol>
+<li><a href="###OpSimpleButton">OpSimpleButton</a> &amp; <a href="####OpSimpleImageButton">OpSimpleImageButton</a></li>
+<li><a href="###OpHoldButton">OpHoldButton</a></li>
+</ol>
+</li>
+<li><a href="##Custom-Classes">Custom Classes</a>
+<ol>
+<li><a href="###DyeableRect">DyeableRect</a></li>
+<li><a href="###BumpBehaviour">BumpBehaviour</a></li>
+<li><a href="###FTexture">FTexture</a></li>
+<li><a href="###FCursor">FCursor</a></li>
+<li><a href="###LabelText">LabelText</a></li>
+<li><a href="###LoremIpsum">LoremIpsum</a></li>
+</ol>
+</li>
+</ol>
+<hr />
+<h2 id="uielement">UIelement</h2>
+<p>UIelement is everything that can be added in <code>OpTab</code>, which is 600x600 canvas.
+Its sub-categories are <a href="##UIconfig">UIconfig</a> and <a href="##UItrigger">UItrigger</a>.
+UIelement can be either rectangular(pos and size) or circular(pos and rad),
+although the vast majority of provided UIelements are rectangular.</p>
+<p>(<em>Italic</em> properties call <code>OnChange</code> when it's modified)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><em>pos(setter)</em></td>
+<td style="text-align: left;">Sets bottom-left position <em>relative</em> to its canvas (<code>OpTab</code>/<code>OpScrollBox</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>size</em></td>
+<td style="text-align: left;">The size of the element. (When this is rectangular)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>rad</em></td>
+<td style="text-align: left;">The radius of the element. (When this is circular)</td>
+</tr>
+<tr>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">Infotext that will be shown at the bottom of the screen when MouseOver is true.</td>
+</tr>
+<tr>
+<td style="text-align: left;">MouseOver</td>
+<td style="text-align: left;">Whether the mouse cursor is over this element.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Hide()</td>
+<td style="text-align: left;">Hides this UIelement, and prevent interaction.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Show()</td>
+<td style="text-align: left;">Unhide this UIelement.</td>
+</tr>
+<tr>
+<td style="text-align: left;">GetPos()</td>
+<td style="text-align: left;">Returns bottom-left position <em>relative</em> to its canvas (<code>OpTab</code>/<code>OpScrollBox</code>). (pos(getter) returns <em>absolute</em> position)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Reset()</td>
+<td style="text-align: left;">Reset this UIelement if it's possible.</td>
+</tr>
+<tr>
+<td style="text-align: left;">FrameMultiply(origFrameCount)</td>
+<td style="text-align: left;">(static) When you have a frame counter in Update, use this to accommodate with Many More Fixes' FPS unlock feature.</td>
+</tr>
+<tr>
+<td style="text-align: left;">DTMultiply(deltaTime)</td>
+<td style="text-align: left;">(static) Without MMF's FPS meddling, this returns somewhere close to <code>1f</code>. Use this for ticking gradual changes.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="oplabel">OpLabel</h3>
+<p><img src="../../../assets/configmachine/provided/Label.png" alt="OpLabel Sample" /></p>
+<p>Simply displays text.</p>
+<p>(<em>Italic</em> parameters are optional)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constructor Parameter</th>
+<th style="text-align: left;">Displays text aligned to defined rectangular</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">pos</td>
+<td style="text-align: left;">BottomLeft position relative from the canvas origin.</td>
+</tr>
+<tr>
+<td style="text-align: left;">size</td>
+<td style="text-align: left;">Width and height of the rectangle this UIelement occupies.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>text</em></td>
+<td style="text-align: left;">Text to be displayed. Setting it empty will generate Lorem Ipsum for testing.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>alignment</em></td>
+<td style="text-align: left;">Horizontal alignment, whether the text is align to left, center, right with the rectangle defined its size.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>bigText</em></td>
+<td style="text-align: left;">Whether to use bigger font or not.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constructor Parameter</th>
+<th style="text-align: left;">Displays text that goes right from the position</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">posX</td>
+<td style="text-align: left;">Relative distance from the canvas origin to left side of the UIelement.</td>
+</tr>
+<tr>
+<td style="text-align: left;">posY</td>
+<td style="text-align: left;">Relative distance from the canvas origin to bottom side of the UIelement.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>text</em></td>
+<td style="text-align: left;">Text to be displayed. Setting it empty will generate Lorem Ipsum for testing.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>bigText</em></td>
+<td style="text-align: left;">Whether to use bigger font or not.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><em>text</em></td>
+<td style="text-align: left;">Text to be displayed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">autoWrap</td>
+<td style="text-align: left;">If true, when the text goes over its width, a linebreak will be inserted.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>alignment</em></td>
+<td style="text-align: left;">Horizontal alignment, whether the text is align to left, center, right with the rectangle defined its size.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>verticalAlignment</em></td>
+<td style="text-align: left;">Vertical alignment, whether the text is align to top, center, bottom with the rectangle defined its size.</td>
+</tr>
+<tr>
+<td style="text-align: left;">bumpBehav</td>
+<td style="text-align: left;"><code>null</code> by default. Setting this to other bumpBehaviour will synchronize highlighting. Creating new BumpBehaviour with this label turns itself reactive.</td>
+</tr>
+<tr>
+<td style="text-align: left;">color</td>
+<td style="text-align: left;">Colour of the text.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="oplabellong">OpLabelLong</h4>
+<p>A child class of <a href="###OpLabel"><code>OpLabel</code></a> that is specialized for displaying long wall of text.
+This will always use smaller font.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constructor Parameter</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">pos</td>
+<td style="text-align: left;">BottomLeft position relative from the canvas origin.</td>
+</tr>
+<tr>
+<td style="text-align: left;">size</td>
+<td style="text-align: left;">Width and height of the rectangle this UIelement occupies.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>text</em></td>
+<td style="text-align: left;">Text to be displayed. Setting it empty will generate Lorem Ipsum for testing.</td>
+</tr>
+<tr>
+<td style="text-align: left;">autoWrap</td>
+<td style="text-align: left;">If true, when the text goes over its width, a linebreak will be inserted.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>alignment</em></td>
+<td style="text-align: left;">Horizontal alignment, whether the text is align to left, center, right with the rectangle defined its size.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">allowOverflow</td>
+<td style="text-align: left;">If false, text that goes over the height will be discarded.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="oprect">OpRect</h3>
+<p><img src="../../../assets/configmachine/provided/Rect.png" alt="OpRect Sample" /></p>
+<p>Simple rectangular, useful to make boundary to group UIelements.
+Z-order is the order they're initialized, so for that purpose, initialize OpRect beforehand.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constructor Parameter</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">pos</td>
+<td style="text-align: left;">BottomLeft position relative from the canvas origin.</td>
+</tr>
+<tr>
+<td style="text-align: left;">size</td>
+<td style="text-align: left;">Width and height of the rectangle this UIelement occupies.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>alpha</em></td>
+<td style="text-align: left;">Alpha of the background of rectangle.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">colorEdge</td>
+<td style="text-align: left;">The colour of boundary sprites.</td>
+</tr>
+<tr>
+<td style="text-align: left;">colorFill</td>
+<td style="text-align: left;">The colour of fill sprites.</td>
+</tr>
+<tr>
+<td style="text-align: left;">alpha</td>
+<td style="text-align: left;">Alpha of the background of rectangle. If doesBump, this gets ignored.</td>
+</tr>
+<tr>
+<td style="text-align: left;">doesBump</td>
+<td style="text-align: left;">If true, this rectangle reacts to mouse cursor hovering .</td>
+</tr>
+<tr>
+<td style="text-align: left;">bumpBehav</td>
+<td style="text-align: left;">If doesBump, this controls reaction. If not, this stays <code>null</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="opimage">OpImage</h3>
+<p><img src="../../../assets/configmachine/provided/Image.png" alt="OpImage Sample" /></p>
+<p>Displays an image, whether it's <code>FAtlasElement</code> that's already loaded in <code>Futile.atlasManager</code>, or <code>Texture2D</code>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constructor Parameter</th>
+<th style="text-align: left;">Displays Texture2D</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">pos</td>
+<td style="text-align: left;">BottomLeft position relative from the canvas origin.</td>
+</tr>
+<tr>
+<td style="text-align: left;">image</td>
+<td style="text-align: left;">Texture2D image to be displayed.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constructor Parameter</th>
+<th style="text-align: left;">Displays FAtlasElement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">pos</td>
+<td style="text-align: left;">BottomLeft position relative from the canvas origin.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fAtlasElement</td>
+<td style="text-align: left;">The name of FAtlasElement.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><em>color</em></td>
+<td style="text-align: left;">The colour of the sprite.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>anchor</em></td>
+<td style="text-align: left;">The anchor of the sprite. (0f, 0f) to set pos as BottomLeft, and (0.5f, 0.5f) to set pos as the center.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>scale</em></td>
+<td style="text-align: left;">The scale of the sprite.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>alpha</em></td>
+<td style="text-align: left;">The alpha of the sprite.</td>
+</tr>
+</tbody>
+</table>
+<p>You can change image without making new OpImage.
+However, you cannot change Texture2D version to FAtlasElement and vice versa.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ChangeImage(newImage)</td>
+<td style="text-align: left;">Swap image to new Texture2D.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ChangeElement(newElement)</td>
+<td style="text-align: left;">Swap FAtlasElement to new one.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="opscrollbox">OpScrollBox</h3>
+<p>OpScrollBox is written by Slime_Cubed.
+It's a special UIelement that acts as canvas, like OpTab.</p>
+<p><img src="../../../assets/configmachine/provided/ScrollBox_Box.png" alt="OpScrollBox Sample - Box" /></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constructor Parameter</th>
+<th style="text-align: left;">Rectangular ScrollBox inside OpTab</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">pos</td>
+<td style="text-align: left;">BottomLeft position relative from the canvas origin.</td>
+</tr>
+<tr>
+<td style="text-align: left;">size</td>
+<td style="text-align: left;">The size of the display.</td>
+</tr>
+<tr>
+<td style="text-align: left;">contentSize</td>
+<td style="text-align: left;">Internal length of the scroll direction.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>horizontal</em></td>
+<td style="text-align: left;">Whether this scrolls horizontally or vertically.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>hasBack</em></td>
+<td style="text-align: left;">Whether its boundary will have filled backdrop or not.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>hasSlideBar</em></td>
+<td style="text-align: left;">Whether this will have a scrollbar or not.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../../../assets/configmachine/provided/ScrollBox_Tab.png" alt="OpScrollBox Sample - Tab" /></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constructor Parameter</th>
+<th style="text-align: left;">ScrollBox that replaces OpTab</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">tab</td>
+<td style="text-align: left;">BottomLeft position relative from the canvas origin.</td>
+</tr>
+<tr>
+<td style="text-align: left;">contentSize</td>
+<td style="text-align: left;">The size of the display.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>horizontal</em></td>
+<td style="text-align: left;">Whether this scrolls horizontally or vertically.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>hasSlideBar</em></td>
+<td style="text-align: left;">Whether this will have a scrollbar or not.</td>
+</tr>
+</tbody>
+</table>
+<p>Think of OpScrollBox as a window that displays larger canvas inside.
+The size of this window is the same as <code>size</code>.
+The size of the canvas inside has <code>contentSize</code> for its scroll-direction length,
+and the other length matches the width of this window.</p>
+<p><img src="../../../assets/configmachine/provided/ScrollBox_Diagram.png" alt="OpScrollBox Diagram" /></p>
+<p>The diagram above would be coded like the following.
+Their <code>pos</code> is relative to the bottom left origin of the canvas inside the OpScrollBox.
+The result of this code is shown above.</p>
+<pre><code class="language-c#">OpScrollBox scb = new OpScrollBox(new Vector2(100f, 100f), new Vector2(240f, 150f), 400f);
+Tabs[0].AddItems(scb); // Not required if you're using Tab version of constructor
+scb.AddItems(new OpLabelLong(new Vector2(20f, 20f), new Vector2(120f, 200f)),
+    new OpSlider(new Vector2(160f, 30f), &quot;_&quot;, new IntVector2(-20, 20), length: 180, true, 10));
+// Use AddItems on OpScrollBox instead of OpTab
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">redrawFlags</td>
+<td style="text-align: left;">When this scrollbox should be redrawn. Never / Always(default) / OnHover / OnKeypress.</td>
+</tr>
+<tr>
+<td style="text-align: left;">colorEdge</td>
+<td style="text-align: left;">Edge colour of rectangles.</td>
+</tr>
+<tr>
+<td style="text-align: left;">colorFill</td>
+<td style="text-align: left;">Fill colour of rectangles.</td>
+</tr>
+<tr>
+<td style="text-align: left;">fillAlpha</td>
+<td style="text-align: left;">Fill alpha of boundary rectangle.</td>
+</tr>
+<tr>
+<td style="text-align: left;">doesBackBump</td>
+<td style="text-align: left;">If false, boundary rectangle does not react with mouse over.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ScrollLocked</td>
+<td style="text-align: left;">Whether the scrolling is locked. Manipulated by <code>Lock</code> and <code>Unlock</code> method.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ScrollOffset</td>
+<td style="text-align: left;">The visual offset, in pixels, of the contents of this scrollbox. (&lt;=0)</td>
+</tr>
+<tr>
+<td style="text-align: left;">MaxScroll</td>
+<td style="text-align: left;">The value of <code>ScrollOffset</code> at the topmost or rightmost position of the box. (&lt;=0)</td>
+</tr>
+<tr>
+<td style="text-align: left;">targetScrollOffset</td>
+<td style="text-align: left;">The target value of <code>ScrollOffset</code>. Change this to smoothly animate scrolling.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">AddItems(items)</td>
+<td style="text-align: left;">Adds a collection of items to the interior of this scrollbox. Use this instead of <code>OpTab.AddItems</code> for its children.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Lock(stopImmediately)</td>
+<td style="text-align: left;">Locks scrolling. If <code>stopImmediately</code>, ignore <code>targetScrollOffset</code> and stops immediately.</td>
+</tr>
+<tr>
+<td style="text-align: left;">UnLock()</td>
+<td style="text-align: left;">Unlocks scrolling.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ScrollToTop(<em>immediate</em>)</td>
+<td style="text-align: left;">Scrolls to the top/leftmost. If <code>immediate</code>, scrolling animation gets cancelled.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ScrollToBottom(<em>immediate</em>)</td>
+<td style="text-align: left;">Scrolls to the bottom/rightmost. If <code>immediate</code>, scrolling animation gets cancelled.</td>
+</tr>
+<tr>
+<td style="text-align: left;">MarkDirty()</td>
+<td style="text-align: left;">Forces redrawing at the end of this frame.</td>
+</tr>
+<tr>
+<td style="text-align: left;">MarkDirty(time)</td>
+<td style="text-align: left;">Forces redrawing for the amount of <code>time</code> in seconds.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="opcontainer">OpContainer</h3>
+<p>This is basically an easy-to-access FContainer for ConfigMenu.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constructor Parameter</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">pos</td>
+<td style="text-align: left;">The origin of this element relative to the canvas origin.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">container</td>
+<td style="text-align: left;">Accessible FContainer. You can access this without checking isOptionMenu. (NullRef-proof)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="uiconfig">UIconfig</h2>
+<p><code>UIconfig</code> is a subcategory of UIelement, and has few extra properties and methods.
+Their value gets saved in <code>ModConfigs</code> folder in json format.
+If the key is either <code>null</code>, Empty, or starts with <code>_</code>,
+it is considered <code>cosmetic</code> and its value won't be saved.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">key</td>
+<td style="text-align: left;">(readonly) Unique key to save the value.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>value</em></td>
+<td style="text-align: left;">The value that gets saved. <code>valueInt</code>, <code>valueFloat</code>, and <code>valueBool</code> exist which is useful for designing reactive GUI.</td>
+</tr>
+<tr>
+<td style="text-align: left;">greyedOut</td>
+<td style="text-align: left;">If true, the element gets greyed out visually and cannot be interacted with.</td>
+</tr>
+<tr>
+<td style="text-align: left;">bumpBehav</td>
+<td style="text-align: left;"><code>BumpBehaviour</code> instance this UIconfig has.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ForceValue(newValue)</td>
+<td style="text-align: left;">Change <code>value</code> without invoking <code>OnChange()</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="opcheckbox">OpCheckBox</h3>
+<p><img src="../../../assets/configmachine/provided/CheckBox.png" alt="OpCheckBox Sample" /></p>
+<h3 id="opradiobuttongroup">OpRadioButtonGroup</h3>
+<h4 id="opradiobutton">OpRadioButton</h4>
+<p><img src="../../../assets/configmachine/provided/RadioButton.png" alt="OpRadioButton Sample" /></p>
+<h3 id="opdragger">OpDragger</h3>
+<h3 id="opslider">OpSlider</h3>
+<h4 id="opslidersubtle">OpSliderSubtle</h4>
+<h3 id="opkeybinder">OpKeyBinder</h3>
+<h3 id="opcombobox">OpComboBox</h3>
+<h4 id="opresourceselector">OpResourceSelector</h4>
+<h4 id="listitem">ListItem</h4>
+<p>While this technically belongs to <a href="##Custom-Classes">Custom Classes</a>,
+this is currently only used in <code>OpComboBox</code> so it will be included here.</p>
+<h3 id="opcolorpicker">OpColorPicker</h3>
+<h3 id="optextbox">OpTextBox</h3>
+<hr />
+<h2 id="uitrigger">UItrigger</h2>
+<h3 id="opsimplebutton">OpSimpleButton</h3>
+<h4 id="opsimpleimagebutton">OpSimpleImageButton</h4>
+<h3 id="opholdbutton">OpHoldButton</h3>
+<hr />
+<h2 id="custom-classes">Custom Classes</h2>
+<h3 id="dyeablerect">DyeableRect</h3>
+<h3 id="bumpbehaviour">BumpBehaviour</h3>
+<h3 id="ftexture">FTexture</h3>
+<h3 id="fcursor">FCursor</h3>
+<h3 id="labeltest">LabelTest</h3>
+<h3 id="loremipsum">LoremIpsum</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Properties</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><em>_init</em></td>
+<td style="text-align: left;">Whether this is initialized in ConfigMenu or not. The same as <code>OptionInterface.isOptionMenu</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>menu</em></td>
+<td style="text-align: left;">Rain World Menu instance this element is belong to.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>owner</em></td>
+<td style="text-align: left;">Rain World Page instance this element is belong to.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>tab</em></td>
+<td style="text-align: left;">OpTab instance this element is in.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>subObjects</em></td>
+<td style="text-align: left;"><code>MenuObject</code> instances this element has.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>myContainer</em></td>
+<td style="text-align: left;">FContainer that this element has. It gets initialized in constructor <em>only</em> when <code>_init</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>isHidden</em></td>
+<td style="text-align: left;">Whether this is hidden and not visible.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>fixedSize</em></td>
+<td style="text-align: left;">If this is not null, this element's size will always be this. (<em>fixedRad</em> does the similar)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>_soundFill</em></td>
+<td style="text-align: left;">Add number (in proportion with sound effect's length) to this whenever you're playing soundeffect.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>_soundFilled</em></td>
+<td style="text-align: left;">If this is true, avoid excuting <code>menu.PlaySound</code></td>
+</tr>
+</tbody>
+</table>
+
+
+</body>
+</html>

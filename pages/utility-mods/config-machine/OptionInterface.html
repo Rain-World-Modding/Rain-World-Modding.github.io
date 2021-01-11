@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='../../css/main.css' />
+    <link rel='stylesheet' href='../../css/article.css' />
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width initial-scale=1'>
+    <title>OptionInterface</title>
+</head>
+<body>
+
+    <h1 id="optioninterface">OptionInterface</h1>
+<p>To interact with Config Machine, it is best to have a child class of <code>OptionInterface</code>.
+This means your mod will be <em>dependent</em> with Config Machine.</p>
+<hr />
+<h2 id="creating-optioninterface-class">Creating OptionInterface class</h2>
+<p>First download <a href="https://drive.google.com/file/d/1NIE8conaoI1OOHevi4K9tvOG4v-NIfYf/view">Config Machine</a> from RainDB,
+extract the zip and put both dll and xml in the folder where you store References.
+Then add <code>ConfigMachine.dll</code> to References of your mod project.
+Create a new cs file and make a class inheriting <code>OptionInterface</code>.</p>
+<pre><code class="language-c#">public class MyOI : OptionInterface
+{
+    public MyOI() : base (plugin: MyPlugin.instance) // Your BaseUnityPlugin instance
+    { }
+}
+</code></pre>
+<p>Now add <code>LoadOI</code> static method in your <code>BaseUnityPlugin</code> class that returns your OptionInterface.</p>
+<pre><code class="language-c#">public static OptionInterface LoadOI() =&gt; return new MyOI();
+</code></pre>
+<h3 id="designing-gui">Designing GUI</h3>
+<p>For designing your GUI, using <a href="https://inkscape.org/">Inkscape</a> is strongly suggested.
+With Inkscape, create a file with 600 x 600 pixel, then enable [View] - [Canvas Orientation] - [Flip Vertically].
+(Alternatively, you can use any CAD program which has up and right as positive axis by default)</p>
+<p>The image below is a diagram of <code>Colorfoot</code>'s first <code>OpTab</code>.</p>
+<p><img src="../../../assets/configmachine/Colorfoot-GUI.png" alt="Example GUI" /></p>
+<p>All UIelements have bottom-left <code>pos</code>ition and rectangular <code>size</code>.
+(Some have <code>fixedSize</code> which you can see from the summary of their constructors)
+Think every element like rectangles, and arrange them as you need.
+(Circular UIelements have <code>rad</code> instead; You can consider them as a square with 2 * rad for its dimensions)</p>
+<p><img src="../../../assets/configmachine/Colorfoot-GUI0.png" alt="Example GUI Positioning" /></p>
+<p>For <code>pos</code> parameters, use the relative coordinate from bottom-left from the canvas to your item.
+For <code>size</code> parameters, use their size in pixel.
+If you're using Inkscape with [Flip Vertically] setting on, you can get those from their properties without any calculation.</p>
+<p><img src="../../../assets/configmachine/Colorfoot-Inkscape.png" alt="Example GUI Inkscape" /></p>
+<p>Here are some tips for designing GUI:</p>
+<ul>
+<li>If you have many things to display, organise them with categories and use <code>OpRect</code> to surround them.</li>
+<li>You don't have to put everything in a single <code>OpTab</code>. If the canvas gets crowded, disperse your items for easier readability.</li>
+<li>Try to avoid using smaller <code>OpScrollBox</code>s to store many things in one place even if that's an option: The users cannot see everything in a single screen which reduces usability greatly.</li>
+</ul>
+<h3 id="initialize">Initialize</h3>
+<p><code>OptionInterface.Initialize</code> is called in IntroRoll(for loading configuration) and ConfigMenu(for displaying to users).
+You can check whether Initialize is called in ConfigMenu or not with <code>OptionInterface.isOptionMenu</code>.
+It usually goes like this following example:</p>
+<pre><code class="language-c#">public override void Initialize()
+{
+    base.Initialize(); // This should be called before everything else
+    Tabs = new OpTab[2]; // The number of OpTab must be 1 ~ 20
+    Tabs[0] = new OpTab(&quot;Main&quot;); // Each OpTab is 600 x 600 pixel sized canvas
+    Tabs[1] = new OpTab(&quot;Second&quot;)
+    { color = Color.cyan }; // You can change its button and canvas colour too
+    
+    // After Initializing Tabs, create UIelements
+}
+</code></pre>
+<p>Now initialize <code>UIelement</code>s and add them to <code>OpTab</code> (or <code>OpScrollBox</code>).
+The Z-order (the order in which they're drawn) of <code>UIelement</code>s is the order of constructors, <em>not</em> the order they're added to <code>OpTab</code>.</p>
+<pre><code class="language-c#">    Tabs[0].AddItems(new OpLabel(100f, 500f, &quot;My Text&quot;)
+    { description = &quot;This is My Text&quot; });
+    // Any UIelement can have description, which will be shown
+    // at the bottom of the screen when the mouse cursor is over
+</code></pre>
+<p><code>UIconfig</code>s are a subcategory of <code>UIelement</code> which have <code>key</code> and <code>value</code>, both of them get saved automatically by Config Machine.
+Their constructor accepts <code>key</code> and <code>defaultValue</code> besides.
+<code>key</code> must be exclusive and unique unless it is cosmetic.</p>
+<p>Setting the key to empty or anything that starts with <code>_</code>(underbar) will turn it <code>cosmetic</code>, and won't be saved.
+Cosmetic UIconfig is useful when you want to have provided <code>UIconfig</code> for UI purpose but not for an actual configurable.
+(Similarly, ModID that starts with <code>_</code> will be completely ignored by Config Machine)</p>
+<pre><code class="language-c#">    OpCheckBox chkExample = new OpCheckBox(260f, 360f, &quot;Example&quot;, true);
+    Tabs[0].AddItems(chkExample,
+        new OpLabel(260f, 390f, &quot;Enable Example&quot;) { bumpBehav = chkExample.bumpBehav });
+    // BumpBehaviour is Config Machine's custom class that allows smoothly animated reaction with the input
+    // Setting OpLabel's bumpBehav to other UIconfig/UItrigger's bumpBehav allows it to highlight with that element
+</code></pre>
+<p><code>UItrigger</code>s are the other subcategory of <code>UIelement</code> which have <code>signal</code>.
+When the user activates an <code>UItrigger</code> in some way, it will call the <code>Signal</code> function in OptionInterface which will be explained later.</p>
+<pre><code class="language-c#">    Tabs[0].AddItems(new OpSimpleButton(new Vector2(400f, 200f), new Vector2(100f, 24f), &quot;press&quot;, &quot;Press Me&quot;));
+</code></pre>
+<h3 id="update">Update</h3>
+<p><code>Update</code> function is called every frame when the game is in ConfigMenu, and this OptionInterface is currently active
+(The user has currently selected this mod from the list on left).
+This is useful to make reactive GUI, especially since each <code>UIconfig</code> instance can have only one value saved.
+The following example code uses cosmetic <code>OpRadioButtonGroup</code> to have four <code>OpColorPicker</code>s in a single spot.</p>
+<pre><code class="language-c#">private OpRadioButtonGroup rbgSelect;
+private int select;
+private OpColorPicker[] cpkPlayers;
+
+public override void Initialize()
+{
+    base.Initialize();
+    Tabs = new OpTab[] { new OpTab() };
+    
+    select = 0;
+    rbgSelect = new OpRadioButtonGroup(&quot;_&quot;, select);
+    Tabs[0].AddItems(rbgSelect);
+    rbgSelect.SetButtons(new OpRadioButton[]
+        {
+            new OpRadioButton(50f, 100f){ description = &quot;The Survivor&quot;},
+            new OpRadioButton(100f, 100f){ description = &quot;The Monk&quot;},
+            new OpRadioButton(150f, 100f){ description = &quot;The Hunter&quot;},
+            new OpRadioButton(200f, 100f){ description = &quot;The Nightcat&quot;}
+        }
+        ); 
+    OpColorPicker[] cpkPlayers = new OpColorPicker[4];
+    for (int i = 0; i &lt; 4; i++)
+    {
+        Tabs[0].AddItems(new OpLabel(50f * i, 70f, rbgSelect.buttons[i].description) { bumpBehav = rbgSelect.buttons[i].bumpBehav });
+        cpkPlayers[i] = new OpColorPicker(new Vector2(100f, 300f), $&quot;Color{i}&quot;, &quot;FFFFFF&quot;);
+        cpkPlayers[i].Hide();
+    }
+    cpkPlayers[select].Show();
+    Tabs[0].AddItems(cpkPlayers);
+}
+
+public override void Update(float dt)
+{
+    base.Update(dt); // dt is deltaTime
+    if (select != rbgSelect.valueInt)
+    {
+        for (int i = 0; i &lt; cpkPlayers.Length; i++) { cpkPlayers[i].Hide(); }
+        select = rbgSelect.valueInt;
+        cpkPlayers[select].Show();
+    }
+}
+</code></pre>
+<h3 id="configonchange">ConfigOnChange</h3>
+<p><code>ConfigOnChange</code> is called whenever <code>config</code> Dictionary is updated,
+mainly when Config Machine loads OptionInterfaces in IntroRoll,
+and when the user saves changes of configuration in ConfigMenu.
+Override this function to grab your configurable values.</p>
+<p><code>config</code> Dictionary is where <code>UIconfig</code>'s value is stored.
+The following is an example of how to convert a string value to the corresponding type.</p>
+<pre><code class="language-c#">public override void ConfigOnChange()
+{
+    base.ConfigOnChange();
+    MyMod.config.myInt = int.Parse(config[&quot;keyInt&quot;]);
+    MyMod.config.myFloat = float.Parse(config[&quot;keyFloat&quot;]);
+    MyMod.config.myKey = OpKeyBinder.StringToKeyCode(config[&quot;keyKey&quot;]);
+    MyMod.config.myColor = OpColorPicker.HexToColor(config[&quot;keyColor&quot;]);
+}
+</code></pre>
+<h3 id="signal">Signal</h3>
+<p><code>Signal</code> is called when the user has interacted with <code>UItrigger</code>.
+Override this for reaction to that.</p>
+<pre><code class="language-c#">public override void Signal(UItrigger trigger, string signal)
+{
+    switch (signal)
+    {
+        case &quot;reset&quot;:
+            ConfigMenu.ResetCurrentConfig(); // This is the same as pressing Reset Config Button.
+            break;
+    }
+}
+</code></pre>
+<hr />
+<p>That's about the basics on how to use OptionInterface.
+For farther detail about <a href="Provided-UIelements.html">provided UIelements</a> or <a href="Translation-Support.html">Translation API</a>, continue reading those pages.</p>
+
+
+</body>
+</html>

@@ -5,13 +5,22 @@
 
     "Utility Mods": [
         "Warp",
-        "RegionCast"
+        "RegionCast",
+        "EnumExtender",
+        {
+            "Config Machine": [
+                "OptionInterface",
+                "Provided-UIelements",
+                "GeneratedOI",
+                "Translation-Support"
+            ]
+        }
     ],
 
     "Creating Mods": [
         "BepInPlugins"
     ],
-    
+         
     "Level Editor": [
         "Official-Level-Editor",
         "Geometry-Editor",
