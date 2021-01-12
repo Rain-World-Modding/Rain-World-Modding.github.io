@@ -4,9 +4,9 @@ function addNavbar() {
     nav.className = "nav";
     nav.innerHTML = 
         `<ul>
-            <li><a class="active" href="/index.html"> Home </a></li>
+            <li><a class="active" href="/rain-world-modding/index.html"> Home </a></li>
             
-            <li style="float:right"><a href="/about.html"> About </a></li>
+            <li style="float:right"><a href="/rain-world-modding/about.html"> About </a></li>
             
             <li style="float:right"><a href="https://store.steampowered.com/app/312520/Rain_World/">Rain World</a></li>
             <li style="float:right"><a href="https://www.raindb.net">RainDB</a></li>
