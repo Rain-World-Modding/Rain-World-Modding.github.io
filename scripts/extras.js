@@ -2,11 +2,20 @@
 function addNavbar() {
     var nav = document.createElement("DIV");
     nav.className = "nav";
+    
+    if (window.location.href.endsWith("/") || window.location.href.endsWith("index.html") ||
+            window.location.href.endsWith("about.html")) {
+        var rootPrepend = "";
+    }
+    else {
+        var rootPrepend = "/rain-world-modding/";
+    }
+
     nav.innerHTML = 
         `<ul>
-            <li><a class="active" href="/rain-world-modding/index.html"> Home </a></li>
+            <li><a class="active" href="${rootPrepend}index.html"> Home </a></li>
             
-            <li style="float:right"><a href="/rain-world-modding/about.html"> About </a></li>
+            <li style="float:right"><a href="${rootPrepend}about.html"> About </a></li>
             
             <li style="float:right"><a href="https://store.steampowered.com/app/312520/Rain_World/">Rain World</a></li>
             <li style="float:right"><a href="https://www.raindb.net">RainDB</a></li>
