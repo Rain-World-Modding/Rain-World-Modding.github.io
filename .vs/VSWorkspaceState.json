@@ -3,12 +3,13 @@
     "",
     "\\assets",
     "\\assets\\configmachine",
+    "\\assets\\configmachine\\provided",
     "\\css",
     "\\pages",
     "\\pages\\creating-mods",
     "\\pages\\utility-mods",
     "\\pages\\utility-mods\\config-machine"
   ],
-  "SelectedNode": "\\pages\\utility-mods\\config-machine\\Translation-Support.md",
+  "SelectedNode": "\\assets\\configmachine\\provided\\ColorPicker.png",
   "PreviewInSolutionExplorer": false
 }

@@ -1,16 +1,75 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Provided UIelements</title>
+    <title>Provided UIelements [WIP]</title>
 </head>
 <body>
 
-    <h1 id="provided-uielements">Provided UIelements</h1>
+    <h1 id="provided-uielements-wip">Provided UIelements [WIP]</h1>
+<p>This page is up to date with Config Machine <code>v1.5.1</code>.</p>
 <p>This page explains what each provided <code>UIelement</code> is and how to use them.
 You can check out the source code of Config Machine from its <a href="https://github.com/metnias/CompletelyOptional">github page</a>,
 or have <code>ConfigMachine.xml</code> in your Reference folder for summaries.
-However there are functions left unused (mainly because the modders are unaware) so this page will cover them.</p>
-<p>This page is up to date with Config Machine <code>v1.5.1</code>.</p>
+However, there are functions left unused (mainly because the modders are unaware) so this page will cover them.</p>
+<p>Some provided <code>UIelement</code>s have <code>fixedSize</code>, which prevents it being resized.
+The list of those follows:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">UIelement</th>
+<th style="text-align: right;">width</th>
+<th style="text-align: right;">height</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">OpCheckBox</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr>
+<td style="text-align: left;">OpRadioButton</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr>
+<td style="text-align: left;">OpDragger</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr>
+<td style="text-align: left;">OpSlider</td>
+<td style="text-align: right;">*<em>30</em></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">OpSliderSubtle</td>
+<td style="text-align: right;">*<em>30</em></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">OpComboBox</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr>
+<td style="text-align: left;">OpColorPicker</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">150</td>
+</tr>
+<tr>
+<td style="text-align: left;">OpTextBox</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr>
+<td style="text-align: left;">OpHoldButton</td>
+<td style="text-align: right;">rad:</td>
+<td style="text-align: right;"><em>55</em></td>
+</tr>
+</tbody>
+</table>
+<p>(* The width perpendicular to its length is fixed)</p>
 <hr />
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
@@ -149,11 +208,11 @@ although the vast majority of provided UIelements are rectangular.</p>
 </tr>
 <tr>
 <td style="text-align: left;"><em>alignment</em></td>
-<td style="text-align: left;">Horizontal alignment, whether the text is align to left, center, right with the rectangle defined its size.</td>
+<td style="text-align: left;">Horizontal alignment, whether the text is aligned to left, center, right with the rectangle defined its size.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><em>bigText</em></td>
-<td style="text-align: left;">Whether to use bigger font or not.</td>
+<td style="text-align: left;">Whether to use the bigger font or not.</td>
 </tr>
 </tbody>
 </table>
@@ -167,7 +226,7 @@ although the vast majority of provided UIelements are rectangular.</p>
 <tbody>
 <tr>
 <td style="text-align: left;">posX</td>
-<td style="text-align: left;">Relative distance from the canvas origin to left side of the UIelement.</td>
+<td style="text-align: left;">Relative distance from the canvas origin to the left side of the UIelement.</td>
 </tr>
 <tr>
 <td style="text-align: left;">posY</td>
@@ -179,7 +238,7 @@ although the vast majority of provided UIelements are rectangular.</p>
 </tr>
 <tr>
 <td style="text-align: left;"><em>bigText</em></td>
-<td style="text-align: left;">Whether to use bigger font or not.</td>
+<td style="text-align: left;">Whether to use the bigger font or not.</td>
 </tr>
 </tbody>
 </table>
@@ -201,11 +260,11 @@ although the vast majority of provided UIelements are rectangular.</p>
 </tr>
 <tr>
 <td style="text-align: left;"><em>alignment</em></td>
-<td style="text-align: left;">Horizontal alignment, whether the text is align to left, center, right with the rectangle defined its size.</td>
+<td style="text-align: left;">Horizontal alignment, whether the text is aligned to left, center, right with the rectangle defined its size.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><em>verticalAlignment</em></td>
-<td style="text-align: left;">Vertical alignment, whether the text is align to top, center, bottom with the rectangle defined its size.</td>
+<td style="text-align: left;">Vertical alignment, whether the text is aligned to top, center, bottom with the rectangle defined its size.</td>
 </tr>
 <tr>
 <td style="text-align: left;">bumpBehav</td>
@@ -218,8 +277,8 @@ although the vast majority of provided UIelements are rectangular.</p>
 </tbody>
 </table>
 <h4 id="oplabellong">OpLabelLong</h4>
-<p>A child class of <a href="###OpLabel"><code>OpLabel</code></a> that is specialized for displaying long wall of text.
-This will always use smaller font.</p>
+<p>A child class of <a href="###OpLabel"><code>OpLabel</code></a> that is specialized for displaying a long wall of text.
+This will always use the smaller font.</p>
 <table>
 <thead>
 <tr>
@@ -246,7 +305,7 @@ This will always use smaller font.</p>
 </tr>
 <tr>
 <td style="text-align: left;"><em>alignment</em></td>
-<td style="text-align: left;">Horizontal alignment, whether the text is align to left, center, right with the rectangle defined its size.</td>
+<td style="text-align: left;">Horizontal alignment, whether the text is aligned to left, center, right with the rectangle defined its size.</td>
 </tr>
 </tbody>
 </table>
@@ -260,13 +319,13 @@ This will always use smaller font.</p>
 <tbody>
 <tr>
 <td style="text-align: left;">allowOverflow</td>
-<td style="text-align: left;">If false, text that goes over the height will be discarded.</td>
+<td style="text-align: left;">If it's false, text that goes over the height will be discarded.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="oprect">OpRect</h3>
 <p><img src="../../../assets/configmachine/provided/Rect.png" alt="OpRect Sample" /></p>
-<p>Simple rectangular, useful to make boundary to group UIelements.
+<p>Simple rectangular, useful to make a boundary to group UIelements.
 Z-order is the order they're initialized, so for that purpose, initialize OpRect beforehand.</p>
 <table>
 <thead>
@@ -286,7 +345,7 @@ Z-order is the order they're initialized, so for that purpose, initialize OpRect
 </tr>
 <tr>
 <td style="text-align: left;"><em>alpha</em></td>
-<td style="text-align: left;">Alpha of the background of rectangle.</td>
+<td style="text-align: left;">Alpha of the background of the rectangle.</td>
 </tr>
 </tbody>
 </table>
@@ -308,7 +367,7 @@ Z-order is the order they're initialized, so for that purpose, initialize OpRect
 </tr>
 <tr>
 <td style="text-align: left;">alpha</td>
-<td style="text-align: left;">Alpha of the background of rectangle. If doesBump, this gets ignored.</td>
+<td style="text-align: left;">Alpha of the background of the rectangle. If doesBump, this gets ignored.</td>
 </tr>
 <tr>
 <td style="text-align: left;">doesBump</td>
@@ -373,7 +432,7 @@ Z-order is the order they're initialized, so for that purpose, initialize OpRect
 </tr>
 <tr>
 <td style="text-align: left;"><em>anchor</em></td>
-<td style="text-align: left;">The anchor of the sprite. (0f, 0f) to set pos as BottomLeft, and (0.5f, 0.5f) to set pos as the center.</td>
+<td style="text-align: left;">The anchor of the sprite. (0f, 0f) to set pos as BottomLeft, and (0.5f, 0.5f) to set pos as the centre.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><em>scale</em></td>
@@ -385,8 +444,8 @@ Z-order is the order they're initialized, so for that purpose, initialize OpRect
 </tr>
 </tbody>
 </table>
-<p>You can change image without making new OpImage.
-However, you cannot change Texture2D version to FAtlasElement and vice versa.</p>
+<p>You can change the image without making new OpImage.
+However, you cannot change the Texture2D version to FAtlasElement and vice versa.</p>
 <table>
 <thead>
 <tr>
@@ -407,7 +466,7 @@ However, you cannot change Texture2D version to FAtlasElement and vice versa.</p
 </table>
 <h3 id="opscrollbox">OpScrollBox</h3>
 <p>OpScrollBox is written by Slime_Cubed.
-It's a special UIelement that acts as canvas, like OpTab.</p>
+It's a special UIelement that acts as a canvas, like OpTab.</p>
 <p><img src="../../../assets/configmachine/provided/ScrollBox_Box.png" alt="OpScrollBox Sample - Box" /></p>
 <table>
 <thead>
@@ -470,7 +529,7 @@ It's a special UIelement that acts as canvas, like OpTab.</p>
 </tr>
 </tbody>
 </table>
-<p>Think of OpScrollBox as a window that displays larger canvas inside.
+<p>Think of OpScrollBox as a window that displays a larger canvas inside.
 The size of this window is the same as <code>size</code>.
 The size of the canvas inside has <code>contentSize</code> for its scroll-direction length,
 and the other length matches the width of this window.</p>
@@ -494,7 +553,7 @@ scb.AddItems(new OpLabelLong(new Vector2(20f, 20f), new Vector2(120f, 200f)),
 <tbody>
 <tr>
 <td style="text-align: left;">redrawFlags</td>
-<td style="text-align: left;">When this scrollbox should be redrawn. Never / Always(default) / OnHover / OnKeypress.</td>
+<td style="text-align: left;">When this ScrollBox should be redrawn. Never / Always(default) / OnHover / OnKeypress.</td>
 </tr>
 <tr>
 <td style="text-align: left;">colorEdge</td>
@@ -510,7 +569,7 @@ scb.AddItems(new OpLabelLong(new Vector2(20f, 20f), new Vector2(120f, 200f)),
 </tr>
 <tr>
 <td style="text-align: left;">doesBackBump</td>
-<td style="text-align: left;">If false, boundary rectangle does not react with mouse over.</td>
+<td style="text-align: left;">If false, the boundary rectangle does not react with mouseover.</td>
 </tr>
 <tr>
 <td style="text-align: left;">ScrollLocked</td>
@@ -518,7 +577,7 @@ scb.AddItems(new OpLabelLong(new Vector2(20f, 20f), new Vector2(120f, 200f)),
 </tr>
 <tr>
 <td style="text-align: left;">ScrollOffset</td>
-<td style="text-align: left;">The visual offset, in pixels, of the contents of this scrollbox. (&lt;=0)</td>
+<td style="text-align: left;">The visual offset, in pixels, of the contents of this ScrollBox. (&lt;=0)</td>
 </tr>
 <tr>
 <td style="text-align: left;">MaxScroll</td>
@@ -540,7 +599,7 @@ scb.AddItems(new OpLabelLong(new Vector2(20f, 20f), new Vector2(120f, 200f)),
 <tbody>
 <tr>
 <td style="text-align: left;">AddItems(items)</td>
-<td style="text-align: left;">Adds a collection of items to the interior of this scrollbox. Use this instead of <code>OpTab.AddItems</code> for its children.</td>
+<td style="text-align: left;">Adds a collection of items to the interior of this ScrollBox. Use this instead of <code>OpTab.AddItems</code> for its children.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Lock(stopImmediately)</td>
@@ -569,7 +628,7 @@ scb.AddItems(new OpLabelLong(new Vector2(20f, 20f), new Vector2(120f, 200f)),
 </tbody>
 </table>
 <h3 id="opcontainer">OpContainer</h3>
-<p>This is basically an easy-to-access FContainer for ConfigMenu.</p>
+<p>This is an easy-to-access FContainer for ConfigMenu.</p>
 <table>
 <thead>
 <tr>
@@ -600,10 +659,11 @@ scb.AddItems(new OpLabelLong(new Vector2(20f, 20f), new Vector2(120f, 200f)),
 </table>
 <hr />
 <h2 id="uiconfig">UIconfig</h2>
-<p><code>UIconfig</code> is a subcategory of UIelement, and has few extra properties and methods.
+<p><code>UIconfig</code> is a subcategory of <a href="##UIelement">UIelement</a>, and has few extra properties and methods.
 Their value gets saved in <code>ModConfigs</code> folder in json format.
 If the key is either <code>null</code>, Empty, or starts with <code>_</code>,
 it is considered <code>cosmetic</code> and its value won't be saved.</p>
+<p>For collecting config values, access <code>config</code> dictionary with <code>key</code> you've set, in <code>ConfigOnChange</code>.</p>
 <table>
 <thead>
 <tr>
@@ -614,7 +674,7 @@ it is considered <code>cosmetic</code> and its value won't be saved.</p>
 <tbody>
 <tr>
 <td style="text-align: left;">key</td>
-<td style="text-align: left;">(readonly) Unique key to save the value.</td>
+<td style="text-align: left;">(readonly) Unique key to save and access the value.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><em>value</em></td>
@@ -646,25 +706,401 @@ it is considered <code>cosmetic</code> and its value won't be saved.</p>
 </table>
 <h3 id="opcheckbox">OpCheckBox</h3>
 <p><img src="../../../assets/configmachine/provided/CheckBox.png" alt="OpCheckBox Sample" /></p>
+<p><a href="https://en.wikipedia.org/wiki/Checkbox">CheckBox</a> (a.k.a. TickBox) permits the user to make a binary choice.
+This returns bool (<code>&quot;true&quot;</code> or <code>&quot;false&quot;</code>).
+Its size is fixed to 24x24.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constructor Parameter</th>
+<th style="text-align: left;">Default constructor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">pos</td>
+<td style="text-align: left;">BottomLeft position relative from the canvas origin.</td>
+</tr>
+<tr>
+<td style="text-align: left;">key</td>
+<td style="text-align: left;">Unique key to save and access the value.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>defaultBool</em></td>
+<td style="text-align: left;">Default value.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constructor Parameter</th>
+<th style="text-align: left;">Lazier version that accepts two float for pos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">posX</td>
+<td style="text-align: left;">Relative distance from the canvas origin to the left side of the UIelement.</td>
+</tr>
+<tr>
+<td style="text-align: left;">posY</td>
+<td style="text-align: left;">Relative distance from the canvas origin to bottom side of the UIelement.</td>
+</tr>
+<tr>
+<td style="text-align: left;">key</td>
+<td style="text-align: left;">Unique key to save and access the value.</td>
+</tr>
+<tr>
+<td style="text-align: left;">defaultBool</td>
+<td style="text-align: left;">Default value.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">colorEdge</td>
+<td style="text-align: left;">The colour of its boundary and its symbol.</td>
+</tr>
+<tr>
+<td style="text-align: left;">colorFill</td>
+<td style="text-align: left;">The colour that fills inside.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="opradiobuttongroup">OpRadioButtonGroup</h3>
-<h4 id="opradiobutton">OpRadioButton</h4>
 <p><img src="../../../assets/configmachine/provided/RadioButton.png" alt="OpRadioButton Sample" /></p>
+<p><a href="https://en.wikipedia.org/wiki/Radio_button">RadioButton</a> (a.k.a. OptionButton) permits the user to choose only one of a predefined set of mutually exclusive options.
+<code>OpRadioButton</code> is <em>UIelement</em> that <em>looks</em> like an UIconfig, but isn't.
+<code>OpRadioButtonGroup</code>, albeit invisible, is what actually stores the value to be saved.
+This returns int value.</p>
+<p>As OpRadioButtonGroup is arbitary, it doesn't need the <code>pos</code> to be initialized.
+However, if your OpRadioButtons should be in OpScrollBox, add OpRadioButtonGroup for its child instead of OpTab.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constructor Parameter</th>
+<th style="text-align: left;">Default constructor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">key</td>
+<td style="text-align: left;">Unique key to save and access the value.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>defaultValue</em></td>
+<td style="text-align: left;">Default value. 0 or higher.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">buttons</td>
+<td style="text-align: left;">OpRadioButtons that belong to this. Use SetButtons(buttons) to set.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">SetButtons(buttons)</td>
+<td style="text-align: left;">Binds OpRadioButton to this. This also adds <code>OpRadioButton</code>s to the canvas this is in.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hide()</td>
+<td style="text-align: left;">Calls Hide() for all children.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Show()</td>
+<td style="text-align: left;">Calls Show() for all children.</td>
+</tr>
+<tr>
+<td style="text-align: left;">SetColorEdge(newColor)</td>
+<td style="text-align: left;">Changes colorEdge of all children.</td>
+</tr>
+<tr>
+<td style="text-align: left;">SetColorFill(newColor)</td>
+<td style="text-align: left;">Changes colorFill of all children.</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<pre><code class="language-c#">OpRadioButtonGroup group = new OpRadioButtonGroup(&quot;MyOption&quot;);
+Tabs[1].AddItems(group); // Add this to canvas before calling SetButtons
+group.SetButtons(new OpRadioButton[] {
+    new OpRadioButton(300f, 450f), new OpRadioButton(350f, 450f) });
+// SetButtons adds params to the canvas the group is in, so no need to call AddItems again.
+</code></pre>
+<h4 id="opradiobutton">OpRadioButton</h4>
+<p>This is an UIelement and it alone does not do anything.
+Its size is fixed to 24x24.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constructor Parameter</th>
+<th style="text-align: left;">Default constructor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">pos</td>
+<td style="text-align: left;">BottomLeft position relative from the canvas origin.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constructor Parameter</th>
+<th style="text-align: left;">Lazier version that accepts two float for pos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">posX</td>
+<td style="text-align: left;">Relative distance from the canvas origin to the left side of the UIelement.</td>
+</tr>
+<tr>
+<td style="text-align: left;">posY</td>
+<td style="text-align: left;">Relative distance from the canvas origin to bottom side of the UIelement.</td>
+</tr>
+</tbody>
+</table>
+<p>It has properties that's the same name as UIconfigs, and they do identical things.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">greyedOut</td>
+<td style="text-align: left;">If true, locks interaction with this button. The users still can interact with other OpRadioButton in the group.</td>
+</tr>
+<tr>
+<td style="text-align: left;">colorEdge</td>
+<td style="text-align: left;">The colour of its boundary and its symbol.</td>
+</tr>
+<tr>
+<td style="text-align: left;">colorFill</td>
+<td style="text-align: left;">The colour that fills inside.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>value</em></td>
+<td style="text-align: left;">The value of this, although this doesn't get saved. <em>valueBool</em> returns this in bool.</td>
+</tr>
+<tr>
+<td style="text-align: left;">bumpBehav</td>
+<td style="text-align: left;">BumpBehaviour instance that's bound to this.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="opdragger">OpDragger</h3>
+<p><img src="../../../assets/configmachine/provided/Dragger.png" alt="OpDragger Sample" /></p>
+<p>Rain World Dragger is a small box with a number, which the users can adjust by holding the mouse and move vertically.
+It is useful for cramping adjustable int value in a tight space.
+This returns int value.
+Its size is fixed to 24x24.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constructor Parameter</th>
+<th style="text-align: left;">Default constructor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">pos</td>
+<td style="text-align: left;">BottomLeft position relative from the canvas origin.</td>
+</tr>
+<tr>
+<td style="text-align: left;">key</td>
+<td style="text-align: left;">Unique key to save and access the value.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>defaultInt</em></td>
+<td style="text-align: left;">Default value.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constructor Parameter</th>
+<th style="text-align: left;">Lazier version that accepts two float for pos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">posX</td>
+<td style="text-align: left;">Relative distance from the canvas origin to the left side of the UIelement.</td>
+</tr>
+<tr>
+<td style="text-align: left;">posY</td>
+<td style="text-align: left;">Relative distance from the canvas origin to bottom side of the UIelement.</td>
+</tr>
+<tr>
+<td style="text-align: left;">key</td>
+<td style="text-align: left;">Unique key to save and access the value.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>defaultInt</em></td>
+<td style="text-align: left;">Default value.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">min</td>
+<td style="text-align: left;">The minimum number this dragger is allowed to go. (default: 0)</td>
+</tr>
+<tr>
+<td style="text-align: left;">max</td>
+<td style="text-align: left;">The maximum number this dragger is allowed to go. (default: 99)</td>
+</tr>
+<tr>
+<td style="text-align: left;">colorEdge</td>
+<td style="text-align: left;">The colour of its boundary.</td>
+</tr>
+<tr>
+<td style="text-align: left;">colorFill</td>
+<td style="text-align: left;">The colour that fills inside.</td>
+</tr>
+<tr>
+<td style="text-align: left;">colorText</td>
+<td style="text-align: left;">The colour of its number inside.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="opslider">OpSlider</h3>
+<p><img src="../../../assets/configmachine/provided/Slider.png" alt="OpSlider Sample" /></p>
+<p><a href="https://en.wikipedia.org/wiki/Slider_(computing)">Slider</a> (a.k.a. TrackBar) allows the users to set value by dragging the indicator.
+Clicking a point on the slider also works.
+This returns int value.
+The width perpendicular to its length is fixed to 30.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constructor Parameter</th>
+<th style="text-align: left;">Default constructor.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">pos</td>
+<td style="text-align: left;">BottomLeft position relative from the canvas origin.</td>
+</tr>
+<tr>
+<td style="text-align: left;">key</td>
+<td style="text-align: left;">Unique key to save and access the value.</td>
+</tr>
+<tr>
+<td style="text-align: left;">range</td>
+<td style="text-align: left;">Inclusive range of value.</td>
+</tr>
+<tr>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">The length of this element.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>vertical</em></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>defaultValue</em></td>
+<td style="text-align: left;">Default value.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constructor Parameter</th>
+<th style="text-align: left;">Length = range * multi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">pos</td>
+<td style="text-align: left;">BottomLeft position relative from the canvas origin.</td>
+</tr>
+<tr>
+<td style="text-align: left;">key</td>
+<td style="text-align: left;">Unique key to save and access the value.</td>
+</tr>
+<tr>
+<td style="text-align: left;">range</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>multi</em></td>
+<td style="text-align: left;">How much pixels length each tick would take.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>vertical</em></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>defaultValue</em></td>
+<td style="text-align: left;">Default value.</td>
+</tr>
+</tbody>
+</table>
 <h4 id="opslidersubtle">OpSliderSubtle</h4>
+<p><img src="../../../assets/configmachine/provided/SliderSubtle.png" alt="OpSliderSubtle Sample" /></p>
 <h3 id="opkeybinder">OpKeyBinder</h3>
 <h3 id="opcombobox">OpComboBox</h3>
+<p><img src="../../../assets/configmachine/provided/ComboBox.png" alt="OpComboBox Sample" /></p>
+<p><a href="https://en.wikipedia.org/wiki/Combo_box">ComboBox</a> is a combination of <a href="https://en.wikipedia.org/wiki/Drop-down_list">Drop-down List</a> and SearchBox.</p>
 <h4 id="opresourceselector">OpResourceSelector</h4>
 <h4 id="listitem">ListItem</h4>
 <p>While this technically belongs to <a href="##Custom-Classes">Custom Classes</a>,
 this is currently only used in <code>OpComboBox</code> so it will be included here.</p>
 <h3 id="opcolorpicker">OpColorPicker</h3>
+<p><img src="../../../assets/configmachine/provided/ColorPicker.png" alt="OpColorPicker Sample" /></p>
+<p><a href="https://en.wikipedia.org/wiki/Color_picker">ColorPicker</a> (a.k.a. ColorChooser) allows the users to select a Color.
+OpColorPicker has four modes of selecting Color:
+RGB(Red/Green/Blue), HSL(Hue/Satuation/Lightness), PLT(Palette), and HEX (which can be copied and pasted from Clipboard).
+OpColorPicker stores value in HEX, so <code>OpColorPicker.HexToColor</code> method comes handy converting that.</p>
 <h3 id="optextbox">OpTextBox</h3>
+<p><a href="https://en.wikipedia.org/wiki/Text_box">TextBox</a> (a.k.a. TextField or TextEntryBox) allows the users to input text information.</p>
 <hr />
 <h2 id="uitrigger">UItrigger</h2>
 <h3 id="opsimplebutton">OpSimpleButton</h3>
+<p>SimpleButton is a <a href="https://en.wikipedia.org/wiki/Button_(computing)">PushButton</a> that allows the users to trigger an event.</p>
 <h4 id="opsimpleimagebutton">OpSimpleImageButton</h4>
 <h3 id="opholdbutton">OpHoldButton</h3>
+<p><img src="../../../assets/configmachine/provided/HoldButton.png" alt="OpHoldButton Sample" /></p>
 <hr />
 <h2 id="custom-classes">Custom Classes</h2>
 <h3 id="dyeablerect">DyeableRect</h3>

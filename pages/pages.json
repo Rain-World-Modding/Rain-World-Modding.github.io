@@ -10,7 +10,6 @@
         {
             "Config Machine": [
                 "OptionInterface",
-                "Provided-UIelements",
                 "GeneratedOI",
                 "Translation-Support"
             ]
