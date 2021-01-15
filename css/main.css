@@ -1,3 +1,4 @@
+
 :root {
 	--back-light: #17181A;
 	--back-dark: #000103;
@@ -5,6 +6,7 @@
 	--text-dark: #515052;
 	--url: #bb8877;
 	--url-hover: #bb8844;
+	--footer-url: #997766;
 	
 	font-family: "Verdana", sans-serif;
 	text-align: left;
@@ -56,6 +58,24 @@ div.nav li a:hover {
 	background-color: var(--back-dark);
 }
 /* end nav bar */
+
+/* start footer */
+footer {
+    bottom: 0;
+    padding: 1%;
+    text-align: center;
+	font-size: 0.9em;
+	background-color: var(--back-dark);
+}
+footer a {
+	text-decoration: none;
+	color: var(--footer-url);
+}
+footer li {
+	display: inline;
+	padding: 0 2.5%;
+}
+/* end footer*/
 
 div.main {
 	margin: 4%;
