@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='../../css/main.css' />
+    <link rel='stylesheet' href='../../css/article.css' />
+    <script src="../../scripts/extras.js"></script>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width initial-scale=1'>
+    <title>Translation Support</title>
+</head>
+<body>
+
+    <h1 id="translation-support">Translation Support</h1>
+<p>While you can support translation for your mod on your own, Config Machine also offers translation solution.
+If you do not want to make GUI and only want to use Translation feature, check out <a href="GeneratedOI.html">GeneratedOI</a>.</p>
+<hr />
+<h2 id="preparation">Preparation</h2>
+<p><code>OptionInterface</code> has a method called <code>Translate</code>, and when it��s initially called,
+it will load specified(<code>transFile</code>) txt file from your assembly and make Dictionary depending on Rain World��s language setting.
+In <code>BaseUnityPlugin.LoadOI</code> method, store the <code>OptionInterface</code> instance in somewhere before returning it.</p>
+<pre><code class="language-c#">public static MyOI oi;
+public static MyOI LoadOI()
+{
+    oi = new MyOI(); return oi;
+}
+</code></pre>
+<p>Then make a static method that calls the translation method.</p>
+<pre><code class="language-c#">public static string Translate(string orig)
+{
+    if (oi != null) { return oi.Translate(orig); }
+    return orig;
+}
+</code></pre>
+<p>Now when you need to translate something, you can pass your string through this method.</p>
+<h2 id="writing-translation-txt">Writing Translation txt</h2>
+<p>Create a txt file that contains translation, too.
+Add txt file to your project, <em>make sure</em> that its encoding is <code>UTF-8</code>,
+then set it to be [Embedded Resources] for its compile setting.
+Then, in the constructor of your OptionInterface, set <code>transFile</code> to that resource name.</p>
+<p>If you have not put it in any folder, it��s usually <code>&lt;ProjectName&gt;.&lt;TxtFileName&gt;.txt</code>, but you might get it wrong.
+If it��s wrong when <code>OptionInterface.Translate</code> is initially called, Config Machine will log all the resources in your assembly in exceptionLog.txt so you can copy from it.</p>
+<pre><code class="language-c#">public MyOI() : base(plugin: MyPlugin.instance)
+{
+    this.transFile = &quot;MyPlugin.Translation.txt&quot;;
+    // if you do not know the resource name, just call Translate.
+    // ConfigMachine will log all the resources in your assembly in exceptionLog.txt.
+}
+</code></pre>
+<p>The format of the translation txt file for Config Machine is quite primitive.
+First, you add a keyword, then <code>|</code> for language separator,
+then language ID(<code>eng, ita, ger, spa, por, (kor, jap, rus)</code>), <code>$</code> for another separator, then translation.
+If there is no translation, the translator will return the keyword, unless there is a translation for ��eng��. (In that case, English ��translation�� will be used as default translation)</p>
+<p>The following is formatting example for txt file.</p>
+<pre><code>// If the first two characters are '//', this line will be ignored.
+Nightcat Horn Colour|kor$������ �� ����
+// If you have variables, avoid using partial sentences. Not every language has the same subject-verb-object order.
+Press &lt;ThrowKey&gt; to stab.|kor$&lt;ThrowKey&gt; ��ư�� ���� ���.
+// When translating the shorter-phrase, the translation might be sensitive with context, but English one does not. Duplicate key causes error(You can check exceptionLog.txt for duplicates), so you can set 'eng' translation for these cases.
+Property_as of possession|eng$Property|kor$������
+Property_as of quality|eng$Property|kor$�Ӽ�
+// For line-breaks, use \n. (In code, it��d be \\n) Each line represents a phrase, so you can��t use actual line-break in a single chunk.
+LINE\nBREAK|kor$��\n�ٲ�
+</code></pre>
+<h2 id="running-translation">Running Translation</h2>
+<p>And here are some examples in code.
+Yes, running every text through the <code>Translate</code> method is tedious, but this is usually how it��s done in Rain World or many other games.
+Make sure to check your mod in another language to confirm you haven't missed any item.</p>
+<pre><code class="language-c#">labelCpkrRadio.text = MyPlugin.Translate(&quot;Nightcat Horn Colour&quot;);
+instance.room.game.cameras[0].hud.textPrompt.AddMessage(MyPlugin.Translate(&quot;Press &lt;ThrowKey&gt; to stab.&quot;).Replace(&quot;&lt;ThrowKey&gt;&quot;, k.ToString())); // k is variable in this example.
+labelLineBreak.text = MyPlugin.Translate(&quot;LINE\\nBREAK&quot;);
+</code></pre>
+<hr />
+<p>These aren��t the part of tutorial but more of tips.
+This does not just apply for making Rain World mods but to general, whenever you��re making something that supports translation.</p>
+<ul>
+<li><p>When you have variables in your sentence, do not use partial phrases and Frankenstein it later with <code>string.Concat</code>.
+Not every language has the same grammar order of subject-verb-object as English.</p>
+</li>
+<li><p>Leave credits to the translators, since you��re most likely getting volunteers from them.
+This is both good for showing gratitude to the translators and keeping the quality of the translation.
+The lack of credits equals a lack of responsibility.</p>
+</li>
+<li><p>Do not use machine translation. That usually hurts the user experience rather than enhancing it.</p>
+</li>
+</ul>
+
+
+</body>
+</html>
