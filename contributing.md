@@ -29,7 +29,7 @@ When adding to or editing the content of this repository, please follow the list
 
 8. Using GitHub, make a pull request from your fork with edits to the origin/main. Someone can then review your pull request and merge it with origin, edit, or request edits. Pull requests can then be merged by a user with write permissions for the origin repository.
 
-After some automated actions have taken place, everything on origin/main is then deployed to [the website](https://rain-world-modding.github.io/rain-world-modding/index.html) . 
+An automated script will add the required CSS and JS resource links to the article, and then everything on origin/main will be deployed to [the website](https://rain-world-modding.github.io/rain-world-modding/index.html) . 
 
 ---
 ### Article styling guide (markdown)
@@ -41,7 +41,7 @@ You can also take a peak at the source for other markdown articles in this repos
 
 - **If** a brief page summary is included after the h1, use `---` on a new line to add a divider before the main body of the article (but after the summary).
 
-- Feel free to use images and other media where they're helpful! You can place assets in the `/assets` folder - try to use relative paths when referencing assets in the repo. If using many assets on your page, please add a folder for this page inside `/assets` and place your assets there instead.
+- Feel free to use images and other media where they're helpful! You can place assets in the `/assets` folder - try to use relative paths when referencing assets in the repo - these should start with `../../assets/` with an additional `../` at the start for each extra category of depth the article has (0 extra if the article is in `pages/some-category`. If using many assets on your page, please add a folder for this page inside `/assets` and place your assets there instead.
 
 - Use headers of h2 and h3 where you think they're helpful for understanding the different sections of the article.
 
