@@ -7,10 +7,10 @@ $(document).ready(function() {
 });
 
 function startGeneratePageList(data) {
-    generatePageList(data, "page-list");
+    generatePageList(data, "page-list", "");
 }
 
-function generatePageList(data, parent) {
+function generatePageList(data, parent, containingCatsUrl) {
     /* Compiles the list of pages for the website homepage. */
     
     $.each(data, function(category, list) {
@@ -20,11 +20,11 @@ function generatePageList(data, parent) {
 
         $.each(list, function(index, child) {
             if (typeof child == "string") {
-                var pageUrl = basePageUrl + `${categoryCode}/${child}.html`;
+                var pageUrl = basePageUrl + containingCatsUrl + `${categoryCode}/${child}.html`;
                 $("#"+categoryCode).append(`<li><a href='${pageUrl}'>${child.replace(/-/g, " ")}</a></li>`);
             }
             else {
-                generatePageList(child, categoryCode)
+                generatePageList(child, categoryCode, containingCatsUrl + categoryCode + "/")
             }
         });
     });
