@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         addNavbar();
     }
 
-    if (document.getElementsByClassName("footer").length == 0) {
+    if (document.getElementsByTagName("footer").length == 0) {
         addFooter();
     }
 
