@@ -1,8 +1,8 @@
-# Custom workflow for adding appropriate css links for new article html pages
+# Custom workflow for adding appropriate resource links for new article html pages
 
-name: css-check
+name: resource-check
 
-on: [push, pull_request, workflow_dispatch]
+on: [push, workflow_dispatch]
 
 jobs:
   add-article-css:
@@ -10,28 +10,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         
-      # check html files in pages dir for article.css reference. if css ref missing, it will be added
-      - name: check for css
+      - name: check for links
         working-directory: .
-        run: |
-          PAGESPATH=./pages/*/
-          for dir in $PAGESPATH
-          do
-            for f in $dir*.html
-            do
-              echo $dir $f
-              lookfor='article.css'
-              match="<head>"
-              insert="<link rel='stylesheet' href='../../css/main.css'/>\n<link rel='stylesheet' href='../../css/article.css'/>\n<script src='../../scripts/extras.js'></script>"
-              if [[ -z "$(grep $lookfor $f)" ]]
-              then
-                sed -i "/$match/a $insert" $f
-              fi
-            done
-          done
+        run: python3 ./.github/workflows/add_article_decor.py
           
       - name: commit changes
         uses: EndBug/add-and-commit@v6
         with:
-          message: 'Automatically added CSS to article (gh action)'
+          message: 'Automatically added resource links (GitHub Action)'
           add: pages
