@@ -68,3 +68,15 @@ pre code {
     max-width: 100%;
     overflow-x: auto;
 }
+
+table, th, td {
+    margin: 1% 10%;
+    border-collapse: collapse;
+    border: solid var(--article-subheading-text) 1px;
+}
+th {
+    border-bottom: solid var(--article-subheading-text) 3px;
+}
+th, td {
+    padding: 5px 10px;
+}
