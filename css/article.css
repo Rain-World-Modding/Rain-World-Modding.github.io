@@ -32,8 +32,12 @@ p {
     padding: 0 16% 0.5% 16%;
 }
 
-li:not(div.nav li):not(footer li) {
-    margin: 0 16% 0 16%;
+
+ul, ol {
+    padding: 0.2% 18%;
+}
+ol ol, ul ul, ol ul, ul ol {
+    padding-left: 3%;
 }
 li p {
     padding: 0;
@@ -70,7 +74,7 @@ pre code {
 }
 
 table, th, td {
-    margin: 1% 10%;
+    margin: 1% 18%;
     border-collapse: collapse;
     border: solid var(--article-subheading-text) 1px;
 }
