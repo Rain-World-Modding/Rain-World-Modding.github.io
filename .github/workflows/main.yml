@@ -15,7 +15,7 @@ jobs:
         run: |
           python3 -m pip install mistune==2.0.0a6
           python3 -m pip install beautifulsoup4
-          python3 ./.github/workflows/html_converter.py
+          python3 ./html_converter.py
           
       - name: commit changes
         uses: EndBug/add-and-commit@v6
