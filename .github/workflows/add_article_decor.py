@@ -8,7 +8,7 @@ html files inside the pages directory and its subdirectories.
 """
 
 
-ZERO_DEPTH_OFFSET = -3
+ZERO_DEPTH_OFFSET = -2
 
 with open("article-decor.txt") as file:
     DECORATIONS = [line for line in file.read().split("\n") if line != ""]
