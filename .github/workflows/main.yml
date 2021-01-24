@@ -1,6 +1,6 @@
-# Custom workflow for adding appropriate resource links for new article html pages
+# Custom workflow for the Rain World modding wiki update project
 
-name: resource-check
+name: wiki-workflow
 
 on: [push, workflow_dispatch]
 
@@ -9,13 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        
-      - name: check for links
-        working-directory: .
-        run: python3 ./.github/workflows/add_article_decor.py
+
+      - name: generate html pages
+        working-directory: ./.github/workflows
+        run: |
+          python3 -m pip install mistune==2.0.0a6
+          python3 -m pip install beautifulsoup4
+          python3 ./html_converter.py
           
       - name: commit changes
         uses: EndBug/add-and-commit@v6
         with:
-          message: 'Automatically added resource links (GitHub Action)'
+          message: 'Automatically generated HTML (GitHub Action)'
           add: pages

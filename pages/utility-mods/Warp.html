@@ -1,30 +1,31 @@
 <!doctype html>
-<html>
+<html lang='en'>
 <head>
 <link rel='stylesheet' href='../../css/main.css'/>
 <link rel='stylesheet' href='../../css/article.css'/>
 <script src='../../scripts/extras.js'></script>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>Warp</title></head>
-<body><h1>Warp</h1>
+<title>Warp (Rain World Modding)</title>
+</head>
+<body>
+<h1>Warp</h1>
 <p>Warp is a utility mod for Rain World that you can use to easily teleport Slugcat to different rooms and regions, this is particularly useful for testing mods and custom regions.</p>
-<p>Download and install Warp from <a href='https://www.raindb.net'>RainDB&#39;s</a> &#39;Tools&#39; section or it&#39;s <a href='https://github.com/LeeMoriya/Warp'>GitHub</a> page.</p>
+<p>Download and install Warp from <a href="https://www.raindb.net">RainDB's</a> 'Tools' section or it's <a href="https://github.com/LeeMoriya/Warp">GitHub</a> page.</p>
 <h2>Usage</h2>
 <p>Install Warp using BepInEx for RW or Partiality, the Warp menu will appear in the pause menu in-game.</p>
-<p>A list of rooms in the current region will be displayed on the right, a list of installed regions will appear in the top left, and gate rooms in the bottom left. Simply click on a room name to warp slugcat to that room. They will be placed at the room&#39;s first pipe entrance, labelled 0.</p>
-<p>Clicking on a different region than the one you are currently in will load a list of all the rooms in that region, allowing you to warp there without the use of gates. This process may take a few seconds depending on the size of the region being loaded. </p>
+<p>A list of rooms in the current region will be displayed on the right, a list of installed regions will appear in the top left, and gate rooms in the bottom left. Simply click on a room name to warp slugcat to that room. They will be placed at the room's first pipe entrance, labelled 0.</p>
+<p>Clicking on a different region than the one you are currently in will load a list of all the rooms in that region, allowing you to warp there without the use of gates. This process may take a few seconds depending on the size of the region being loaded.</p>
 <h3>Issues When Warping</h3>
-<p>If the region doesn&#39;t load then there is likely an issue with the region or room you are trying to Warp to. Check your <em>exceptionLog.txt</em> for errors and review any recent changes you made. If you are making a custom region make sure that there are no errors with room connections in your World file, or problems with your room&#39;s geometry, like pipe entrances. </p>
+<p>If the region doesn't load then there is likely an issue with the region or room you are trying to Warp to. Check your <em>exceptionLog.txt</em> for errors and review any recent changes you made. If you are making a custom region make sure that there are no errors with room connections in your World file, or problems with your room's geometry, like pipe entrances.</p>
 <p>If you have installed a new region make sure you have started the game from a fresh save since that region was added or the game may freeze when switching regions or resting in a shelter.</p>
 <h2>Custom Den Position</h2>
-<p>Warp features an option you change which room the game considers as Slugcat&#39;s &#39;Den Position&#39; -- the room they start in that cycle. Note that if you are using Extended Dev Tools, the &#39;Start Map&#39; parameter in the edtSetup.json must be empty or it will overwrite Warp.</p>
+<p>Warp features an option to change which room the game considers as Slugcat's 'Den Position' -- the room they start in that cycle. Note that if you are using Extended Dev Tools, the 'Start Map' parameter in the edtSetup.json must be empty or it will overwrite Warp.</p>
 <ul>
 <li>Hold Shift and click a room name to set the den position.</li>
 <li>Press C to reset the den position to its default.</li>
-
 </ul>
 <h2>Custom Regions Support</h2>
-<p>Warp supports Garrakx&#39;s Custom Regions Support mod which allows for easier creation of new regions and region changes, and will load new rooms from within your CustomResources folder. Below is how room lists are currently generated:</p>
+<p>Warp supports Garrakx's Custom Regions Support mod which allows for easier creation of new regions and region changes, and will load new rooms from within your CustomResources folder. Below is how room lists are currently generated:</p>
 <h3>Current Region</h3>
 <p>The list of rooms for the region you are currently in are taken directly from the list of loaded AbstractRooms.</p>
 <h3>Different Regions</h3>
@@ -32,9 +33,9 @@
 <ol>
 <li>Rooms are added to the room list from the vanilla World folder.</li>
 <li>Each Rooms folder found in CustomResources is scanned and rooms not already in the list are added.</li>
-
 </ol>
-<p>At the moment, this means that if a region pack is present in your CustomResources folder but has been manually disabled in it&#39;s regionInfo.json, rooms from this folder will be added regardless and clicking on them will do nothing.</p>
-<p>This is also technically the case for any region pack that <em>removes</em> rooms, though I don&#39;t know of any that do.</p>
+<p>At the moment, this means that if a region pack is present in your CustomResources folder but has been manually disabled in it's regionInfo.json, rooms from this folder will be added regardless and clicking on them will do nothing.</p>
+<p>This is also technically the case for any region pack that <em>removes</em> rooms, though I don't know of any that do.</p>
+
 </body>
 </html>

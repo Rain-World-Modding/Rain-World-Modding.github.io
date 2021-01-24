@@ -17,7 +17,7 @@ When adding to or editing the content of this repository, please follow the list
 4. Find an appropriate category for your article, or if one does not exist create a new one.
     - To create a new category, add the name of the category to `pages/pages.json` as a new key. Add a list as the corresponding value. Create a new folder in the `pages` folder and make its name the name of the category but all lowercase and each space with "`-`" (a hyphen).
 
-5. Save your article's .md file to the category's folder, avoiding using spaces in the file name. Export an HTML (without styling) of this article (this is an option in Typora under File>Export) and place the .html file in the same place with the same name as the .md file.
+5. Save your article's .md file to the category's folder, avoiding using spaces in the file name. You should no longer export HTML - GitHub will handle this for you :D
 
 6. Open `pages/pages.json` in a text editor and add the exact name of your .md file (minus the md file extension) to the list corresponding to the chosen category. Here is an example extract from the json file - note the usage of double quotes and commas:
 
