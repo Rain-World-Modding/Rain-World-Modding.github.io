@@ -20,5 +20,5 @@ jobs:
       - name: commit changes
         uses: EndBug/add-and-commit@v6
         with:
-          message: 'Automatically added resource links (GitHub Action)'
+          message: 'Automatically generated HTML (GitHub Action)'
           add: pages
