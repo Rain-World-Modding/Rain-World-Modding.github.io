@@ -1,20 +1,18 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!doctype html>
+<html lang='en'>
 <head>
-<script src='../../../scripts/extras.js'></script>
-<link rel='stylesheet' href='../../../css/article.css'/>
-<link rel='stylesheet' href='../../../css/main.css'/>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width initial-scale=1'>
-    <title>OptionInterface</title>
+<link rel='stylesheet' href='../../css/main.css'/>
+<link rel='stylesheet' href='../../css/article.css'/>
+<script src='../../scripts/extras.js'></script>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>OptionInterface (Rain World Modding)</title>
 </head>
 <body>
-
-    <h1 id="optioninterface">OptionInterface</h1>
+<h1>OptionInterface</h1>
 <p>To interact with Config Machine, it is best to have a child class of <code>OptionInterface</code>.
 This means your mod will be <em>dependent</em> with Config Machine.</p>
 <hr />
-<h2 id="creating-optioninterface-class">Creating OptionInterface class</h2>
+<h2>Creating OptionInterface class</h2>
 <p>First download <a href="https://drive.google.com/file/d/1NIE8conaoI1OOHevi4K9tvOG4v-NIfYf/view">Config Machine</a> from RainDB,
 extract the zip and put both dll and xml in the folder where you store References.
 Then add <code>ConfigMachine.dll</code> to References of your mod project.
@@ -28,7 +26,7 @@ Create a new cs file and make a class inheriting <code>OptionInterface</code>.</
 <p>Now add <code>LoadOI</code> static method in your <code>BaseUnityPlugin</code> class that returns your OptionInterface.</p>
 <pre><code class="language-c#">public static OptionInterface LoadOI() =&gt; return new MyOI();
 </code></pre>
-<h3 id="designing-gui">Designing GUI</h3>
+<h3>Designing GUI</h3>
 <p>For designing your GUI, using <a href="https://inkscape.org/">Inkscape</a> is strongly suggested.
 With Inkscape, create a file with 600 x 600 pixel, then enable [View] - [Canvas Orientation] - [Flip Vertically].
 (Alternatively, you can use any CAD program which has up and right as positive axis by default)</p>
@@ -49,7 +47,7 @@ If you're using Inkscape with [Flip Vertically] setting on, you can get those fr
 <li>You don't have to put everything in a single <code>OpTab</code>. If the canvas gets crowded, disperse your items for easier readability.</li>
 <li>Try to avoid using smaller <code>OpScrollBox</code>s to store many things in one place even if that's an option: The users cannot see everything in a single screen which reduces usability greatly.</li>
 </ul>
-<h3 id="initialize">Initialize</h3>
+<h3>Initialize</h3>
 <p><code>OptionInterface.Initialize</code> is called in IntroRoll(for loading configuration) and ConfigMenu(for displaying to users).
 You can check whether Initialize is called in ConfigMenu or not with <code>OptionInterface.isOptionMenu</code>.
 It usually goes like this following example:</p>
@@ -60,7 +58,7 @@ It usually goes like this following example:</p>
     Tabs[0] = new OpTab(&quot;Main&quot;); // Each OpTab is 600 x 600 pixel sized canvas
     Tabs[1] = new OpTab(&quot;Second&quot;)
     { color = Color.cyan }; // You can change its button and canvas colour too
-    
+
     // After Initializing Tabs, create UIelements
 }
 </code></pre>
@@ -87,7 +85,7 @@ Cosmetic UIconfig is useful when you want to have provided <code>UIconfig</code>
 When the user activates an <code>UItrigger</code> in some way, it will call the <code>Signal</code> function in OptionInterface which will be explained later.</p>
 <pre><code class="language-c#">    Tabs[0].AddItems(new OpSimpleButton(new Vector2(400f, 200f), new Vector2(100f, 24f), &quot;press&quot;, &quot;Press Me&quot;));
 </code></pre>
-<h3 id="update">Update</h3>
+<h3>Update</h3>
 <p><code>Update</code> function is called every frame when the game is in ConfigMenu, and this OptionInterface is currently active
 (The user has currently selected this mod from the list on left).
 This is useful to make reactive GUI, especially since each <code>UIconfig</code> instance can have only one value saved.
@@ -100,7 +98,7 @@ public override void Initialize()
 {
     base.Initialize();
     Tabs = new OpTab[] { new OpTab() };
-    
+
     select = 0;
     rbgSelect = new OpRadioButtonGroup(&quot;_&quot;, select);
     Tabs[0].AddItems(rbgSelect);
@@ -134,7 +132,7 @@ public override void Update(float dt)
     }
 }
 </code></pre>
-<h3 id="configonchange">ConfigOnChange</h3>
+<h3>ConfigOnChange</h3>
 <p><code>ConfigOnChange</code> is called whenever <code>config</code> Dictionary is updated,
 mainly when Config Machine loads OptionInterfaces in IntroRoll,
 and when the user saves changes of configuration in ConfigMenu.
@@ -150,7 +148,7 @@ The following is an example of how to convert a string value to the correspondin
     MyMod.config.myColor = OpColorPicker.HexToColor(config[&quot;keyColor&quot;]);
 }
 </code></pre>
-<h3 id="signal">Signal</h3>
+<h3>Signal</h3>
 <p><code>Signal</code> is called when the user has interacted with <code>UItrigger</code>.
 Override this for reaction to that.</p>
 <pre><code class="language-c#">public override void Signal(UItrigger trigger, string signal)
@@ -166,7 +164,6 @@ Override this for reaction to that.</p>
 <hr />
 <p>That's about the basics on how to use OptionInterface.
 For farther detail about <a href="Provided-UIelements.html">provided UIelements</a> or <a href="Translation-Support.html">Translation API</a>, continue reading those pages.</p>
-
 
 </body>
 </html>
