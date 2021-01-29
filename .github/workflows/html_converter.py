@@ -12,7 +12,6 @@ Generates HTML pages from markdown files in the pages dir and its subdirs
 """
 
 os.chdir("../..")
-ENCODING = "utf8"
 
 def html_from_md_file(fp: str) -> str:
     """
