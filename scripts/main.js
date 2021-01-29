@@ -1,5 +1,5 @@
 
-var basePageUrl = "https://rain-world-modding.github.io/rain-world-modding/pages/";
+var basePageUrl = "./pages/";
 
 // run json load and subsequent list generation on page load
 $(document).ready(function() {
