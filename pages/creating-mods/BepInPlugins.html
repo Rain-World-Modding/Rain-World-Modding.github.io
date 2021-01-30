@@ -9,13 +9,13 @@
 </head>
 <body>
 <h1>BepInPlugins</h1>
-<p>BepInPlugins are a kind of game mod native to <a href="https://rain-world-modding.github.io/rain-world-modding/pages/using-mods/BepInEx.html">BepInEx</a>. They are not compatible with Partiality. They should be placed in <code>Rain World/BepInEx/plugins</code>.</p>
+<p>BepInPlugins are a kind of game mod native to <a href="/pages/using-mods/BepInEx.html">BepInEx</a>. They are not compatible with Partiality. They should be placed in <code>Rain World/BepInEx/plugins</code>.</p>
 <hr />
 <h2>Creating a BepInPlugin</h2>
 <h3>Prerequisites</h3>
 <ul>
 <li>A solid understanding of some key concepts including C# syntax and environment, and Unity (good but not necessary)</li>
-<li>Rain World with RW BepInEx set up - see <a href="https://rain-world-modding.github.io/rain-world-modding/pages/using-mods/BepInEx.html">here</a>.</li>
+<li>Rain World with RW BepInEx set up - see <a href="/pages/using-mods/BepInEx.html">here</a>.</li>
 <li>Some kind of .NET programming environment, probably Visual Studio if you're on Windows, or Visual Studio Code for Linux/Mac. The guide below will assume you're already comfortable with the first prerequisite and your editor and environment of choice.<ul>
 <li>The .NET Development pack for Visual Studio (or similar for other environments - you need to be able to use .NET Framework 3.5)</li>
 </ul>
@@ -28,7 +28,7 @@
 <li><code>BepInEx/plugins/PartialityWrapper/HOOKS-Assembly-CSharp.dll</code></li>
 <li><code>BepInEx/core/BepInEx.dll</code></li>
 <li><code>RainWorld_Data/Managed/UnityEngine.dll</code></li>
-<li><code>RainWorld_Data/Managed/Assembly-CSharp.dll</code> - <em>note: you will need to modify this before accessing private members; see the section &quot;Replacement of Publicity Stunt&quot; on the <a href="https://rain-world-modding.github.io/rain-world-modding/pages/using-mods/BepInEx.html">BepInEx page</a>.</em></li>
+<li><code>RainWorld_Data/Managed/Assembly-CSharp.dll</code> - <em>note: you will need to modify this before accessing private members; see the section &quot;Replacement of Publicity Stunt&quot; on the <a href="/pages/using-mods/BepInEx.html">BepInEx page</a>.</em></li>
 </ul>
 <h3>Step 2 - The BepInPlugin class</h3>
 <p>In a your new C# file, make a public class that has the <code>BepInEx.BepInPlugin</code> attribute and inherits from <code>BepInEx.BaseUnityPlugin</code> . The <code>BaseUnityPlugin</code> class inherits from <code>MonoBehaviour</code>, so you can use standard Unity script methods such as <code>OnEnable</code> and <code>OnDisable</code> in this class.</p>
@@ -53,7 +53,7 @@ public class MyMod : BaseUnityPlugin
         /* This constructor is called when the mod is loaded. */
 
         // subscribe your PlayerUpdateHook to the Player.Update method from the game
-        // the subscriber should have the same parameters as the game's method, plus the orig
+
         On.Player.Update += PlayerUpdateHook;
     }
 
@@ -61,13 +61,19 @@ public class MyMod : BaseUnityPlugin
     {
         /* This method will be subscribed to Player.Update. */
 
-        // you should always call the orig - it lets other mods and the game do their thing
         orig(self, eu);
-        // do other stuff before or after the orig call as necessary
+        /* Calling orig is what allows the original method and 
+         * other hooks to the same method do their thing. 
+         * Not calling this is almost always undesirable, and 
+         * can cause big issues.
+         *   You can execute code before or after the call of 
+         * orig as necessary.
+         */
     }
 }
 </code></pre>
-<p>If you have many hooks, consider organising them, perhaps into classes.</p>
+<p>Note that our hook there - <code>PlayerUpdateHook</code> - takes the orig method, the <code>Player</code> object whose <code>Update</code> method was called (since <code>Player.Update</code> is not static), and the parameters taken by the original method.</p>
+<p>If you have many hooks consider organising them, perhaps into classes.</p>
 <p><em>&quot;Where can I find these magical and elusive Rain World methods?&quot;</em>
 Since the source code for Rain World is not public, one must use a decompiler such as <a href="https://github.com/dnSpy/dnSpy/releases/latest">dnSpy</a> or <a href="https://marketplace.visualstudio.com/items?itemName=SharpDevelopTeam.ILSpy">ILSpy</a> to look through the <code>Assembly-CSharp.dll</code> file.</p>
 <p><em>Reminder: you should never distribute significant portions of the game's code or the binaries, or that of any closed source mods unless you have explicit permission to do so from the mod author. Pay attention to licenses on public repositories too - see <a href="https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/licensing-a-repository">GitHub's guide to code licensing</a> and if in doubt ask the author.</em></p>
