@@ -12,20 +12,49 @@ div.nav {
     position: static;
 }
 
+.header-flex {
+    padding: 2.2% 0 0 12%;
+    margin: 0 5% 3.2% 5%;
+    width: 78%;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--article-subheading-text);
+}
+#info {
+    width: 40%;
+    padding: 0 0 0 5%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+#info p, #info img, #info a {
+    margin: 0;
+}
+#info p {
+    padding: 2.5% 1% 0 5%;
+}
+#info a {
+    width: 10%;
+    padding: 2.5% 0 0 0;
+}
+
+/*
 h1 {
     border-bottom: solid 1px var(--article-subheading-text);
-    margin: 2% 5%;
+    margin: 2.2% 8%;
     padding-bottom: 1.5%;
-    width: 90%;
+    width: 84%;
 }
+*/
 
 h2, h3, h4, h5, h6 {
     padding: 0.75% 15% 0 15%;
-    color: var(--article-subheading-text)
+    color: var(--article-subheading-text);
 }
 
 hr {
     width: 80%;
+    color: var(--article-subheading-text);
 }
 
 p {
