@@ -2,8 +2,6 @@
 
 ## ***<u>This article is outdated and needs updating!</u>***
 
-## 
-
 1. Pick a two letter acronym for your region. For these examples we'll use XX
 
 2. Open the file "Rain World/World/Regions/regions.txt"
@@ -22,9 +20,9 @@
 
   6c. Delete everything from the Rooms folder, leaving just one room to use as your start map to build off of.
 
-  6d. Blank out most of the ROOMS and CREATURES sections from the world_XX file.
+  6d. Blank out most of the ROOMS and CREATURES sections from the [world_XX](World-File-Format.html) file.
   		- If you want Vultures/Leviathans/Scavengers in your region, leave the OFFSCREEN section under CREATURES
-  		- You'll add a couple lines under ROOM for connecting the gate and your start room, so your region at least has SOMETHING in it (once you make the gate).
+    		- You'll add a couple lines under ROOM for connecting the gate and your start room, so your region at least has SOMETHING in it (once you make the gate).
 
 
 
