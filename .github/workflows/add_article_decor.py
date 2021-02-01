@@ -48,27 +48,12 @@ def add_stuff(path: str, html: str) -> str:
 
     # add wrap body content with body tags, prepend head, etc
     title = re.split(r"[\\/]", path)[-1].replace(".html", "").replace("-", " ") + " (Rain World Modding)"
-    contents = f"<!doctype html>\n<html lang='en'>\n<head>\n{formatted_tags}\n" + \
+    out_html = f"<!doctype html>\n<html lang='en'>\n<head>\n{formatted_tags}\n" + \
                     "<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>\n" + \
-                    f"<title>{title}</title>\n</head>\n<body>\n" + \
+                    f"<title>{title}</title>\n</head>\n<body>\n<div class='article-box'>\n<div class='article-content'>\n" + \
                     html + \
-                    "\n</body>\n</html>\n"
+                    "\n</div><div class='article-details'></div>\n</div>\n</body>\n</html>\n"
 
+    out_html = re.sub(r"(<h1>[^<]*</h1>)", r"\1\n<hr />", out_html)
 
-    """
-    # replace all double quotes inside the html head tags with single quotes
-    contents = re.sub(r'(<head>.*)"([^"]*)"(.*</head>)', r"\1'\2'\3", contents, flags=re.DOTALL)
-    resource_path_prepend = get_resource_path_prepend(path)
-    
-    for tag in DECORATIONS:
-        # format tag string
-        tag = re.sub(r'"', r"'", tag)
-        tag = re.sub(r"(href=')", r"\1"+resource_path_prepend, tag)     # css href
-        tag = re.sub(r"(src=')", r"\1"+resource_path_prepend, tag)      # js src
-
-        if tag not in contents:
-            # insert new tag after <head> open tag
-            contents = re.sub(r"(<head>)", r"\1"+"\n"+tag, contents)
-    """
-
-    return contents
+    return out_html

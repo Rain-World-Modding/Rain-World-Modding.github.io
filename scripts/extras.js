@@ -1,4 +1,7 @@
 
+var repoUrl = "https://github.com/Rain-World-Modding/Rain-World-Modding.github.io";
+
+
 function addNavbar() {
     var nav = document.createElement("DIV");
     nav.className = "nav";
@@ -30,7 +33,6 @@ function getPageSourceUrl(repoUrl) {
 }
 
 function addFooter() {
-    var repoUrl = "https://github.com/Rain-World-Modding/Rain-World-Modding.github.io";
     var pageSource = getPageSourceUrl(repoUrl+"/");
     var licenseUrl = repoUrl + "/blob/main/LICENSE";
     var contribUrl = repoUrl + "/blob/main/contributing.md";
@@ -46,6 +48,30 @@ function addFooter() {
     document.body.appendChild(footer);
 }
 
+function addPageInfo() {
+    infoDiv = document.getElementsByClassName("article-details")[0];
+
+    let client = new XMLHttpRequest();
+    var path = window.location.href.replace(/https*:\/\/[^\/]*/, "").replace(".html", ".md");
+    var url = `https://api.github.com/repos/Rain-World-Modding/Rain-World-Modding.github.io/commits?path=${path}`;
+    client.open("GET", url);
+
+    client.onload = function () {
+        if (this.status === 200) {
+            var contributors = "";
+            var data = JSON.parse(this.responseText);
+            data.forEach(element => {
+                if (!contributors.includes(element['author']['avatar_url'])){
+                    contributors += `<a href='https://github.com/${element['author']['login']}'><img src='${element['author']['avatar_url']}'></a>`;
+                }
+            });
+            infoDiv.innerHTML = `<h3>Contributors</h3><div class='contributors'>${contributors}</div>` +
+                `<h3>Last updated</h3><div class='last-updated'>${data[0]['commit']['committer']['date'].substring(0, 10)}</div>`;
+        }
+    }
+    client.send();
+}
+
 // add missing navbar or footer once the content is loaded
 document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -57,5 +83,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         addFooter();
     }
 
+    if (window.location.href.includes("pages")) {
+        addPageInfo();
+    }
 });
-
