@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<link rel='stylesheet' href='../../../css/main.css'/>
+<link rel='stylesheet' href='../../../css/article.css'/>
+<script src='../../../scripts/extras.js'></script>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Objects (Rain World Modding)</title>
+</head>
+<body>
+<h1>Dev Tools: Objects</h1>
+<p>This is a single tab for the <a href="Dev-Tools.html">Dev Tools.</a> See that page for more controls and other tabs.</p>
+<h2>General controls</h2>
+<hr />
+<h3>PAGES:</h3>
+<p>Brings you to the other devtool editors.</p>
+<h3>Save:</h3>
+<p>Saves the current objects to a file inside the region's World folder, named ROOMNAME_settings.txt Some objects do not spawn instantly, and thus need to be saved, and then reloaded by dying and returning to the room to see the changes.</p>
+<h3>Mouse input:</h3>
+<p>Objects can be grabbed with the left mouse button. Releasing will put them down. Dragging the object to the bottom left into the trash bin box will remove it. Some objects will only be removed completely by reloading the room entirely.</p>
+<h2>Object Library</h2>
+<hr />
+<table>
+<thead>
+<tr>
+  <th style="text-align:left"><strong><u>Object</u></strong></th>
+  <th style="text-align:left"><strong><u>Description</u></strong></th>
+  <th style="text-align:left">Requires Reload</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:left">LightSource</td>
+  <td style="text-align:left">Spawns a light that changes color based on its location. The secondary dot can be grabbed to stretch out the distance the light covers, and the slider sets how bright it is.</td>
+  <td style="text-align:left">No</td>
+</tr>
+<tr>
+  <td style="text-align:left">FlareBomb</td>
+  <td style="text-align:left">Spawns a bomb.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">PuffBall</td>
+  <td style="text-align:left">Spawns a puffball.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">TempleGuard</td>
+  <td style="text-align:left">Spawns a guardian</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">LightFixture</td>
+  <td style="text-align:left">Spawns a light with a specific state and style of flickering. Such as fire or filtration system red lights. Is turned on and off by the BrokenZeroG effect.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">Dangle fruit</td>
+  <td style="text-align:left">Spawns edible blue fruit that hang from vines. Dot's position is where the top of the fruit will be, not the vine's base. Refresh time between cycles can be set with the sliders.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">CoralStem</td>
+  <td style="text-align:left">Places one of the nerve tree plants from inside Five Pebbles. Center dot is the root. Secondary dot is the default direction and the base.If not in zero gravity the plant will flop limply down.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">CoralStemWithNeurons</td>
+  <td style="text-align:left">Spawns the same object as above, except with neuron flies around it. May require zero gravity to spawn neurons.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">CoralNeuron</td>
+  <td style="text-align:left">Spawns a long red climbable noodly creature from inside Five Pebbles. Center dot is one end, Secondary dot is the other end. Acts as if it is always in zero gravity.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">CoralCircuit</td>
+  <td style="text-align:left">Spawns a breakable block of coral and neurons from inside Five Pebbles. Acts as if it is always in zerogravity. Center dot controls location, Second dot controls the size of it.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">WallMycelia</td>
+  <td style="text-align:left">Spawns tiny black and blue tendrils that talk to neurons, and attach to CoralNeurons. Act as if always in zero gravity.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">ProjectedStars</td>
+  <td style="text-align:left">Adds the constellation looking projections found within five pebbles. Center dot controls location, Second dot controls the size of it. Just like the SuperStructureProjector and the ProjectedScanLines effects from the effects tab, The stars will only work if the SunBlock effect is added.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">ZapCoil</td>
+  <td style="text-align:left">Adds a blue zapping and sizzling effect the tile it is placed over. Meant to be used with the ZapCoil objects in the tile editor. Strangely, it turns off and on with the BrokenZeroG effect, even though this is never seen happening in the main game.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">SuperStructureFuses</td>
+  <td style="text-align:left">Causes blinking lights and flicking dots. It is often used with the Superstructure material in the official editor's tile editor. However it can be placed under any tileset, and will cause it to flash red and blue in various ways.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">GravityDisruptor</td>
+  <td style="text-align:left">Causes a visual distortion, blue lights, and will forcibly make slugcat push away and orbit it when close enough. Is intended to be used with the gravity machine tile/prop in the official editor. Will turn on and off automatically if brokenZeroGravity is enabled.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">Spotlight</td>
+  <td style="text-align:left">Adds a configurable light that comes from a specific direction. The location of the Spotlight is configurable with four dots the same way configuring a decal works.The light color and layer are also configurable.</td>
+  <td style="text-align:left">No</td>
+</tr>
+<tr>
+  <td style="text-align:left">DeepProcessing</td>
+  <td style="text-align:left">Causes a blue sparkling effect in background layers. The layer and intensity can be adjusted using the slider. The four points can be stretched as needed.</td>
+  <td style="text-align:left">No</td>
+</tr>
+<tr>
+  <td style="text-align:left">Corruption</td>
+  <td style="text-align:left">Spawns Daddy Longlegs corruption on walls. Only the tendrils will pull you into walls, the small tumors will simply slide you around harmlessly. Tendrils are spawned automatically. The main dot controls location, second dot controls the size of the area affected.Warning: This object will crash in arena mode.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">CorruptionTube</td>
+  <td style="text-align:left">Spawns a climbable blue tendril between two points.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">CorruptionDarkness</td>
+  <td style="text-align:left">Spawns a black distorted shadow that normally appears near the corruption inside Five Pebbles.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">StuckDaddy</td>
+  <td style="text-align:left">Spawns a Daddy Longlegs locked to a specific location. This spawns a new daddy, and does not require any creature to be added to the World file.Note: It must be placed within corruption to spawn.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">SSlightrod</td>
+  <td style="text-align:left">Glowing laser lights inside Five Pebbles. Can be adjusted in both brightness, and depth into the background.</td>
+  <td style="text-align:left">No</td>
+</tr>
+<tr>
+  <td style="text-align:left">CentipedeAttractor</td>
+  <td style="text-align:left">Draws centipedes towards it at the start of a cycle. These centipedes will even ignore slugcat till they reach their destination.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">DandelionPatch</td>
+  <td style="text-align:left">Spawns a patch of skyisland puffballs along the ground.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">GhostSpot</td>
+  <td style="text-align:left">Triggers an echo at this location. Requires advanced modding setups to add echos.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">DataPearl</td>
+  <td style="text-align:left">Spawns a generic white pearl.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">UniqueDataPearl</td>
+  <td style="text-align:left">Spawns a data pearl with a set lore index. Requires advanced modding setup to add lore pearls.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">SeedCob</td>
+  <td style="text-align:left">Spawns a popcorn plant, the top of the plant is at the dot. The root will automatically try to find the ground under it. Refresh time between cycles can be set with the sliders.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">DeadSeedCob</td>
+  <td style="text-align:left">Same as above, except it starts eaten, and will never refill.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">WaterNut</td>
+  <td style="text-align:left">Spawns a blue waterNut that can be popped in water. Dot is the center of the nut, The plant will find ground to take root on. Refresh time between cycles can be set with the sliders.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">Jellyfish</td>
+  <td style="text-align:left">Spawns a jellyfish at the dot's location. Refresh time between cycles can be set with the sliders.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">KarmaFlower</td>
+  <td style="text-align:left">Spawns a karma flower. Dot is the root of the plant. Refresh time between cycles can be set with the sliders.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">Mushroom</td>
+  <td style="text-align:left">Spawns a mushroom. Dot is the center of the cap, the room will find the ground automatically.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">SlimeMold</td>
+  <td style="text-align:left">Places glowing edible molds on the walls and floor. Refresh time between cycles can be set with the sliders.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">Flylure</td>
+  <td style="text-align:left">Spawns batfly luring plants. The dot is the root of the plant. Refresh time between cycles can be set with the sliders.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">CosmeticSlimeMold</td>
+  <td style="text-align:left">Same as SlimeMold just smaller and not edible.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">CosmeticSlimeMold2</td>
+  <td style="text-align:left">Another SlimeMold variant</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">FirecrackerPlant</td>
+  <td style="text-align:left">Spawns a firecracker, dot is the root of the plant. Refresh time between cycles can be set with the sliders.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">VultureGrub</td>
+  <td style="text-align:left">Spawns a vultureGrub. Refresh time between cycles can be set with the sliders.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">DeadVultureGrub</td>
+  <td style="text-align:left">Same as above, except prekilled.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">VoidSpawnEgg</td>
+  <td style="text-align:left">Adds a little void ghost thing that is trapped and can be freed if touched by slugcat. Only visible when slugcat has obtained the mark from Five Pebbles. May need other unknown conditions to be visible.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">ReliableSpear</td>
+  <td style="text-align:left">Spawns a spear in this location with a much higher chance then normal. If you need a required spear, use the official level editor to place one in the room's file.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">SuperjumpInstructions</td>
+  <td style="text-align:left">Trigger rectangle will cause the long jump tutorial text to display. The four points can be stretched as needed.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">ProjectedImagePosition</td>
+  <td style="text-align:left">Wip, but presumably makes the yellow overseer project an image.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">ExitSymbolShelter</td>
+  <td style="text-align:left">Forces a door's symbol to show as a save room. Often used on the other side of gates, where you cannot control what the door links to, but still need it to show a save room on the other side.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">ExitSymbolHidden</td>
+  <td style="text-align:left">Will cause a door's symbol to hide. Used to make the entrances to scavenger caches, or to hide doors under corruption in Five Pebbles.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">NoSpearStickZone</td>
+  <td style="text-align:left">Spears will always bounce off walls inside this circle.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">LanturnOnStick</td>
+  <td style="text-align:left">Spawns a scavenger lantern on a pole. Used often by scavenger merchants.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">ScavengerOutpost</td>
+  <td style="text-align:left">Scavenger toll. Trade pearl for passage through. Second dot sets range from main dot. Direction from the middle dot to the second dot controls the angle of the dear totem's pole. The skull and pearls hanging from it can be changed using the random seed sliders, and the angle the skull faces with the &quot;angle&quot; slider. Requires scavengers to be added to the world file, and scavenger doors be placed in the world. Scavengers will naturally migrate to it. Will also spawn a cache of spears around it for the scavengers.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">TradeOutpost</td>
+  <td style="text-align:left">Scavenger merchant. Trade pearls for items. Second dot sets range from main dot.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">ScavengerTreasury</td>
+  <td style="text-align:left">Spawns random scavenger items in the radius around it. Explosive spears, bombs, and lanterns.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">ScavTradeInstruction</td>
+  <td style="text-align:left">Displays pearl trading tutorial</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">CustomDecal</td>
+  <td style="text-align:left">Spawns a distort-able decal that can be placed and changed as needed.</td>
+  <td style="text-align:left">No</td>
+</tr>
+<tr>
+  <td style="text-align:left">InsectGroup</td>
+  <td style="text-align:left">Spawns a several insects who stay inside the boundaries of the circle. Amount of insects is determined by the density.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">PlayerPushback</td>
+  <td style="text-align:left">Pushes the player away from a point with increasing force.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">MultiplayerItem</td>
+  <td style="text-align:left">Adds an item of choice that can spawn in arena mode.</td>
+  <td style="text-align:left"></td>
+</tr>
+<tr>
+  <td style="text-align:left">SporePlant</td>
+  <td style="text-align:left">Wip</td>
+  <td style="text-align:left"></td>
+</tr>
+<tr>
+  <td style="text-align:left">GoldToken</td>
+  <td style="text-align:left">Spawns an arena unlocking scanplant. center dot is the location of the token, second dot is the roots. Can be configured to show up only in specific difficulties</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">BlueToken</td>
+  <td style="text-align:left">Same as above, except for creature unlocks</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">DeadTokenStalk</td>
+  <td style="text-align:left">Same as above, but has nothing to unlock.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">NeedleEgg</td>
+  <td style="text-align:left">Spawns a noodlefly egg. Dot is the egg itself, it will attach to a ceiling on its own.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">BrokenShelterWaterLevel</td>
+  <td style="text-align:left">If a shelter is configured to be broken on a certain difficulty, it can be flooded to a certain water level. This will set that height.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">BubbleGrass</td>
+  <td style="text-align:left">Spawns in the bubble grass object that allows for longer breathing.</td>
+  <td style="text-align:left"></td>
+</tr>
+<tr>
+  <td style="text-align:left">Filter</td>
+  <td style="text-align:left">Spawns a zone where objects can be configured to only spawn on certain difficulties.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">ReliableIggyDirection</td>
+  <td style="text-align:left">Wip</td>
+  <td style="text-align:left"></td>
+</tr>
+<tr>
+  <td style="text-align:left">Hazer</td>
+  <td style="text-align:left">Spawns a squid like creature called a Hazer. Will make a huge cloud of ink when thrown.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">DeadHazer</td>
+  <td style="text-align:left">Spawns a dead Hazer.</td>
+  <td style="text-align:left">Yes</td>
+</tr>
+<tr>
+  <td style="text-align:left">Rainbow</td>
+  <td style="text-align:left">Spawns a rainbow that will appear with a certain percent at the beginning of a cycle. The rainbows size, thickness, and fade can be controlled with the slider. The dots change it's location and arch.</td>
+  <td style="text-align:left">No</td>
+</tr>
+<tr>
+  <td style="text-align:left">LightBeam</td>
+  <td style="text-align:left">Spawns a ray of light that can be distorted and moved around by the four points that make up this object's rectangle. Sliders control the depth per layer, as well as how bright it is per layer. The white adjustment is between using a palette color, and using white.</td>
+  <td style="text-align:left">No</td>
+</tr>
+<tr>
+  <td style="text-align:left">NoLeviathanStrandingZone</td>
+  <td style="text-align:left">Creates an area that pushes leviathans, useful for placing down in places where leviathans get stuck.</td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>

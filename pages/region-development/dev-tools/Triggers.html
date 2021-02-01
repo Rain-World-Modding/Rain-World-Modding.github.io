@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<link rel='stylesheet' href='../../../css/main.css'/>
+<link rel='stylesheet' href='../../../css/article.css'/>
+<script src='../../../scripts/extras.js'></script>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Triggers (Rain World Modding)</title>
+</head>
+<body>
+<h1>Dev Tools: Triggers</h1>
+<h2>*<strong><u>This article is contains outdated information and needs to be updated!</u></strong>*</h2>
+<p><img src="../../../assets/regionDevelopment/devTools/triggerTab.png" alt="triggerTab" /></p>
+<p>This is a single tab for the <a href="Dev-Tools.html">Dev Tools.</a> See that page for more controls and other tabs.</p>
+<h2>General controls</h2>
+<hr />
+<h3>PAGES:</h3>
+<p>Brings you to the other devtool editors.</p>
+<h3>Save:</h3>
+<p>Saves the current effects and room settings to a file inside the region's World folder, named ROOMNAME_settings.txt Most effects are not applied instantly, and thus need to be saved, and then reloaded by pressing R and returning to the room to see the changes.</p>
+<h3>Inherent from template:</h3>
+<p>Will set the values stored in a specific template the region has to this room.</p>
+<h3>Save as template:</h3>
+<p>Saves the current room's settings as a template for easy re-use.</p>
+<h2>Triggers Menu</h2>
+<hr />
+<p><strong>Triggers</strong> are the mechanism in which some in-game events occur, such as specific songs playing, projections being displayed by the player guide overseer, or information text being displayed at the bottom of the screen. Clicking one of the four options in the bottom right-hand box will place a trigger of that type, which can be moved just like other devtools objects.</p>
+<h3>Trigger Options</h3>
+<p>Triggers have a number of settings which determine what the trigger does and under what circumstances.</p>
+<ul>
+<li><strong>Active from cycle:</strong> The minimum total cycle requirement for the trigger to activate.</li>
+<li><strong>Active up to cycle:</strong> The maximum cycle limit for the trigger to activate - if the player has a cycle count higher than this number, the trigger will not activate.</li>
+<li><strong>Fire chance:</strong> A random percentage chance for the trigger to activate, from 0% to 100%.</li>
+<li><strong>Trigger delay:</strong> How many seconds between the requirements for the trigger being met and the event occurring.</li>
+<li><strong>Karma req.:</strong> The minimum karma the player needs for the trigger to activate (from 0 to 5)</li>
+<li><strong>Can only fire once/Can fire multiple times:</strong> Self-explanatory, determines whether the trigger only fires once or not.</li>
+<li><strong>No entrance requirement/Entrance XX:</strong> Determines whether the player can enter from any entrance pipe, or whether they need to come through a specific one. When an entrance is selected, a red line will connect this entrance and the options box.</li>
+<li><strong>White, Yellow, Red:</strong> Determines which gamemodes the trigger fires on - Survivor, Hunter or Monk. A gamemode's name being displayed means that the trigger will fire in said gamemode.</li>
+</ul>
+<h3>Event Types</h3>
+<p>The lowest button on the options box lets you pick what type of event you want to add.</p>
+<h4>MusicEvent</h4>
+<p>Plays a song from the soundtrack.</p>
+<ul>
+<li>The first button lets you pick the song you want to play. Files for these songs can be found in <em>Rain World\Assets\Futile\Resources\Music\Songs</em>, or many of them can be found <a href="https://www.youtube.com/playlist?list=PLPJWSVeszYFBo1oAXYgzGfJfewnGKgGna">online.</a></li>
+<li><strong>Play volume:</strong> Self-explanatory, the volume the song plays at.</li>
+<li><strong>Fade in:</strong> In seconds, how long the song takes to reach full volume.</li>
+<li><strong>Song priority:</strong> If this song's priority is higher than another's, then this song will continue to play if the other trigger is activated. If the priority is lower, then the higher one will play instead of it.</li>
+<li><strong>Drone volume:</strong> <em>WIP, presumably adds a background drone sound at the set volume.</em></li>
+<li><strong>Fade out at threat:</strong> The threat level at which the song fades out and is overtaken by the threat music.</li>
+<li><strong>Rest cycles:</strong> If this trigger can activate multiple times, the number of cycles for the trigger to wait before being able to fire again.</li>
+<li><strong>Room transitions:</strong> How many rooms the song will continue playing through.</li>
+<li><strong>One song per cycle:</strong> Whether or not the same song can activate multiple times in one cycle.</li>
+<li><strong>Play once/loop:</strong> Determines whether the song plays once or loops.</li>
+<li><strong>Continue at death:</strong> Continue playing the song when the player dies.</li>
+<li><strong>Continue through gate:</strong> Continue playing the song when the player uses a region gate.</li>
+</ul>
+<h4>StopMusicEvent</h4>
+<p>As the name says, stops one or more MusicEvents.</p>
+<ul>
+<li>The first button lets you pick the song you want to stop/exclude.</li>
+<li><strong>Priority:</strong> If a song has a higher priority than the trigger, it won't stop.</li>
+<li><strong>Fade out:</strong> Same as fade in, but fading out to silence.</li>
+<li><strong>Stop all songs/stop specific song/stop all but specific song:</strong> Self-explanatory, song selected at the top of the box is what this refers to.</li>
+</ul>
+<h4><strong>PoleMimicSubtleReveal</strong></h4>
+<p>Causes a pole mimic to flutter slightly when activated.</p>
+<h4><strong>ShowProjectedImageEvent</strong></h4>
+<p><em>WIP, presumably relates to player guide overseer projections.</em></p>
+<h4><strong>RoomSpecificTextMessage</strong></h4>
+<p>Presumably causes specific text to appear at the bottom of the screen. Non-functional on its own.</p>
+<h4><strong>BringPlayerGuideToRoom</strong></h4>
+<p><em>WIP, presumably brings the player guide overseer to the current room.</em></p>
+<h3>Trigger Types</h3>
+<ul>
+<li><strong>Spot:</strong> The most commonly used trigger; activates when slugcat walks into a specific circular area of the room. This is indicated by a white area-of-effect which can be moved and scaled.</li>
+<li><strong>SeeCreature:</strong> <em>WIP, presumably activates upon a certain creature being seen.</em></li>
+<li><strong>RegionBump:</strong> Activates either when the region is entered or at the beginning of a cycle where the region name and cycle count is shown.</li>
+<li><strong>PreRegionBump:</strong> Seemingly functions the same way as RegionBump.</li>
+</ul>
+
+</body>
+</html>
