@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<link rel='stylesheet' href='../../../css/main.css'/>
+<link rel='stylesheet' href='../../../css/article.css'/>
+<script src='../../../scripts/extras.js'></script>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Room Settings (Rain World Modding)</title>
+</head>
+<body>
+<h1>Dev Tools: Room Settings</h1>
+<p>This is a single tab for the <a href="Dev-Tools.html">Dev Tools.</a> See that page for more controls and other tabs.</p>
+<h2>General Controls</h2>
+<hr />
+<h3>Pages:</h3>
+<p>Brings you to the other devtool editors.</p>
+<h3>Save:</h3>
+<p>Saves the current effects and room settings to a file inside the region's World folder, named ROOMNAME_settings.txt Most effects are not applied instantly, and thus need to be saved, and then reloaded by dying and returning to the room to see the changes.</p>
+<h3>Inherit from template:</h3>
+<p>Will set the values stored in a specific template the region has to this room.</p>
+<h3>Save as template:</h3>
+<p>Saves the current room's settings as a template for easy re-use.</p>
+<h2>Room settings menu</h2>
+<hr />
+<h3>G.O:</h3>
+<p>Controls the game over sequence when the rain timer expires.</p>
+<ul>
+<li>Rain: As it says on the tin.</li>
+<li>Flood: Room will slowly fill up from its set water height.</li>
+<li>Flood and rain: The sky is death, and the room floods</li>
+<li>None: Will cause no visual effects, and screen rumbling will be disabled</li>
+<li>Thunder: Lightning effects in the room will speed up animation.However no actual deadly effects will happen. To do an under hang style lightning walls effect. you will need to add an &quot;ElectricDeath&quot; room effect with a 100% modifier.</li>
+</ul>
+<h3>Rain Intensity:</h3>
+<p>Increases or decrease how hard the rain will impact the player. Default is 100%. Lower amounts will eventually not kill the player, but instead only hamper their jumps.</p>
+<h3>Rumble Intensity</h3>
+<p>Similar to rain intensity, Controls the screen shake of the room when the rain timer expires. This does not apply to rooms with a G.O of &quot;none&quot;, as by default those will not shake anyway.</p>
+<h3>Ceiling Drips:</h3>
+<p>Controls how wet a room is. The higher the value, the more drips will spawn. This will only apply for a few moments at the beginning of a cycle, unless &quot;Wet terrain&quot; is turned on.</p>
+<h3>Waves:</h3>
+<p>Speed, length, and amplitude of water waves. Allows you to make bodies of water behave like an ocean.</p>
+<h3>Clouds:</h3>
+<p>Changes the cloud cover of an area. Will be forced to 100% when the room has the sun disabled. ( This is changed in the official editor when exporting a level. )</p>
+<h3>Grime:</h3>
+<p>Creates an oil like film over the edges and raised bits of tiles. Also causes minor distortions on the screen.</p>
+<h3>Random Item Density:</h3>
+<p>Controls how often rocks will spawn on the ground of the room.</p>
+<h3>Random Item Spear Percent:</h3>
+<p>How often those random rocks will be spears.</p>
+<h3>Water Light:</h3>
+<p>The modified intensity of light sources placed underwater.</p>
+<h2>Palette Menu</h2>
+<hr />
+<p><a href="https://static.wikia.nocookie.net/rain-world-modding/images/3/37/Fadepalette_example.png/revision/latest?cb=20180213230933"><img src="https://static.wikia.nocookie.net/rain-world-modding/images/3/37/Fadepalette_example.png/revision/latest/scale-to-width-down/307?cb=20180213230933" alt="Fadepalette example.png" /></a></p>
+<h3>Palette:</h3>
+<p>Rooms in rainworld use palettes to decide how they draw on screen. These colors can be changed during run time and easily modified and saved to tweak rooms on the fly. By default there are 35 palettes in vanilla rainworld. However more can be added through modding.</p>
+<h3>Effect color A/B:</h3>
+<p>Controls the palette of effects applied from the official editor. The official editor can paint effects to use one of these palettes specifically. Allowing you to draw plants using palette A, and daddy corruption using palette B, to name an example. Both palettes can be configured like the normal palette menu.</p>
+<h3>Fade Palette:</h3>
+<p>Changing this from &quot;none&quot; will enable a percent slider for every camera in the room, and will allow you to select a secondary palette. These sliders will allow you to fade between the primary palette, and this secondary fade palette. Allowing you to do visual transitions as you progress through rooms, or to simply create a blended set of colors between two specific palettes.</p>
+<p>The image on the right shows a fade at 0%, 50% and 100%. Slowly changing the room's colors between the two palettes based on the slider.</p>
+<h2>Effects Library</h2>
+<hr />
+<p>This menu will allow you to select various effects you want to happen in a room. However, most of these will require the room to be saved, and then reloaded. Simply dying, and returning to the room will do this. Clicking an effect in this menu will add it, and again will remove it. Most effects require a save + reload, so do not be surprised if the effect does not show up at all when you add it at first!</p>
+<table>
+<thead>
+<tr>
+  <th style="text-align:left"><u><strong>Effect</strong></u></th>
+  <th style="text-align:left"><u><strong>Description</strong></u></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:left">SkyDandelions</td>
+  <td style="text-align:left">Adds floating puffs in the air, a Sky Islands effect.</td>
+</tr>
+<tr>
+  <td style="text-align:left">SkyBloom</td>
+  <td style="text-align:left">Increases how fuzzy/bloomy the sky's light is.</td>
+</tr>
+<tr>
+  <td style="text-align:left">LightBurn</td>
+  <td style="text-align:left">How overwhelming the &quot;baked in&quot; light placed in the official editor is. A good example is the bright lights seen near the start of the Miros bird tunnel in subterranean.</td>
+</tr>
+<tr>
+  <td style="text-align:left">Bloom</td>
+  <td style="text-align:left">Similar to SkyBloom, but applies to lights.</td>
+</tr>
+<tr>
+  <td style="text-align:left">Fog</td>
+  <td style="text-align:left">Creates a white cloudy effect at layer 1. Not compatible with</td>
+</tr>
+<tr>
+  <td style="text-align:left">Lightning</td>
+  <td style="text-align:left">Creates flashes, and makes the terrain glow. Certain palettes break this effect. Plays a zapping sound effect.</td>
+</tr>
+<tr>
+  <td style="text-align:left">BkgOnlyLightning</td>
+  <td style="text-align:left">Similar to above, However it only causes the background to flash, and does not require special palettes. Plays a zapping sound effect.</td>
+</tr>
+<tr>
+  <td style="text-align:left">ExtraLoudThunder</td>
+  <td style="text-align:left">Changes the thunder sound effects of Lighting/BkgOnlyLightning to a louder and more violent version.</td>
+</tr>
+<tr>
+  <td style="text-align:left">GreenSparks</td>
+  <td style="text-align:left">Underhang, and the Legs' green sparkles.</td>
+</tr>
+<tr>
+  <td style="text-align:left">VoidMelt</td>
+  <td style="text-align:left">Void fluid camera effect seen near the end of the game. Covers the screen in maple syrup. Causes slowdown automatically.</td>
+</tr>
+<tr>
+  <td style="text-align:left">ZeroG</td>
+  <td style="text-align:left">Decreases gravity, at 100% you will gain zeroG controls like the inside of Five Pebbles.</td>
+</tr>
+<tr>
+  <td style="text-align:left">BrokenZeroG</td>
+  <td style="text-align:left">Controls how often the above effect shuts down and turns back on. Allows you to have partial anti-gravity with different levels of gravity, and not just fully on or off gravity.</td>
+</tr>
+<tr>
+  <td style="text-align:left">SunBlock</td>
+  <td style="text-align:left">Makes it so sun light doesn't show as if a shadow is covering everything.Allows the two projector effects below to work properly.</td>
+</tr>
+<tr>
+  <td style="text-align:left">SuperStructureProjector</td>
+  <td style="text-align:left">Causes glowing lines and circles around CoralNeurons, the percent slider controls flashing symbols and lines in various intensities.</td>
+</tr>
+<tr>
+  <td style="text-align:left">ProjectedScanLines</td>
+  <td style="text-align:left">Adds vertical and horizontal projected lines that slowly scroll across the room.</td>
+</tr>
+<tr>
+  <td style="text-align:left">CorruptionSpores</td>
+  <td style="text-align:left">Spawns black specks that float in the air, as seen near unfortunate development. Requires zero gravity, or broken zero gravity at full strength to appear.</td>
+</tr>
+<tr>
+  <td style="text-align:left">SSSwarmers</td>
+  <td style="text-align:left">Causes neurons to spawn randomly throughout the room.</td>
+</tr>
+<tr>
+  <td style="text-align:left">SSmusic</td>
+  <td style="text-align:left">Plays Random gods at the intensity of the percent slider. Requires zero gravity. Fades in and out when gravity is broken.</td>
+</tr>
+<tr>
+  <td style="text-align:left">AboveCloudsView</td>
+  <td style="text-align:left">Draws the Wall's background in the room. This is tied directly to the room's Y location on the map. The top of the wall is at Y -2064. Use the regions map file to place your room at the height required for the effect you need.</td>
+</tr>
+<tr>
+  <td style="text-align:left">RoofTopView</td>
+  <td style="text-align:left">Draws the city above FivePebble's in the background, and applies a dusty effect behind slugcat as they move and jump.</td>
+</tr>
+<tr>
+  <td style="text-align:left">VoidSea</td>
+  <td style="text-align:left">Spawns voidworms, draws a fade. Swimming downward, or falling downwards, will eventually bring you to the void sea. Triggers the ending sequence when entered.</td>
+</tr>
+<tr>
+  <td style="text-align:left">ElectricDeath</td>
+  <td style="text-align:left">Causes sparks and zaps when the raintimer expires. Any value under 100% will only cause visual sparks. at 100% it will knock slugcat around, and eventually kill them.</td>
+</tr>
+<tr>
+  <td style="text-align:left">VoidSpawn</td>
+  <td style="text-align:left">Wip</td>
+</tr>
+<tr>
+  <td style="text-align:left">BorderPushBack</td>
+  <td style="text-align:left">Will shove slugcat away with increasing force. Used in shoreline when you go off screen.</td>
+</tr>
+<tr>
+  <td style="text-align:left">Flies</td>
+  <td style="text-align:left">Spawns small flys that buzz around the room and land on objects.</td>
+</tr>
+<tr>
+  <td style="text-align:left">FireFlies</td>
+  <td style="text-align:left">Spawns tiny glowing yellow bugs throughout the room, that grow in intensity as the cycle progresses.</td>
+</tr>
+<tr>
+  <td style="text-align:left">TinyDragonFly</td>
+  <td style="text-align:left">Spawns tiny bugs that fly around plants.</td>
+</tr>
+<tr>
+  <td style="text-align:left">RockFlea</td>
+  <td style="text-align:left">Spawns tiny bugs that hop around on the ground in clusters.</td>
+</tr>
+<tr>
+  <td style="text-align:left">RedSwarmer</td>
+  <td style="text-align:left">Spawns small, bright red bugs that fly around slowly.</td>
+</tr>
+<tr>
+  <td style="text-align:left">Ant</td>
+  <td style="text-align:left">Wip, but presumably another bug effect.</td>
+</tr>
+<tr>
+  <td style="text-align:left">Beetle</td>
+  <td style="text-align:left">Spawns small beetles that slowly fly around the room.</td>
+</tr>
+<tr>
+  <td style="text-align:left">WaterGlowWorm</td>
+  <td style="text-align:left">Spawns small worms that swim around in water.</td>
+</tr>
+<tr>
+  <td style="text-align:left">Wasp</td>
+  <td style="text-align:left">Spawns small wasps that quickly dart between walls.</td>
+</tr>
+<tr>
+  <td style="text-align:left">Moth</td>
+  <td style="text-align:left">Spawns small white moths which slowly flutter around the room.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: Some effects are mutually exclusive - if multiple of these effects are applied, not all of them will work properly. Some of them are partially compatible, but most of them override entirely. The order of these is the priority - effects that are higher in the list will override lower ones.</em></p>
+<pre><code>`SkyBloom`, `SkyAndLightBloom`, `Lightning`, `LightBurn`, `Fog`, `Bloom`, `VoidMelt`
+</code></pre>
+
+</body>
+</html>

@@ -18,7 +18,7 @@ The following video tutorial made by LeeMoriya explains how to install both RW B
 
 BepInEx doesn't have a graphical user interface (or GUI - the app with buttons and such). Obviously this is a little tedious, as users would be required to move mod DLLs between folders themselves... This is where thalber's BlepOutIn (or BOI) launcher comes in. BOI is an app that provides a nice interface for RW BepInEx, as well as some other related tools such as easy access to Extended Dev Tools settings and region pack settings.
 
-![BOI](https://rain-world-modding.github.io/rain-world-modding/assets/BOI-main.png)
+![BOI](../../assets/BOI-main.png)
 
 You can find the release page for BOI [here](https://github.com/thalber/BOI/releases/latest). 
 

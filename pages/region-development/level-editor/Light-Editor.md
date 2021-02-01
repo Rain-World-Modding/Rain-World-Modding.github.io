@@ -2,7 +2,7 @@
 
 ## ***<u>This article is a stub and needs to be updated!</u>***
 
-![lightEditor](../../assets/regionDevelopment/levelEditor/lightEditor.png)
+![lightEditor](../../../assets/regionDevelopment/levelEditor/lightEditor.png)
 
 ## Controls
 

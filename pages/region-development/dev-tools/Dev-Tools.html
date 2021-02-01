@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<link rel='stylesheet' href='../../../css/main.css'/>
+<link rel='stylesheet' href='../../../css/article.css'/>
+<script src='../../../scripts/extras.js'></script>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Dev Tools (Rain World Modding)</title>
+</head>
+<body>
+<h1>Dev Tools</h1>
+<p>The <strong>Dev Tools</strong> are a collection of in-game tools used by the developers for testing the game and editing map properties. They are a good starting point for modders, as the tools are fairly easy to use, and provide some basic modding capabilities. They can be installed from the Tools section of <a href="http://www.raindb.net/">RainDB</a>.</p>
+<h2>Controls</h2>
+<hr />
+<p>The following keyboard shortcuts are available for use once the Dev Tools have been activated in-game.</p>
+<table>
+<thead>
+<tr>
+  <th style="text-align:center"><u>Key</u></th>
+  <th style="text-align:left"><u>Function</u></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:center"><strong>O</strong></td>
+  <td style="text-align:left">Enables/Disables Dev Mode. While Dev mode is active, some yellow text will be shown at the top of the screen showing that it is active, and also showing the current map name.</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>H</strong></td>
+  <td style="text-align:left">Opens/closes the main Dev Tool interface.</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>M</strong></td>
+  <td style="text-align:left">Shows various useful debug information, like number of creatures active in the region, exact time left until the rain, creature relationship statuses, numerical identifiers for pipes and spawn locations, and pixel/tile coordinates at the mouse location.</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>P</strong></td>
+  <td style="text-align:left">Displays tile accessibility for each creature type. Use arrow keys to select a creature type, then click a tile in the room to see every place the creature can reach from that tile.</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>Q</strong></td>
+  <td style="text-align:left">Fills Slugcat's food meter by one pip.</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>R</strong></td>
+  <td style="text-align:left">Restarts the cycle from the shelter.</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>A</strong></td>
+  <td style="text-align:left">Runs the simulation in slow-mode while the button is held.</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>S</strong></td>
+  <td style="text-align:left">Run the simulation in fast-mode while the button is held.</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>V</strong></td>
+  <td style="text-align:left">Teleports Slugcat to the location of the mouse.</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>W</strong></td>
+  <td style="text-align:left">Flings slugcat in the general direction of mouse motion.</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>F</strong></td>
+  <td style="text-align:left">Pulls batflies towards the location of the mouse.</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>B</strong></td>
+  <td style="text-align:left">Drags all creatures/entities to the location of the mouse (except Slugcat and Batflies).</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>G</strong></td>
+  <td style="text-align:left">Flings all vultures skywards.</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>N</strong></td>
+  <td style="text-align:left">Offsets the camera based on the mouse position.</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>E</strong></td>
+  <td style="text-align:left">Sets the migratory destination of every creature in the region to the current room.</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>U</strong></td>
+  <td style="text-align:left">Reloads all sound samples.</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>I</strong></td>
+  <td style="text-align:left">Shows a log of all sound effects played.</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>K</strong></td>
+  <td style="text-align:left">Opens ConsoleLog.txt (only Extended Devtools).</td>
+</tr>
+</tbody>
+</table>
+<p>Additional Dev Tools commands available on the title screen/region select screens:</p>
+<table>
+<thead>
+<tr>
+  <th style="text-align:left">Key</th>
+  <th style="text-align:left">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:left">N+Jump</td>
+  <td style="text-align:left">Allows you to reposition the layers in the background image with the mouse.</td>
+</tr>
+<tr>
+  <td style="text-align:left">B</td>
+  <td style="text-align:left">Saves the new positions of the layers to file.</td>
+</tr>
+</tbody>
+</table>
+<p>Additional Dev Tools commands available in cutscenes (not useful in the current version of Dev Tools, as you can't save these changes, and the cutscene doesn't pause while this mode is active, like it probably is supposed to)</p>
+<table>
+<thead>
+<tr>
+  <th style="text-align:center"><u>Key</u></th>
+  <th style="text-align:left"><u>Function</u></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:center">M</td>
+  <td style="text-align:left">Activate/Deactivate cutscene editing mode.</td>
+</tr>
+<tr>
+  <td style="text-align:center">Left Click</td>
+  <td style="text-align:left">Select and drag keyframes around.</td>
+</tr>
+<tr>
+  <td style="text-align:center">J</td>
+  <td style="text-align:left">Add a new keyframe.</td>
+</tr>
+<tr>
+  <td style="text-align:center">K</td>
+  <td style="text-align:left">Remove a keyframe.</td>
+</tr>
+<tr>
+  <td style="text-align:center">O</td>
+  <td style="text-align:left">Change depth of selected keyframe.</td>
+</tr>
+<tr>
+  <td style="text-align:center">L</td>
+  <td style="text-align:left">Offset all keyframes.</td>
+</tr>
+<tr>
+  <td style="text-align:center">I</td>
+  <td style="text-align:left">Test playback of cutscene.</td>
+</tr>
+</tbody>
+</table>
+<h2>Main Interface Tabs</h2>
+<hr />
+<p>Once opening the main dev tools interface with H, the interface is broken up into five different tabs. Each of these tabs are extensive enough to warrant their own pages:</p>
+<ul>
+<li><a href="Room-Settings.html">Room Settings Tab</a></li>
+<li><a href="Objects.html">Objects Tab</a></li>
+<li><a href="Sound.html">Sound Tab</a></li>
+<li><a href="Map.html">Map Tab</a></li>
+<li><a href="Triggers.html">Triggers Tab</a></li>
+</ul>
+
+</body>
+</html>

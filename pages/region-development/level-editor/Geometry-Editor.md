@@ -1,6 +1,6 @@
 # Level Editor: Geometry Editor
 
-![geoEditor](../../assets/regionDevelopment/levelEditor/geoEditor.png)
+![geoEditor](../../../assets/regionDevelopment/levelEditor/geoEditor.png)
 
 The Geometry Editor is the first stop for the creation of new rooms. In the Geometry Editor, you define the gameplay and collision information of your room, as well as the placement of vertical and horizontal bars, shortcuts, entrances and exits (to connect your room to other rooms), and a number of other gameplay relevant elements. Once you have defined your geometry (and ideally play tested your room in-engine) you can move on to the [Tile Editor](Tile-Editor.html) to define the look and props that make up your geometry.
 
@@ -50,7 +50,7 @@ Starting from the top left, and going through each row.
 - Copy Backwards: Copies a rectangle of tiles on the current layer to the next layer. This does not wrap around back to layer 1 if you are on layer 3.
 - Short Cut Entrance: Places the entrance of a short cut into the room. Please see the tips and tricks section for details of how to properly connect entrances and doors together.
 - Short Cut: Places a short cut's travel dot. These go between short cut entrances, and specific entrance or den tiles.
-- Dragon Den: Places an enemy nest. These can be configured to spawn enemies in a region using the region's [World File](../region-development/World-File-Format.html).
+- Dragon Den: Places an enemy nest. These can be configured to spawn enemies in a region using the region's [World File](../World-File-Format.html).
 - Entrance: Used to connect between rooms. Slugcat can use these short cuts as doors to different rooms. This is configured in the regions world file.
 - Forbid Fly Chains: Prevents bat flies from hanging together in specific locations to rest.
 - Spawn Fly: Does nothing.
@@ -71,7 +71,7 @@ Starting from the top left, and going through each row.
 
 ---
 
-![geoShortcuts1](../../assets/regionDevelopment/levelEditor/geoShortcuts1.gif)![geoShortcuts2](../../assets/regionDevelopment/levelEditor/geoShortcuts2.png)![geoShortcuts3](../../assets/regionDevelopment/levelEditor/geoShortcuts3.png)
+![geoShortcuts1](../../../assets/regionDevelopment/levelEditor/geoShortcuts1.gif)![geoShortcuts2](../../../assets/regionDevelopment/levelEditor/geoShortcuts2.png)![geoShortcuts3](../../../assets/regionDevelopment/levelEditor/geoShortcuts3.png)
 
 Short cuts and their connections to the various kinds of entrances in Rain World have specific needs! Improperly making the short cut can lead to crashes, or odd behavior in game. This gif presents several examples of properly linked short cuts.
 
@@ -87,7 +87,7 @@ The images on the right also display the bare minimum needed for short cut entra
 
 ---
 
-![geoLayers](../../assets/regionDevelopment/levelEditor/geoLayers.gif)
+![geoLayers](../../../assets/regionDevelopment/levelEditor/geoLayers.gif)
 
 Rain World levels consist of 3 layers, each representing a different depth. This layer info is represented
 

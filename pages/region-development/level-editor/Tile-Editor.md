@@ -1,6 +1,6 @@
 # Level Editor: Tile Editor
 
-![tileEditor](../../assets/regionDevelopment/levelEditor/tileEditor.png)
+![tileEditor](../../../assets/regionDevelopment/levelEditor/tileEditor.png)
 
 The Tile Editor is where you define the tiles and materials that provide the visual representation of the level geometry created in the [Geometry Editor](Geometry-Editor.html). Because the actual coloring of levels is done dynamically in-engine, Level creators are afforded incredible flexibility in the tiles and tile combinations that match. On top of that, the game shipped with a massive asset library which can be leveraged to create new and exciting styles. Tiles in the tile editor span the range from small nondescript square stones to the massive metal gates connecting regions.
 
@@ -34,7 +34,7 @@ Tab + X + C clears all tiles (***there is no undo button***, only reloading from
 
 ---
 
-![tileMaterials](../../assets/regionDevelopment/levelEditor/tileMaterials.png)
+![tileMaterials](../../../assets/regionDevelopment/levelEditor/tileMaterials.png)
 
 Tiles come in a variety of flavors. Materials are the core and most flexible tiles as they procedurally generate to fill any size or shape. With the Materials category selected, an option to choose the default material appears (select the intended material and press E to assign it). The default material will be applied to any solid grid squares not manually assigned to something else. Materials are represented by colored squares in the tile editor. Pictured to the right is a fantastic cheat sheet made by AndrewFM that gives you a preview of each of the materials.
 

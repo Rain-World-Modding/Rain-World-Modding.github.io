@@ -26,7 +26,7 @@ A standard room with two room-connecting pipes. These will form the bulk of your
 
 > TR_T07 : TR_T01, TR_P02
 
-A standard room, with five doors. However, pipes 1, 2 and 3 have no connection. Each pipe inside a room has a specific number starting from 0. These can be viewed using the [Dev Tool's](https://rain-world-modding.fandom.com/wiki/Dev_Tools) [Map Tab](https://rain-world-modding.fandom.com/wiki/Map_Tab), or by entering the room with dev tools enabled and pressing M.
+A standard room, with five doors. However, pipes 1, 2 and 3 have no connection. Each pipe inside a room has a specific number starting from 0. These can be viewed using the [Dev Tool's](dev-tools/Dev-Tools.html) [Map Tab](dev-tools/Map.html), or by entering the room with dev tools enabled and pressing M.
 
 > TR_W19 : TR_L05, DISCONNECTED, DISCONNECTED, DISCONNECTED, TR_W18
 
@@ -34,7 +34,7 @@ A shelter. These rooms will often be copied from other regions when you are firs
 
 > TR_S01 : TR_P01 : SHELTER
 
-A region gate. Doors on the other side of the gate are set to DISCONNECTED. They will automatically be shown as connected doors due to the gate's special flags. If you need to show a save room door specifically on the other side of the gate. You can use the ExitSymbolShelter object, in the dev tool's [object tab](https://rain-world-modding.fandom.com/wiki/Objects_Tab) to change the door symbols as required.
+A region gate. Doors on the other side of the gate are set to DISCONNECTED. They will automatically be shown as connected doors due to the gate's special flags. If you need to show a save room door specifically on the other side of the gate. You can use the ExitSymbolShelter object, in the dev tool's [object tab](dev-tools/Objects.html) to change the door symbols as required.
 
 > GATE_SS_TR : DISCONNECTED, TR_L07 : GATE
 
@@ -52,7 +52,7 @@ A scavenger outpost. Wip....
 
 ![regionFormatConnection](../../assets/regionDevelopment/regionFormatConnection.png)
 
-For a door to be properly connected, both ends must point to each other using valid doors. For this example, both rooms will have two doors. Door0 will be on the left, and door1 on the right. Door numbers are decided specifically for your room, so be sure to check in game how your doors have been assigned by the [Official Level Editor](../level-editor/Official-Level-Editor.html). The dev tool's [Map Tab](https://rain-world-modding.fandom.com/wiki/Map_Tab) can also be used to see the links between doors. As in the picture to the right. Properly connected doors will show both lines pointing to the set door on the other end. Doors with incorrect links will point off to the bottom right (A disconnected door will also do this,) and a door connected to another room, but that room has no door back( or lacks enough doors! ) will point to the center of the room on the map tab page.
+For a door to be properly connected, both ends must point to each other using valid doors. For this example, both rooms will have two doors. Door0 will be on the left, and door1 on the right. Door numbers are decided specifically for your room, so be sure to check in game how your doors have been assigned by the [Official Level Editor](/level-editor/Official-Level-Editor.html). The dev tool's [Map Tab](dev-tools/Map.html) can also be used to see the links between doors. As in the picture to the right. Properly connected doors will show both lines pointing to the set door on the other end. Doors with incorrect links will point off to the bottom right (A disconnected door will also do this,) and a door connected to another room, but that room has no door back( or lacks enough doors! ) will point to the center of the room on the map tab page.
 
 > RG_ROOM1 : DISCONNECTED, RG_ROOM2
 
@@ -98,9 +98,27 @@ Multiple pipes in a room may all go to the same room. However, these will all ac
 
 ---
 
-Creature spawn data exists between CREATURES and END CREATURES tags. Most regions also use // for comments about the creatures or for separating the difficulties into specific sections. These comments however, do nothing to the code, and can even be used in the room connections above. Rainworld only spawns creatures the moment you enter a region for the first time, or after an excessive number of cycles has passed. To properly test enemy spawns, you will need to use a fresh file, or to backup a save just before you entered the region. Editing the region while it has "stale" enemy data, will result in bizarre situations, such as enemies spawning in shelters, or changing their pipes to be in different rooms. These can be corrected simply by reverting to the backed up save before you entered the region, or wiping the file and re-entering the region. A full article on enemy spawns is available here: [Creature Spawns](https://rain-world-modding.fandom.com/wiki/Creature_Spawns). The basic format is as follows:
+Creature spawn data exists between CREATURES and END CREATURES tags. Most regions also use // for comments about the creatures or for separating the difficulties into specific sections. These comments however, do nothing to the code, and can even be used in the room connections above. Rain World only spawns creatures the moment you enter a region for the first time, or after an excessive number of cycles has passed. To properly test enemy spawns, you will need to use a fresh file, or to backup a save just before you entered the region. Editing the region while it has "stale" enemy data, will result in bizarre situations, such as enemies spawning in shelters, or changing their pipes to be in different rooms. These can be corrected simply by reverting to the backed up save before you entered the region, or wiping the file and re-entering the region.
 
-> (optional difficulty)ROOM : PIPE_NUMBER-ENEMY-{optional flags}-COUNT
+> |                    |                                        |                       |                            |                          |                       |
+> | :----------------- | :------------------------------------- | :-------------------- | :------------------------- | :----------------------- | :-------------------- |
+> | <u>**Lizards**</u> | **<u>Insects</u>**                     | **<u>Amphibians</u>** | **<u>Flying</u>**          | **<u>Plants</u>**        | **<u>Other</u>**      |
+> | Pink               | Spider                                 | Salamander            | CicadaA                    | PoleMimic, Mimic*        | Scavenger             |
+> | Green              | Small Centipede                        | Leech                 | CicadaB                    | Tentacle, TentaclePlant* | Lantern Mouse, Mouse* |
+> | Blue               | Centipede, Centi, Cent*                | SeaLeech              | Vulture                    |                          | Worm, Garbage Worm*   |
+> | Yellow             | Red Centipede, RedCenti, RedCentipede* | JetFish, Jetfish*     | KingVulture, King Vulture* |                          | Miros, MirosBird*     |
+> | White              | DropBug, Dropbug, DropWig, Dropwig*    | Snail                 | Needle, Needle Worm*       |                          | Tube, TubeWorm*       |
+> | Black              | BigSpider                              | Lev, Leviathan        | SmallNeedleWorm            |                          | Bro, BroLongLegs*     |
+> | Cyan               | SpitterSpider                          |                       | Cicada**                   |                          | Daddy, DaddyLongLegs* |
+> | Red                | EggBug, Eggbug*                        |                       |                            |                          |                       |
+>
+> (*) Interchangeable names
+>
+> (**) Switches between CicadaA and CicadaB)
+>
+> 
+>
+> (optional difficulty)ROOM : PipeNumber-Creature-{optional flags}-Count
 
 While this appears very complex, some examples will make it easier to understand, as not all entries and flags are required. The optional difficulties are 0 = normal, 1 = easy, 2 = hard.
 
@@ -112,25 +130,37 @@ A single green lizard, spawning from pipe 2, on all difficulties.
 
 > SU_A10 : 2-Green
 
+
+
 A single red lizard, spawning from pipe 3, on hard mode only.
 
 > (2)SU_A10 : 3-Red
+
+
 
 A hoard of 5 yellow lizards spawning from pipe 1, on easy mode only.
 
 > (1)SU_A10 : 1-Yellow-5
 
+
+
 A Daddy longlegs spawning from pipe 4, but only on easy and normal difficulties.
 
 > (0,1)SU_A10 : 4-Daddy
+
+
 
 A very angry white lizard that spawns from pipe 3, on all difficulties. the "Mean" flag can be set from 0 to 1, and will change the enemy's personality to pursue you aggressively depending on how high it is set.
 
 > SU_A10 : 3-White-{Mean:0.9}
 
+
+
 Some enemies require a unique room known as OFFSCREEN. These enemies use special doors that are automatically added to your level to move between rooms. These include vultures, scavengers, leviathans, and miros birds. This example spawns two off screen vultures.
 
 > OFFSCREEN : 0-Vulture-2
+
+
 
 Enemy flags still apply to offscreen enemies. This will spawn a very aggressive KingVulture that will rarely leave the screen if it spots slugcat, but only on hardmode.
 
@@ -138,7 +168,7 @@ Enemy flags still apply to offscreen enemies. This will spawn a very aggressive 
 
 
 
-### Important quirks to creatures:
+#### Important quirks to creatures:
 
 Enemies may be set to spawn from the same nest pipes. However, do not be surprised if they somehow kill each other offscreen very quickly if you do this. A daddy long legs may have no problems consuming an entire hoard of yellow lizards for example.
 
@@ -158,9 +188,7 @@ All enemies can be configured using the dev tool's map editor to prefer, avoid, 
 
 
 
-## Creature Spawns(Lineage System)
-
----
+### The Lineage System:
 
 Enemy nests may also be configured to use the lineage system. After being killed, this allows a creature to roll a dice at the end of a cycle, and in a certain percent, respawn as its next entry in the lineage. Due to the format however, you cannot decide how many enemies can spawn from the pipe. So a green lizard cannot turn into a hoard of 3 yellow lizards. Only a single yellow lizard. Enemy flags, and difficulty filters still apply however. The format is as follows:
 
@@ -176,13 +204,19 @@ A green lizard that spawns from pipe 2, that turns into a blue, and then into a 
 
 > LINEAGE : SU_B08 : 2 : Green-0.05, Blue-0.05, Red-0
 
+
+
 A poleplant, with a specific height of 10 blocks, and spawning from pipe 3. That has a 10% chance to turn into a monster kelp
 
 > LINEAGE : SU_A02 : 3 : Mimic-{10}-0.1, TentaclePlant-0
 
+
+
 A empty pipe 3, that has a 1% chance to turn into a monster kelp.
 
 > LINEAGE : SU_B02 : 3 : NONE-0.01, TentaclePlant-0
+
+
 
 Lineage applies to offscreen creatures, as well as difficulties! This example from chimney canopy has a 20% chance to turn a vulture into a king vulture after being killed, but only on normal difficulty.
 

@@ -31,21 +31,25 @@ def page_changed(fp: str, new_content: str) -> Tuple[bool, str, str]:
         str: encoding code
     """
     # read binary of existing html and use it to get probable encoding
-    with open(fp, "rb") as file:
-        file_bytes = file.read()
-    orig_encoding = chardet.detect(file_bytes)["encoding"]
+    try:
+        with open(fp, "rb") as file:
+            file_bytes = file.read()
+        orig_encoding = chardet.detect(file_bytes)["encoding"]
 
-    # read existing html using the above encoding and generate a hash
-    with open(fp, encoding=orig_encoding) as file:
-        file_content = UnicodeDammit(file.read()).unicode_markup
-    old_hash = hashlib.sha256(file_content.encode(orig_encoding)).hexdigest()
+        # read existing html using the above encoding and generate a hash
+        with open(fp, encoding=orig_encoding) as file:
+            file_content = UnicodeDammit(file.read()).unicode_markup
+        old_hash = hashlib.sha256(file_content.encode(orig_encoding)).hexdigest()
 
-    # generate hash from new html
-    formatted_new_content = UnicodeDammit(new_content).unicode_markup
-    new_hash = hashlib.sha256(formatted_new_content.encode(orig_encoding)).hexdigest()
+        # generate hash from new html
+        formatted_new_content = UnicodeDammit(new_content).unicode_markup
+        new_hash = hashlib.sha256(formatted_new_content.encode(orig_encoding)).hexdigest()
 
-    print(old_hash, new_hash)
-    return old_hash != new_hash, formatted_new_content, orig_encoding
+        print(old_hash, new_hash)
+        return old_hash != new_hash, formatted_new_content, orig_encoding
+
+    except FileNotFoundError:
+        return True, UnicodeDammit(new_content).unicode_markup, "utf8"
 
 
 def iterate_dir(dirname: str):
