@@ -19,21 +19,32 @@
     "Creating Mods": [
         "BepInPlugins"
     ],
-         
-    "Level Editor": [
-        "Official-Level-Editor",
-        "Geometry-Editor",
-        "Tile-Editor",
-        "Effect-Editor",
-        "Prop-Editor",
-        "Camera-Editor",
-        "Light-Editor"
-    ],
+    
     
     "Region Development": [
         "Making-A-Region-From-The-Ground-Up",
         "Architecture-of-Rain-World",
         "Adding-A-New-Region",
-        "World-File-Format"
+        "World-File-Format",
+        {
+            "Level Editor": [
+                "Official-Level-Editor",
+                "Geometry-Editor",
+                "Tile-Editor",
+                "Effect-Editor",
+                "Prop-Editor",
+                "Camera-Editor",
+                "Light-Editor"
+            ],
+
+            "Dev Tools": [
+                "Dev-Tools",
+                "Room-Settings",
+                "Objects",
+                "Sound",
+                "Map",
+                "Triggers"
+            ]
+        }
     ]
 }

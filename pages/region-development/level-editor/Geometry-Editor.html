@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang='en'>
 <head>
-<link rel='stylesheet' href='../../css/main.css'/>
-<link rel='stylesheet' href='../../css/article.css'/>
-<script src='../../scripts/extras.js'></script>
+<link rel='stylesheet' href='../../../css/main.css'/>
+<link rel='stylesheet' href='../../../css/article.css'/>
+<script src='../../../scripts/extras.js'></script>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 <title>Geometry Editor (Rain World Modding)</title>
 </head>
 <body>
 <h1>Level Editor: Geometry Editor</h1>
-<p><img src="../../assets/regionDevelopment/levelEditor/geoEditor.png" alt="geoEditor" /></p>
+<p><img src="../../../assets/regionDevelopment/levelEditor/geoEditor.png" alt="geoEditor" /></p>
 <p>The Geometry Editor is the first stop for the creation of new rooms. In the Geometry Editor, you define the gameplay and collision information of your room, as well as the placement of vertical and horizontal bars, shortcuts, entrances and exits (to connect your room to other rooms), and a number of other gameplay relevant elements. Once you have defined your geometry (and ideally play tested your room in-engine) you can move on to the <a href="Tile-Editor.html">Tile Editor</a> to define the look and props that make up your geometry.</p>
 <h2>Controls</h2>
 <hr />
@@ -41,7 +41,7 @@
 <li>Copy Backwards: Copies a rectangle of tiles on the current layer to the next layer. This does not wrap around back to layer 1 if you are on layer 3.</li>
 <li>Short Cut Entrance: Places the entrance of a short cut into the room. Please see the tips and tricks section for details of how to properly connect entrances and doors together.</li>
 <li>Short Cut: Places a short cut's travel dot. These go between short cut entrances, and specific entrance or den tiles.</li>
-<li>Dragon Den: Places an enemy nest. These can be configured to spawn enemies in a region using the region's <a href="../region-development/World-File-Format.html">World File</a>.</li>
+<li>Dragon Den: Places an enemy nest. These can be configured to spawn enemies in a region using the region's <a href="../World-File-Format.html">World File</a>.</li>
 <li>Entrance: Used to connect between rooms. Slugcat can use these short cuts as doors to different rooms. This is configured in the regions world file.</li>
 <li>Forbid Fly Chains: Prevents bat flies from hanging together in specific locations to rest.</li>
 <li>Spawn Fly: Does nothing.</li>
@@ -58,14 +58,14 @@
 </ul>
 <h2>Short Cuts and Entrances</h2>
 <hr />
-<p><img src="../../assets/regionDevelopment/levelEditor/geoShortcuts1.gif" alt="geoShortcuts1" /><img src="../../assets/regionDevelopment/levelEditor/geoShortcuts2.png" alt="geoShortcuts2" /><img src="../../assets/regionDevelopment/levelEditor/geoShortcuts3.png" alt="geoShortcuts3" /></p>
+<p><img src="../../../assets/regionDevelopment/levelEditor/geoShortcuts1.gif" alt="geoShortcuts1" /><img src="../../../assets/regionDevelopment/levelEditor/geoShortcuts2.png" alt="geoShortcuts2" /><img src="../../../assets/regionDevelopment/levelEditor/geoShortcuts3.png" alt="geoShortcuts3" /></p>
 <p>Short cuts and their connections to the various kinds of entrances in Rain World have specific needs! Improperly making the short cut can lead to crashes, or odd behavior in game. This gif presents several examples of properly linked short cuts.</p>
 <p>A short cut dot is not required between the short cut's entrance, and the den or door it is connecting to. However, the shortcut must show as an arrow toward the den or door for the link to it to be proper. The short cut entrance also requires walls surrounding it on all sides, with the exception of the side you will enter it from.</p>
 <p>Connecting two short cut entrances to each other with dots will connect them as a tunnel between the two. The various other den and entrance types will decide how enemies interact with the entrance. Dens are used for most normal creatures. Scavenger require their unique entrance type to enter the room properly without using normal doors. ( They will not be able to leave the OFFSCREEN room of the region if there are no scavenger doors at all in the region! ) Garbage worms require a unique door due to their AI's behavior, and cannot use normal dens, nore can enemies enter their dens. Finally the Whack-A-Mole holes are used by creatures to warp from various short cuts around the room.</p>
 <p>The images on the right also display the bare minimum needed for short cut entrances to function, and example doors in all directions.</p>
 <h2>Layer Info</h2>
 <hr />
-<p><img src="../../assets/regionDevelopment/levelEditor/geoLayers.gif" alt="geoLayers" /></p>
+<p><img src="../../../assets/regionDevelopment/levelEditor/geoLayers.gif" alt="geoLayers" /></p>
 <p>Rain World levels consist of 3 layers, each representing a different depth. This layer info is represented</p>
 <p>visually through the color of tiles, and you can switch between editing on different layers with the work layer tool in the bottom left of the tool panel. Layer 1 draws in full black, layer 2 draws in green, and layer 3 draws in red. These colors will blend if multiple layers are drawn on top of each other.</p>
 <p>Layer 1 is the foreground, and any filled tiles on this layer will have collision. This is the base layer you define for the sake of gameplay, as any air here is space you can traverse.</p>
