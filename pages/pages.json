@@ -5,7 +5,15 @@
 
     "Utility Mods": [
         "Warp",
-        "RegionCast"
+        "RegionCast",
+        "EnumExtender",
+        {
+            "Config Machine": [
+                "OptionInterface",
+                "GeneratedOI",
+                "Translation-Support"
+            ]
+        }
     ],
 
     "Creating Mods": [
