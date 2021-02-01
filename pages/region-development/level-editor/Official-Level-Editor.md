@@ -1,6 +1,6 @@
 # The Official Level Editor
 
-![editorFront](../../assets/regionDevelopment/levelEditor/editorFront.png)
+![editorFront](../../../assets/regionDevelopment/levelEditor/editorFront.png)
 
 The Rain World level editor is a powerful tool that allows for the creation of new rooms for the game. It is the same editor the developers used to make all of the rooms for the base game. It takes specially formatted spritesheets and a number of programmed effects and outputs png files that the engine interprets in 3D (as well as an accompanying text file which contains collision and gameplay info).
 

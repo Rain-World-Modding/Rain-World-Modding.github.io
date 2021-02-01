@@ -1,10 +1,12 @@
 # Making A Region From The Ground Up
 
+## **<u>This article is contains outdated information and needs to be updated!</u>**
+
 So you want to make a region, but you have no clue where to start! The idea of modding something so big is certainly daunting! However, looking at everything in small repeatable pieces will let you work step by step until one day you'll suddenly have a finished region! However before that happens you need to learn some basics to get you started! Lets start with some terminology of the tools used!
 
-- [Official level editor](../level-editor/Official-Level-Editor.html) - This is the tool given to the modding community by the Rain World developers. These are the actual tools used to make Rain World. However much of its features and hotkeys are difficult and quirky to work with at first, but given enough time and use, the editor becomes an extremely powerful tool.
+- [Official level editor](level-editor/Official-Level-Editor.html) - This is the tool given to the modding community by the Rain World developers. These are the actual tools used to make Rain World. However much of its features and hotkeys are difficult and quirky to work with at first, but given enough time and use, the editor becomes an extremely powerful tool.
 - Unofficial level editor - This is a tool created by AndrewFM and Mikronaut to edit Rain World rooms before the official editor was released. While it lacks many features needed to make rooms. It does have the incredibly useful feature of being able to edit already exported rooms. As well as changing creature dens into doors, and vice versa.
-- [Dev Tools](https://rain-world-modding.fandom.com/wiki/Dev_Tools) - These are in game tools Rain World uses for editing room visual effects, sounds, and triggers. As well as the regions map, and the various other specific configurations of your room!
+- [Dev Tools](dev-tools/Dev-Tools.html) - These are in game tools Rain World uses for editing room visual effects, sounds, and triggers. As well as the regions map, and the various other specific configurations of your room!
 - [World File](World-File-Format.html) - This controls how your region (or any other region!) binds rooms together. As well as creature spawns!
 - Room settings text - These files are present for every room that you save a configuration for in the dev tools. It contains the placement of objects, sounds, room effects, and any other setting applied using the dev tools.
 
@@ -21,7 +23,7 @@ Before we start. It is extremely important to understand a few things about Rain
 - The editors are used to make rooms. You will not be crafting your entire region in a single editor project. You will be making one room at a time.
 - A region is a large collection of connected rooms. Using a [World File](World-File-Format.html) to setup data inside them.
 - A room is three files that control how Rain World handles the walls of that room, the graphics of that room, and finally the effects and colors of that room.
-- The editor can only export the collision and graphics for rooms, [Dev Tools](https://rain-world-modding.fandom.com/wiki/Dev_Tools) are used to set the colors and effects.
+- The editor can only export the collision and graphics for rooms, [Dev Tools](dev-tools/Dev-Tools.html) are used to set the colors and effects.
 - Code edits are required if you want to have passage support for your region.
 - This guide is mostly about how to build the rooms that make up a region. As linking rooms using the world file does not take such a massive guide to explain.
 - You will need at least a single door in your room in order to test it, as well as link it to the rest of your region later.
@@ -81,7 +83,7 @@ A "fuzzy" grey border marks the very edge of a room. Where tiles no longer exist
 
 ![3](../../assets/regionDevelopment/regionGroundUp/3.png)
 
-Lets start painting out the shapes we want for our basic level! This seems like a bit sudden of a jump, but only a few moments of messing around in the editor will let you achieve what you see in the screenshot! Short cuts to doors and dens require walls to be placed in specific ways around them. The [Geometry Editor](../level-editor/Geometry-Editor.html) article goes into more depth about properly connecting short cuts, doors, and dens.
+Lets start painting out the shapes we want for our basic level! This seems like a bit sudden of a jump, but only a few moments of messing around in the editor will let you achieve what you see in the screenshot! Short cuts to doors and dens require walls to be placed in specific ways around them. The [Geometry Editor](level-editor/Geometry-Editor.html) article goes into more depth about properly connecting short cuts, doors, and dens.
 
 For now, we will simply place walls, some poles, and at least one "Entrance" to the room. The Dens seen in the screenshot are optional. Only one door is required for this tutorial.
 
@@ -183,7 +185,7 @@ Some details on the first layer will also "bleed" into layers behind them. This 
 
 ![9](../../assets/regionDevelopment/regionGroundUp/9.png)
 
-Yet another render, and more to see and tweak! We can fix any mistakes easily as we go. You can also skip each rendering step, and do all the layers at once if you are confident with the editor! I'll be doing a third layer, and correcting all the issues on layer 2 by the next section. All the info you need is in the official editor's article here: [Official Level Editor](../level-editor/Official-Level-Editor.html). There is also a large guide of all tiles and materials, and how they look once rendered here: https://imgur.com/a/Vz3Kk
+Yet another render, and more to see and tweak! We can fix any mistakes easily as we go. You can also skip each rendering step, and do all the layers at once if you are confident with the editor! I'll be doing a third layer, and correcting all the issues on layer 2 by the next section. All the info you need is in the official editor's article here: [Official Level Editor](level-editor/Official-Level-Editor.html). There is also a large guide of all tiles and materials, and how they look once rendered here: https://imgur.com/a/Vz3Kk
 
 The next steps involve tweaking, rendering, retweaking, and rerendering until you are happy with the base design of your level! Remember, that some creatures use layer 2 to climb on walls, but layer 3 is far enough in the background for nothing to interact with it! Layer 1 is solid to all creatures with few if at all exceptions. Make sure you cannot get trapped in your level!
 
@@ -195,7 +197,7 @@ The next steps involve tweaking, rendering, retweaking, and rerendering until yo
 
 ![10](../../assets/regionDevelopment/regionGroundUp/10.png)
 
-It's time to start painting! Now that you've solved any issues on your tile layers, and painted yourself a background layer. You are now ready to start painting effects! Remember though. Each effect slows down the render of the level quite a bit. From now on it will begin to get more time consuming to fix mistakes in the level! Especially once you start making larger rooms! Effects are what make Rain World rooms look special. They alter, distort, and deform your tiles. Grow plants, and even alter tiles entirely! The effects editor has an example image of every effect, and its basic usage outline in this article: [Effects Editor](../level-editor/Effect-Editor).
+It's time to start painting! Now that you've solved any issues on your tile layers, and painted yourself a background layer. You are now ready to start painting effects! Remember though. Each effect slows down the render of the level quite a bit. From now on it will begin to get more time consuming to fix mistakes in the level! Especially once you start making larger rooms! Effects are what make Rain World rooms look special. They alter, distort, and deform your tiles. Grow plants, and even alter tiles entirely! The effects editor has an example image of every effect, and its basic usage outline in this article: [Effects Editor](level-editor/Effect-Editor).
 
 For the basics though! BlackGoo and Slime; These two effects are used in nearly every screen in Rain World to some degree! Slime makes every tile look slightly drippy and goopy. Like a mess has been rubbed onto them. BlackGoo forms the outer "shadow" of rooms. Both of these work together to make your room look less repetitive and clean!
 
@@ -221,7 +223,7 @@ You can also apply other effects till you are happy with the room. This includes
 
 Remember to always save and keep backups! Some editor tabs can be more fussy then others!
 
-Props are used to detail your room even further. Allowing you to place details without the grid, and at any angle and distorted shape you want! The control are outlined in the article here: [Prop Editor](https://rain-world-modding.fandom.com/wiki/Prop_Editor). While this is not too complex of a section. Adding a few proper can help break the rather straight geometry normally present in Rain World's levels by giving them some more curved shapes to look at. Such as tubes and valves between containers or machines!
+Props are used to detail your room even further. Allowing you to place details without the grid, and at any angle and distorted shape you want! The control are outlined in the article here: [Prop Editor](level-editor/Prop-Editor.html). While this is not too complex of a section. Adding a few proper can help break the rather straight geometry normally present in Rain World's levels by giving them some more curved shapes to look at. Such as tubes and valves between containers or machines!
 
 Once you are all setup, we can render and move onto using the dev tools to configure the rooms more fine details! Remember. You can always re-render and re-export a level as many times as you need. At no point does a level become impossible to edit. With the one exception of losing its project save file!
 
@@ -233,7 +235,7 @@ Once you are all setup, we can render and move onto using the dev tools to confi
 
 ![13](../../assets/regionDevelopment/regionGroundUp/13.png)
 
-We can now move onto using the [Dev Tools](https://rain-world-modding.fandom.com/wiki/Dev_Tools) to configure the level's more detailed settings! Everything from the room's colors, effects, and even how the rain timer affects this room!
+We can now move onto using the [Dev Tools](dev-tools/Dev-Tools.html) to configure the level's more detailed settings! Everything from the room's colors, effects, and even how the rain timer affects this room!
 
 Want a section of outskirts with some kind of lightning machine? Go ahead! Want to make a flooding cave system? It's all in here! The room's palette is not tied to the region. However most regions have "templates" that you can use to automatically set room settings to. Instead of needing to do each room one by one the same way. You can change anything you need to away from the template default, or click "NONE" beneath in the template section to use purely your own settings.
 
@@ -251,7 +253,7 @@ Exploring the dev tools documentation will give you far more info and ideas then
 
 ![14](../../assets/regionDevelopment/regionGroundUp/14.png)
 
-The process of making a full region is filled with this! Making rooms from the ground up, detailing and configuring them, before linking another room onto the chain. The only real difference is that you are doing so from the gates of your own region, instead of a small room connected to the side of outskirts! There are already a few pages of documentation related to connecting in a new region yourself! The main one can be found here: [Adding new Regions](Adding-A-New-Region.html). The details of how to setup creatures and connections for the region are here: [World File Format](World-File-Format.html). Finally, the dev tool's map editor for making your region properly show as a map in game is here: [Map Tab](https://rain-world-modding.fandom.com/wiki/Map_Tab). I'll likely be expanding this guide at some point in the future, but for now this is the basics of how to create a room from scratch! Look through the other articles for things like: Raising the water level, setting up creature spawns, understanding doors, adding food, placing objects and plants, adding sounds and effects, specific room triggers, and the various special room settings!
+The process of making a full region is filled with this! Making rooms from the ground up, detailing and configuring them, before linking another room onto the chain. The only real difference is that you are doing so from the gates of your own region, instead of a small room connected to the side of outskirts! There are already a few pages of documentation related to connecting in a new region yourself! The main one can be found here: [Adding new Regions](Adding-A-New-Region.html). The details of how to setup creatures and connections for the region are here: [World File Format](World-File-Format.html). Finally, the dev tool's map editor for making your region properly show as a map in game is here: [Map Tab](dev-tools/Map.html). I'll likely be expanding this guide at some point in the future, but for now this is the basics of how to create a room from scratch! Look through the other articles for things like: Raising the water level, setting up creature spawns, understanding doors, adding food, placing objects and plants, adding sounds and effects, specific room triggers, and the various special room settings!
 
 And remember! Have fun!
 

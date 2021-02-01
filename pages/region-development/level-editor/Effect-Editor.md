@@ -1,6 +1,6 @@
 # Level Editor: Effect Editor
 
-![effectEditor](../../assets/regionDevelopment/levelEditor/effectEditor.png)
+![effectEditor](../../../assets/regionDevelopment/levelEditor/effectEditor.png)
 
 The effect editor is used to modify and add filters to the level's geometry and tiles. This is the main way you make your levels "look good." It is largely up for you to paint the effects that will fill your rooms, and all of these effects can be seen in a large gallery picture at the end of the article. However there are a few pointers that hold true for most rooms in Rain World.
 
@@ -50,4 +50,4 @@ The effect editor is used to modify and add filters to the level's geometry and 
 
 Not all effects are shown in their best light here. Experiment and mix effects to create rooms that fit the style and shape of the regions or arenas you want to create!
 
-![effectGallery](../../assets/regionDevelopment/levelEditor/effectGallery.png)
+![effectGallery](../../../assets/regionDevelopment/levelEditor/effectGallery.png)
