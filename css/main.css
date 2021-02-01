@@ -1,9 +1,9 @@
 
 :root {
 	--back-light: #17181A;
-	--back-dark: #000103;
+	--back-dark: #000303;
 	--text-light: #FFFFFA;
-	--text-dark: #515052;
+	--navbar-bg: #44403c;
 	--url: #bb8877;
 	--url-hover: #bb8844;
 	--footer-url: #997766;
@@ -27,7 +27,7 @@ h1 {
 /* nav bar */
 div.nav {
 	padding-top: 0px;
-	background-color: var(--text-light);
+	background-color: var(--navbar-bg);
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -47,7 +47,7 @@ div.nav li a {
 	width: 100px;
 	padding: 10px 10px;
 	text-decoration: none;
-	color: var(--text-dark);
+	color: var(--text-light);
 }
 div.nav li a.active {
 	background-color: var(--back-dark);
