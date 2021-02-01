@@ -1,6 +1,8 @@
 
 :root {
-    --article-subheading-text: #a8a8a0;
+    --article-subheading-text: #babab0;
+    --article-content-bg: #3d393a4a;
+    --article-details-bg: #2824294a;
     
     --code-font: Monospace;
     --code-bg: #353230;
@@ -12,69 +14,80 @@ div.nav {
     position: static;
 }
 
-.header-flex {
-    padding: 2.2% 0 0 12%;
-    margin: 0 5% 3.2% 5%;
-    width: 78%;
+div.article-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 2% 10% 2% 10%;
+    width: 80%;
+}
+div.article-content {
+    background-color: var(--article-content-bg);
+    width: 75%;
+    padding-bottom: 2%;
+}
+div.article-details {
+    background-color: var(--article-details-bg);
+    width: 24.5%;
+    height: 100%;
+    margin-left: 0.5%;
+}
+
+h1 {
+    padding: 2% 1% 1% 1%;
+}
+
+/* page detail bar */
+.article-details h3 {
+    margin: 0;
+    padding: 5% 0 3% 7%;
+    font-size: 1em;
+}
+.contributors, .last-updated {
     display: flex;
     flex-wrap: wrap;
-    border-bottom: 1px solid var(--article-subheading-text);
-}
-#info {
-    width: 40%;
-    padding: 0 0 0 5%;
-    display: inline-flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-#info p, #info img, #info a {
     margin: 0;
+    padding: 0 0 3% 7%;
+    width: 20%;
 }
-#info p {
-    padding: 2.5% 1% 0 5%;
+.last-updated {
+    font-size: 0.8em;
 }
-#info a {
-    width: 10%;
-    padding: 2.5% 0 0 0;
-}
+/* --- */
 
-/*
-h1 {
-    border-bottom: solid 1px var(--article-subheading-text);
-    margin: 2.2% 8%;
-    padding-bottom: 1.5%;
-    width: 84%;
-}
-*/
 
 h2, h3, h4, h5, h6 {
-    padding: 0.75% 15% 0 15%;
+    padding: 0.75% 15% 0 10%;
     color: var(--article-subheading-text);
 }
-
 hr {
-    width: 80%;
+    width: 85%;
     color: var(--article-subheading-text);
+    margin-bottom: 1.5%; margin-top: 1.2%;
 }
-
 p {
-    padding: 0 16% 0.5% 16%;
+    padding: 0.5% 16% 0.5% 11%;
 }
 
 
 ul, ol {
-    padding: 0.2% 18%;
+    padding: 0.4% 15%;
 }
 ol ol, ul ul, ol ul, ul ol {
     padding-left: 3%;
 }
-li p {
-    padding: 0;
+li:not(.nav li, footer li) {
+    padding: 0.5% 0;
 }
 
 img {
     max-width: 65%;
-    padding: 0 7%;
+    margin: 0 7%;
+    transition: transform 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+img:hover:not(.article-details img) {
+    transform: scale(1.5);
+    -wekbit-transform: scale(1.5);
 }
 
 iframe {
@@ -90,7 +103,7 @@ code {
     padding: 0 0.3em;
 }
 pre {
-    margin: 1% 15%;
+    margin: 1% 12% 1% 12%;
 }
 pre code {
     padding: 2em;

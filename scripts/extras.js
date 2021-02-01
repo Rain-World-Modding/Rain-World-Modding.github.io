@@ -49,7 +49,7 @@ function addFooter() {
 }
 
 function addPageInfo() {
-    infoDiv = document.getElementById("info");
+    infoDiv = document.getElementsByClassName("article-details")[0];
 
     let client = new XMLHttpRequest();
     var path = window.location.href.replace(/https*:\/\/[^\/]*/, "").replace(".html", ".md");
@@ -65,7 +65,8 @@ function addPageInfo() {
                     contributors += `<a href='https://github.com/${element['author']['login']}'><img src='${element['author']['avatar_url']}'></a>`;
                 }
             });
-            infoDiv.innerHTML = "<p>Contributors:</p>" + contributors;
+            infoDiv.innerHTML = `<h3>Contributors</h3><div class='contributors'>${contributors}</div>` +
+                `<h3>Last updated</h3><div class='last-updated'>${data[0]['commit']['committer']['date'].substring(0, 10)}</div>`;
         }
     }
     client.send();
@@ -82,8 +83,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         addFooter();
     }
 
-    // check that page is article page
-    addPageInfo();
-
+    if (window.location.href.includes("pages")) {
+        addPageInfo();
+    }
 });
-

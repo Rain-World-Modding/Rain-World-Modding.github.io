@@ -50,10 +50,10 @@ def add_stuff(path: str, html: str) -> str:
     title = re.split(r"[\\/]", path)[-1].replace(".html", "").replace("-", " ") + " (Rain World Modding)"
     out_html = f"<!doctype html>\n<html lang='en'>\n<head>\n{formatted_tags}\n" + \
                     "<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>\n" + \
-                    f"<title>{title}</title>\n</head>\n<body>\n" + \
+                    f"<title>{title}</title>\n</head>\n<body>\n<div class='article-box'>\n<div class='article-content'>\n" + \
                     html + \
-                    "\n</body>\n</html>\n"
+                    "\n</div><div class='article-details'></div>\n</div>\n</body>\n</html>\n"
 
-    out_html = re.sub(r"(<h1>[^<]*</h1>)", r"<div class='header-flex'><div>\1</div><div id='info'></div></div>", out_html)
+    out_html = re.sub(r"(<h1>[^<]*</h1>)", r"\1\n<hr />", out_html)
 
     return out_html
