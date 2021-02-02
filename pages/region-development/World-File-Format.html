@@ -110,18 +110,84 @@
 <h2>Creature Spawns</h2>
 <hr />
 <p>Creature spawn data exists between CREATURES and END CREATURES tags. Most regions also use // for comments about the creatures or for separating the difficulties into specific sections. These comments however, do nothing to the code, and can even be used in the room connections above. Rain World only spawns creatures the moment you enter a region for the first time, or after an excessive number of cycles has passed. To properly test enemy spawns, you will need to use a fresh file, or to backup a save just before you entered the region. Editing the region while it has &quot;stale&quot; enemy data, will result in bizarre situations, such as enemies spawning in shelters, or changing their pipes to be in different rooms. These can be corrected simply by reverting to the backed up save before you entered the region, or wiping the file and re-entering the region.</p>
+<table>
+<thead>
+<tr>
+  <th style="text-align:center">Lizards</th>
+  <th style="text-align:center">Insects</th>
+  <th style="text-align:center">Amphibians</th>
+  <th style="text-align:center">Flying</th>
+  <th style="text-align:center">Plants</th>
+  <th style="text-align:center">Other</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:center">Pink</td>
+  <td style="text-align:center">Spider</td>
+  <td style="text-align:center">Salamander</td>
+  <td style="text-align:center">CicadaA</td>
+  <td style="text-align:center">PoleMimic, Mimic*</td>
+  <td style="text-align:center">Scavenger</td>
+</tr>
+<tr>
+  <td style="text-align:center">Green</td>
+  <td style="text-align:center">Small Centipede</td>
+  <td style="text-align:center">Leech</td>
+  <td style="text-align:center">CicadaB</td>
+  <td style="text-align:center">Tentacle, TentaclePlant*</td>
+  <td style="text-align:center">Lantern Mouse, Mouse*</td>
+</tr>
+<tr>
+  <td style="text-align:center">Blue</td>
+  <td style="text-align:center">Centipede, Centi, Cent*</td>
+  <td style="text-align:center">SeaLeech</td>
+  <td style="text-align:center">Vulture</td>
+  <td style="text-align:center"></td>
+  <td style="text-align:center">Worm, Garbage Worm*</td>
+</tr>
+<tr>
+  <td style="text-align:center">Yellow</td>
+  <td style="text-align:center">Red Centipede, RedCenti, RedCentipede*</td>
+  <td style="text-align:center">JetFish, Jetfish*</td>
+  <td style="text-align:center">KingVulture, King Vulture*</td>
+  <td style="text-align:center"></td>
+  <td style="text-align:center">Miros, MirosBird*</td>
+</tr>
+<tr>
+  <td style="text-align:center">White</td>
+  <td style="text-align:center">DropBug, Dropbug, DropWig, Dropwig*</td>
+  <td style="text-align:center">Snail</td>
+  <td style="text-align:center">Needle, Needle Worm*</td>
+  <td style="text-align:center"></td>
+  <td style="text-align:center">Tube, TubeWorm*</td>
+</tr>
+<tr>
+  <td style="text-align:center">Black</td>
+  <td style="text-align:center">BigSpider</td>
+  <td style="text-align:center">Lev, Leviathan</td>
+  <td style="text-align:center">SmallNeedleWorm</td>
+  <td style="text-align:center"></td>
+  <td style="text-align:center">Bro, BroLongLegs*</td>
+</tr>
+<tr>
+  <td style="text-align:center">Cyan</td>
+  <td style="text-align:center">SpitterSpider</td>
+  <td style="text-align:center"></td>
+  <td style="text-align:center">Cicada**</td>
+  <td style="text-align:center"></td>
+  <td style="text-align:center">Daddy, DaddyLongLegs*</td>
+</tr>
+<tr>
+  <td style="text-align:center">Red</td>
+  <td style="text-align:center">EggBug, Eggbug*</td>
+  <td style="text-align:center"></td>
+  <td style="text-align:center"></td>
+  <td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
 <blockquote>
-<p>|                    |                                        |                       |                            |                          |                       |
-| :----------------- | :------------------------------------- | :-------------------- | :------------------------- | :----------------------- | :-------------------- |
-| <u><strong>Lizards</strong></u> | <strong><u>Insects</u></strong>                     | <strong><u>Amphibians</u></strong> | <strong><u>Flying</u></strong>          | <strong><u>Plants</u></strong>        | <strong><u>Other</u></strong>      |
-| Pink               | Spider                                 | Salamander            | CicadaA                    | PoleMimic, Mimic*        | Scavenger             |
-| Green              | Small Centipede                        | Leech                 | CicadaB                    | Tentacle, TentaclePlant* | Lantern Mouse, Mouse* |
-| Blue               | Centipede, Centi, Cent*                | SeaLeech              | Vulture                    |                          | Worm, Garbage Worm*   |
-| Yellow             | Red Centipede, RedCenti, RedCentipede* | JetFish, Jetfish*     | KingVulture, King Vulture* |                          | Miros, MirosBird*     |
-| White              | DropBug, Dropbug, DropWig, Dropwig*    | Snail                 | Needle, Needle Worm*       |                          | Tube, TubeWorm*       |
-| Black              | BigSpider                              | Lev, Leviathan        | SmallNeedleWorm            |                          | Bro, BroLongLegs*     |
-| Cyan               | SpitterSpider                          |                       | Cicada**                   |                          | Daddy, DaddyLongLegs* |
-| Red                | EggBug, Eggbug*                        |                       |                            |                          |                       |</p>
 <p>(*) Interchangeable names</p>
 <p>(**) Switches between CicadaA and CicadaB)</p>
 <p>(optional difficulty)ROOM : PipeNumber-Creature-{optional flags}-Count</p>

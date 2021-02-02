@@ -80,18 +80,78 @@ void Awake()
 <p>As of Config Machine <code>v1.5.1</code>, it accepts the following types and uses provided UIconfig.
 (Height is the pixel height that how much this ConfigEntry would use.
 And each entry get 20 pixeled gaps in between)</p>
-<p>|type           |UIconfig	            |Height |Note	|
-|---:	        |:---:	                |---:	|:---	|
-|bool           |OpCheckBox             |60     | |
-|byte           |OpSliderSubtle         |90     |Range: [0, 20]   |
-|uint           |OpSlider               |90     |Range: [0, 100]   |
-|int            |OpTextBox              |60     |Accepts: Int  |
-|float          |OpTextBox              |60     |Accepts: Float   |
-|string(Hex)    |OpColorPicker          |170    |When defaultValue is Hex   |
-|string         |OpTextBox              |60     |When defaultValue is not Hex; Accepts: ASCII   |
-|KeyCode        |OpKeyBinder            |100    |   |
-|enumType       |OpResourceSelector     |60     |   |
-|default        |N/A                    |       |Will warn the user that this plugin has ConfigEntry that's not supported by Config Machine   |</p>
+<table>
+<thead>
+<tr>
+  <th style="text-align:right">type</th>
+  <th style="text-align:center">UIconfig	</th>
+  <th style="text-align:right">Height</th>
+  <th style="text-align:left">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:right">bool</td>
+  <td style="text-align:center">OpCheckBox</td>
+  <td style="text-align:right">60</td>
+  <td style="text-align:left"></td>
+</tr>
+<tr>
+  <td style="text-align:right">byte</td>
+  <td style="text-align:center">OpSliderSubtle</td>
+  <td style="text-align:right">90</td>
+  <td style="text-align:left">Range: [0, 20]</td>
+</tr>
+<tr>
+  <td style="text-align:right">uint</td>
+  <td style="text-align:center">OpSlider</td>
+  <td style="text-align:right">90</td>
+  <td style="text-align:left">Range: [0, 100]</td>
+</tr>
+<tr>
+  <td style="text-align:right">int</td>
+  <td style="text-align:center">OpTextBox</td>
+  <td style="text-align:right">60</td>
+  <td style="text-align:left">Accepts: Int</td>
+</tr>
+<tr>
+  <td style="text-align:right">float</td>
+  <td style="text-align:center">OpTextBox</td>
+  <td style="text-align:right">60</td>
+  <td style="text-align:left">Accepts: Float</td>
+</tr>
+<tr>
+  <td style="text-align:right">string(Hex)</td>
+  <td style="text-align:center">OpColorPicker</td>
+  <td style="text-align:right">170</td>
+  <td style="text-align:left">When defaultValue is Hex</td>
+</tr>
+<tr>
+  <td style="text-align:right">string</td>
+  <td style="text-align:center">OpTextBox</td>
+  <td style="text-align:right">60</td>
+  <td style="text-align:left">When defaultValue is not Hex; Accepts: ASCII</td>
+</tr>
+<tr>
+  <td style="text-align:right">KeyCode</td>
+  <td style="text-align:center">OpKeyBinder</td>
+  <td style="text-align:right">100</td>
+  <td style="text-align:left"></td>
+</tr>
+<tr>
+  <td style="text-align:right">enumType</td>
+  <td style="text-align:center">OpResourceSelector</td>
+  <td style="text-align:right">60</td>
+  <td style="text-align:left"></td>
+</tr>
+<tr>
+  <td style="text-align:right">default</td>
+  <td style="text-align:center">N/A</td>
+  <td style="text-align:right"></td>
+  <td style="text-align:left">Will warn the user that this plugin has ConfigEntry that's not supported by Config Machine</td>
+</tr>
+</tbody>
+</table>
 
 </div><div class='article-details'></div>
 </div>
