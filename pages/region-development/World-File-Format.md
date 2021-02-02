@@ -100,18 +100,17 @@ Multiple pipes in a room may all go to the same room. However, these will all ac
 
 Creature spawn data exists between CREATURES and END CREATURES tags. Most regions also use // for comments about the creatures or for separating the difficulties into specific sections. These comments however, do nothing to the code, and can even be used in the room connections above. Rain World only spawns creatures the moment you enter a region for the first time, or after an excessive number of cycles has passed. To properly test enemy spawns, you will need to use a fresh file, or to backup a save just before you entered the region. Editing the region while it has "stale" enemy data, will result in bizarre situations, such as enemies spawning in shelters, or changing their pipes to be in different rooms. These can be corrected simply by reverting to the backed up save before you entered the region, or wiping the file and re-entering the region.
 
-> |                    |                                        |                       |                            |                          |                       |
-> | :----------------- | :------------------------------------- | :-------------------- | :------------------------- | :----------------------- | :-------------------- |
-> | <u>**Lizards**</u> | **<u>Insects</u>**                     | **<u>Amphibians</u>** | **<u>Flying</u>**          | **<u>Plants</u>**        | **<u>Other</u>**      |
-> | Pink               | Spider                                 | Salamander            | CicadaA                    | PoleMimic, Mimic*        | Scavenger             |
-> | Green              | Small Centipede                        | Leech                 | CicadaB                    | Tentacle, TentaclePlant* | Lantern Mouse, Mouse* |
-> | Blue               | Centipede, Centi, Cent*                | SeaLeech              | Vulture                    |                          | Worm, Garbage Worm*   |
-> | Yellow             | Red Centipede, RedCenti, RedCentipede* | JetFish, Jetfish*     | KingVulture, King Vulture* |                          | Miros, MirosBird*     |
-> | White              | DropBug, Dropbug, DropWig, Dropwig*    | Snail                 | Needle, Needle Worm*       |                          | Tube, TubeWorm*       |
-> | Black              | BigSpider                              | Lev, Leviathan        | SmallNeedleWorm            |                          | Bro, BroLongLegs*     |
-> | Cyan               | SpitterSpider                          |                       | Cicada**                   |                          | Daddy, DaddyLongLegs* |
-> | Red                | EggBug, Eggbug*                        |                       |                            |                          |                       |
->
+| Lizards             | Insects                                   | Amphibians            | Flying                        | Plants                    | Other                 |
+| :-----------------: | :--------------------------------------:  | :-------------------: | :---------------------------: | :-----------------------: | :------------------:  |
+| Pink                | Spider                                    | Salamander            | CicadaA                       | PoleMimic, Mimic*         | Scavenger             |
+| Green               | Small Centipede                           | Leech                 | CicadaB                       | Tentacle, TentaclePlant*  | Lantern Mouse, Mouse* |
+| Blue                | Centipede, Centi, Cent*                   | SeaLeech              | Vulture                       |                           | Worm, Garbage Worm*   |
+| Yellow              | Red Centipede, RedCenti, RedCentipede*    | JetFish, Jetfish*     | KingVulture, King Vulture*    |                           | Miros, MirosBird*     |
+| White               | DropBug, Dropbug, DropWig, Dropwig*       | Snail                 | Needle, Needle Worm*          |                           | Tube, TubeWorm*       |
+| Black               | BigSpider                                 | Lev, Leviathan        | SmallNeedleWorm               |                           | Bro, BroLongLegs*     |
+| Cyan                | SpitterSpider                             |                       | Cicada**                      |                           | Daddy, DaddyLongLegs* |
+| Red                 | EggBug, Eggbug*                           |                       |                               |                           |                       |
+
 > (*) Interchangeable names
 >
 > (**) Switches between CicadaA and CicadaB)

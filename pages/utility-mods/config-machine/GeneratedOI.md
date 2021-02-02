@@ -90,7 +90,7 @@ As of Config Machine `v1.5.1`, it accepts the following types and uses provided 
 And each entry get 20 pixeled gaps in between)
 
 |type           |UIconfig	            |Height |Note	|
-|---:	        |:---:	                |---:	|:---	|
+|---:           |:---:                  |---:   |:---   |
 |bool           |OpCheckBox             |60     | |
 |byte           |OpSliderSubtle         |90     |Range: [0, 20]   |
 |uint           |OpSlider               |90     |Range: [0, 100]   |
