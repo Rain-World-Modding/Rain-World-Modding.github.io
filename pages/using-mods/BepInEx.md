@@ -7,7 +7,7 @@ BepInEx is a plugin framework primarily for Unity games. In the Rain World moddi
 ---
 ## Installation
 
-The following video tutorial made by LeeMoriya explains how to install both RW BepInEx and BOI (see below), as well as the additional steps required to migrate from Partiality to BepInEx if applicable). https://youtu.be/brDN_8uN6-U
+The following video tutorial made by LeeMoriya explains how to install both RW BepInEx and BOI (see below), as well as the additional steps required to migrate from Partiality to BepInEx if applicable). <https://youtu.be/brDN_8uN6-U>
 
 RW BepInEx can currently be downloaded from [here](https://drive.google.com/file/d/1WcCCsS3ABBdO1aX-iJGeqeE07YE4Qv88/view). Download this and extact the contents of the zip archive. Place the `BepInEx` folder, and `doorstep_config.ini` and `winhttp.dll` files in your `Rain World` folder.
 
@@ -44,7 +44,7 @@ The BepInEx part of RW BepInEx has been tested by a community far larger than Ra
 
 ### Ability to run BepInPlugins
 
-BepInPlugins, as the name suggests, are plugins made for BepInEx. Simply put, they won't run on Partiality. As of 29th Dec 2020, only one BepInPlugin has been released, but it's inevitable that more will come (this excludes the BepInPlugins used within RW BepInEx itself). 
+BepInPlugins, as the name suggests, are plugins made for BepInEx. Simply put, they won't run on Partiality. There are now a variety of BepInPlugins available, and they should tell you what they are.
 
 As mentioned at the top of the article, RW BepInEx supports the use of Partiality mods.
 
