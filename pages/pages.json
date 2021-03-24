@@ -16,8 +16,9 @@
         }
     ],
 
-    "Creating Mods": [
-        "BepInPlugins"
+    "Making Code Mods": [
+        "BepInPlugins",
+        "Partiality-Mods"
     ],
     
     
