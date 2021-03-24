@@ -4,9 +4,21 @@ BepInEx is a plugin framework primarily for Unity games. In the Rain World moddi
 
 **Very important note:** the generic BepInEx releases are not directly compatible with Rain World / RW's old Partiality mods. It is imperative you use modified Rain World BepInEx for support with the majority of existing Rain World mods (information current on 29th Dec 2020).
 
-RW BepInEx can currently be downloaded from [here](https://drive.google.com/file/d/1WcCCsS3ABBdO1aX-iJGeqeE07YE4Qv88/view). 
+---
+## Installation
 
-The following video tutorial made by LeeMoriya explains how to install both RW BepInEx and BOI (see below), as well as the additional steps required to migrate from Partiality to BepInEx if applicable) - https://youtu.be/brDN_8uN6-U .
+The following video tutorial made by LeeMoriya explains how to install both RW BepInEx and BOI (see below), as well as the additional steps required to migrate from Partiality to BepInEx if applicable). <https://youtu.be/brDN_8uN6-U>
+
+RW BepInEx can currently be downloaded from [here](https://drive.google.com/file/d/1WcCCsS3ABBdO1aX-iJGeqeE07YE4Qv88/view). Download this and extact the contents of the zip archive. Place the `BepInEx` folder, and `doorstep_config.ini` and `winhttp.dll` files in your `Rain World` folder.
+
+*"Where do my mod DLLs go?"*
+- Partiality hook mods and BepInEx plugins go in `BepInEx/plugins/`
+- Patch mods - rename to format `Assembly-CSharp.[modname].mm.dll` and place in `BepInEx/monomod/`
+- Standalones are discouraged. Those that do exist the file at `Rain World/RainWorld_Data/Managed/Assembly-CSharp.dll`
+
+If you can't be bothered will all of this, see the section about BOI below.
+
+Other mods, such as region packs, are not managed by BepInEx. Many mods come with a README file containing installation instructions... Reading that is a good idea.
 
 ---
 
@@ -16,7 +28,7 @@ The following video tutorial made by LeeMoriya explains how to install both RW B
 
 ### BOI Interface
 
-BepInEx doesn't have a graphical user interface (or GUI - the app with buttons and such). Obviously this is a little tedious, as users would be required to move mod DLLs between folders themselves... This is where thalber's BlepOutIn (or BOI) launcher comes in. BOI is an app that provides a nice interface for RW BepInEx, as well as some other related tools such as easy access to Extended Dev Tools settings and region pack settings.
+BepInEx doesn't have a graphical user interface (or GUI - the app with buttons and such). Obviously this is a little tedius for some users... This is where thalber's BlepOutIn (or BOI) launcher comes in. BOI is an app that provides a nice interface for RW BepInEx, as well as some other related tools such as easy access to Extended Dev Tools settings and region pack settings.
 
 ![BOI](../../assets/BOI-main.png)
 
@@ -32,7 +44,7 @@ The BepInEx part of RW BepInEx has been tested by a community far larger than Ra
 
 ### Ability to run BepInPlugins
 
-BepInPlugins, as the name suggests, are plugins made for BepInEx. Simply put, they won't run on Partiality. As of 29th Dec 2020, only one BepInPlugin has been released, but it's inevitable that more will come (this excludes the BepInPlugins used within RW BepInEx itself). 
+BepInPlugins, as the name suggests, are plugins made for BepInEx. Simply put, they won't run on Partiality. There are now a variety of BepInPlugins available, and they should tell you what they are.
 
 As mentioned at the top of the article, RW BepInEx supports the use of Partiality mods.
 
