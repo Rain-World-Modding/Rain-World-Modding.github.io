@@ -18,7 +18,8 @@
 
     "Making Code Mods": [
         "BepInPlugins",
-        "Partiality-Mods"
+        "Partiality-Mods",
+        "Hooking-Properties"
     ],
     
     
