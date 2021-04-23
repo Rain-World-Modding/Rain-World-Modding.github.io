@@ -1,5 +1,8 @@
 # Custom Palettes, Tiles and Props
 
+---
+
+**This page is a work in progress and some of its informations need to be verified.**
 
 ## Palettes
 
@@ -45,7 +48,7 @@ It’s important to note that the collision is **NOT** horizontal, but rather ve
 
 ![railballs](../../../assets/regionDevelopment/levelEditor/railballs.png);
 
-	- "box": wip;
+- `box`: wip;
 
 - `#bfTiles` is set this way: 
 ![bfTilesGuide](../../../assets/regionDevelopment/levelEditor/bfTilesGuide.png)
@@ -56,6 +59,7 @@ It’s important to note that the collision is **NOT** horizontal, but rather ve
 ![Square Stone](../../../assets/regionDevelopment/levelEditor/Square Stone.png)
 
 - `#ptPos` must be left as 0.
+
 - `The tags` can just be left empty if you want, or you can use the tags in this list: 
 
 	- "notTrashProp": disallows the tile from being used in the largetrash or trash materials spread;
