@@ -56,7 +56,7 @@ It’s important to note that the collision is **NOT** horizontal, but rather ve
 - `box`: wip;
 
 - a guide for `#bfTiles` can be found here: 
-- 
+
 ![bfTilesGuide](../../../assets/regionDevelopment/levelEditor/bfTilesGuide.png)
 *credit to DeltaTime for the guide on bfTiles*
 
