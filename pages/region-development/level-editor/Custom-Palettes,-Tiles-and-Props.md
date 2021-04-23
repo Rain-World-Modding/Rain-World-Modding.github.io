@@ -6,6 +6,8 @@
 
 ## Palettes
 
+---
+
 Palettes are very easy to change and modify, you can find them in Rain World\Assets\Futile\Resources\Palettes. I recommend just copy and pasting one of the palette.pngs in there already, and renaming it to the next available number (Ex: Palette37). However, if you're making a region you will share with the community, I suggest looking for free palette names in the Palettes page of the Region Lease found [here](https://docs.google.com/spreadsheets/d/14wt42_ZalI5di8zpUFx3WvPWldC_L7SwIbgb_TxOpUk/edit#gid=1310131772). You can find a handy palette key of most of the colors [here](https://i.imgur.com/6rI8pWa.png), but the big un-labeled space is the main palette of the room itself. The best way to make a palette is modifying it while in-game. To see any changes, just save the .png and re-enter the room with the palette.
 
 The following image shows how a palette is organized:
@@ -19,6 +21,8 @@ The rainbow in the palette is used for the rainbow object or the grime.
 
 
 ## Tiles
+
+---
 
 All of the tiles the editor uses are located in the Graphics folder, and they look like this image [here](https://i.imgur.com/iiz0s3u.png). The tiles are in layers, with the bottom one being the image for the tile editor. The tiles follow a 20x20 pixel grid while the image for the tile editor follows a 16x16 grid. The blue is the lit colour of the layer, the green is the normal colour of the layer, while the red is the shaded colour of the layer. The top row of pixels HAS to be pure white, except for black pixel in the top left.
 
@@ -114,6 +118,8 @@ If you need any help, don’t be afraid to ask Twelve Havens on the official rai
 
 
 ## Props
+
+---
 
 All of the props the editor uses are located in the Props folder.
 VERY WIP
