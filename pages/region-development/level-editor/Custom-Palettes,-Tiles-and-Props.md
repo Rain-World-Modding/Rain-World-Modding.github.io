@@ -42,6 +42,7 @@ It’s important to note that the collision is **NOT** horizontal, but rather ve
 	- "voxelStructRockType": doesn't need `repeatL`, repeat the first layer 10 times;
 
 	- "voxelStructRandomDisplaceVertical" or "voxelStructRandomDisplaceHorizontal": randomly displaces the tile's graphics horizontally or vertically while rendering like this:
+
 ![railballs](../../../assets/regionDevelopment/levelEditor/railballs.png);
 
 	- "box": wip;
@@ -54,7 +55,8 @@ It’s important to note that the collision is **NOT** horizontal, but rather ve
 ```[#nm:"Square Stone", #sz:point(2,2), #specs:[1, 1, 1, 1], #specs2:0, #tp:"voxelStructRockType", #bfTiles:1, #rnd:3, #ptPos:0, #tags:[]]```
 ![Square Stone](../../../assets/regionDevelopment/levelEditor/Square Stone.png)
 
-- `#ptPos` must be left as 0. The tags can just be left empty if you want, or you can use the tags in this list: 
+- `#ptPos` must be left as 0.
+- `The tags` can just be left empty if you want, or you can use the tags in this list: 
 
 	- "notTrashProp": disallows the tile from being used in the largetrash or trash materials spread;
 
