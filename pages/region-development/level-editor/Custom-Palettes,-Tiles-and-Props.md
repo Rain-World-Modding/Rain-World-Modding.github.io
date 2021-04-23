@@ -102,7 +102,7 @@ It’s important to note that the collision is **NOT** horizontal, but rather ve
 
 - `#repeatL` is a very important property: it dictates how many times the layer is repeated. If you have a tile with 3 layers, you’d want 3 numbers, with each number saying how many times the layer is repeated, starting from the first layer.
 
-An incredibly useful tool when developing custom tile collision is the [Specs Editor](https://drive.google.com/file/d/17hWH494JwnAOrjo3Xyh8J_QZbbuAA3CO/view), a program designed to create tile dimensions and collisions, along with making the process more intuitive and easier.
+An incredibly useful tool when developing custom tile collision is the [Specs Editor](https://drive.google.com/file/d/17hWH494JwnAOrjo3Xyh8J_QZbbuAA3CO/view), a program designed to create tile dimensions and collisions, along with making the process more intuitive and easier. However, it doesn't allow to use floor and glass geometries.
 
 Otherwise, you can write the collisions manually using numbers. Here are the numbers associated to the different geometries:
 
