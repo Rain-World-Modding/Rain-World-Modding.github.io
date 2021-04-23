@@ -50,7 +50,7 @@ It’s important to note that the collision is **NOT** horizontal, but rather ve
 
 - `box`: wip;
 
-- `#bfTiles` is set this way: 
+- a guide for `#bfTiles` can be found here: 
 ![bfTilesGuide](../../../assets/regionDevelopment/levelEditor/bfTilesGuide.png)
 *credit to DeltaTime for the guide on bfTiles*
 
@@ -58,9 +58,9 @@ It’s important to note that the collision is **NOT** horizontal, but rather ve
 ```[#nm:"Square Stone", #sz:point(2,2), #specs:[1, 1, 1, 1], #specs2:0, #tp:"voxelStructRockType", #bfTiles:1, #rnd:3, #ptPos:0, #tags:[]]```
 ![Square Stone](../../../assets/regionDevelopment/levelEditor/Square Stone.png)
 
-- `#ptPos` must be left as 0.
+- `#ptPos` should be left as 0.
 
-- `The tags` can just be left empty if you want, or you can use the tags in this list: 
+- The tags can just be left empty if you want, or you can use the tags in this list: 
 
 	- "notTrashProp": disallows the tile from being used in the largetrash or trash materials spread;
 
@@ -105,7 +105,9 @@ It’s important to note that the collision is **NOT** horizontal, but rather ve
 An incredibly useful tool when developing custom tile collision is the [Specs Editor](https://drive.google.com/file/d/17hWH494JwnAOrjo3Xyh8J_QZbbuAA3CO/view), a program designed to create tile dimensions and collisions, along with making the process more intuitive and easier.
 
 Otherwise, you can write the collisions manually using numbers. Here are the numbers associated to the different geometries:
+
 ![Basic Collisions](../../../assets/regionDevelopment/levelEditor/Basic Collisions.png)
+
 (7 is shortcut but doesn't work as tile geometry, and 8 is nothing).
 
 If you need any help, don’t be afraid to ask Twelve Havens on the official rain world discord.
