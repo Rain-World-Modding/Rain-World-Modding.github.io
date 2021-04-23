@@ -11,6 +11,7 @@
 Palettes are very easy to change and modify, you can find them in Rain World\Assets\Futile\Resources\Palettes. I recommend just copy and pasting one of the palette.pngs in there already, and renaming it to the next available number (Ex: Palette37). However, if you're making a region you will share with the community, I suggest looking for free palette names in the Palettes page of the Region Lease found [here](https://docs.google.com/spreadsheets/d/14wt42_ZalI5di8zpUFx3WvPWldC_L7SwIbgb_TxOpUk/edit#gid=1310131772). You can find a handy palette key of most of the colors [here](https://i.imgur.com/6rI8pWa.png), but the big un-labeled space is the main palette of the room itself. The best way to make a palette is modifying it while in-game. To see any changes, just save the .png and re-enter the room with the palette.
 
 The following image shows how a palette is organized:
+
 ![paletteExplanationFinal](../../../assets/regionDevelopment/levelEditor/paletteExplanationFinal.png)
 
 The top palette is for a normal cycle. The bottom palette is before rain.
@@ -55,11 +56,13 @@ It’s important to note that the collision is **NOT** horizontal, but rather ve
 - `box`: wip;
 
 - a guide for `#bfTiles` can be found here: 
+- 
 ![bfTilesGuide](../../../assets/regionDevelopment/levelEditor/bfTilesGuide.png)
 *credit to DeltaTime for the guide on bfTiles*
 
 - `#rnd` is the number of variations of the tile that are choosen randomly while rendering. They can be changed using the seed. The varitions have the same geometry, number of layers, bfTiles, etc, and are on the same line on the image of the tile. Here is an example of tile that has random variations:
 ```[#nm:"Square Stone", #sz:point(2,2), #specs:[1, 1, 1, 1], #specs2:0, #tp:"voxelStructRockType", #bfTiles:1, #rnd:3, #ptPos:0, #tags:[]]```
+
 ![Square-Stone](../../../assets/regionDevelopment/levelEditor/Square-Stone.png)
 
 - `#ptPos` should be left as 0.
