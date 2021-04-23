@@ -36,7 +36,8 @@
                 "Effect-Editor",
                 "Prop-Editor",
                 "Camera-Editor",
-                "Light-Editor"
+                "Light-Editor",
+                "Custom Palettes, Tiles and Props"
             ],
 
             "Dev Tools": [
