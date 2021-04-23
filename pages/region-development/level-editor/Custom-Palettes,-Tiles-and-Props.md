@@ -56,7 +56,7 @@ It’s important to note that the collision is **NOT** horizontal, but rather ve
 
 - `#rnd` is the number of variations of the tile that are choosen randomly while rendering. They can be changed using the seed. The varitions have the same geometry, number of layers, bfTiles, etc, and are on the same line on the image of the tile. Here is an example of tile that has random variations:
 ```[#nm:"Square Stone", #sz:point(2,2), #specs:[1, 1, 1, 1], #specs2:0, #tp:"voxelStructRockType", #bfTiles:1, #rnd:3, #ptPos:0, #tags:[]]```
-![Square Stone](../../../assets/regionDevelopment/levelEditor/Square Stone.png)
+![Square-Stone](../../../assets/regionDevelopment/levelEditor/Square-Stone.png)
 
 - `#ptPos` should be left as 0.
 
@@ -106,7 +106,7 @@ An incredibly useful tool when developing custom tile collision is the [Specs Ed
 
 Otherwise, you can write the collisions manually using numbers. Here are the numbers associated to the different geometries:
 
-![Basic Collisions](../../../assets/regionDevelopment/levelEditor/Basic Collisions.png)
+![Basic-Collisions](../../../assets/regionDevelopment/levelEditor/Basic-Collisions.png)
 
 (7 is shortcut but doesn't work as tile geometry, and 8 is nothing).
 
