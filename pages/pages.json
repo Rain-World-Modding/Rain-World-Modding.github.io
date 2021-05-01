@@ -16,6 +16,15 @@
         }
     ],
 
+    "Dev Tools": [
+        "Dev-Tools",
+        "Room-Settings",
+        "Objects",
+        "Sound",
+        "Map",
+        "Triggers"
+    ],
+
     "Making Code Mods": [
         "BepInPlugins",
         "Partiality-Mods",
@@ -37,15 +46,6 @@
                 "Prop-Editor",
                 "Camera-Editor",
                 "Light-Editor"
-            ],
-
-            "Dev Tools": [
-                "Dev-Tools",
-                "Room-Settings",
-                "Objects",
-                "Sound",
-                "Map",
-                "Triggers"
             ]
         }
     ]
