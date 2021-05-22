@@ -1,6 +1,6 @@
 # RegionCast
 
-RegionCast is a [BepInPlugin](https://rain-world-modding.github.io/rain-world-modding/pages/creating-mods/BepInPlugins.html) and side-app combo created by casheww that adds Discord Rich Presence to Rain World. The Rich Presence details the player's current location, the game mode, and the time elapsed from when they started that game mode. It also supports customisation from region pack creators and custom slugcat creators [hyperlinks to relevant pages] . 
+RegionCast is a [BepInPlugin](https://rain-world-modding.github.io/rain-world-modding/pages/creating-mods/BepInPlugins.html) and side-app combo created by casheww that adds Discord Rich Presence to Rain World. The Rich Presence details the player's current location, the game mode, and the time elapsed from when they started that game mode. It also supports customisation from region pack creators and [custom slugcat](../making-code-mods/SlugBase.html) creators. 
 
 The latest release of RegionCast can be found [here](https://github.com/casheww/RW-RegionCast/releases/latest) - be sure to read the README for installation instructions. 
 
@@ -29,7 +29,7 @@ Due to the way Discord handles Rich Presence assets, the only way for a region p
 
 ### Custom Slugcat names
 
-Note: *this section refers to mods that add a new slugcat to the game, not those that just modify sprite atlases or overwrite existing character slots.*
+Note: *this section refers to mods that add a new slugcat to the game, not those that just modify sprite atlases or overwrite existing character slots. See [SlugBase](../making-code-mods/SlugBase.html).*
 
 Everyone loves slugcats!
 In the game's story mode, RegionCast reads and uses `Menu.SlugcatSelectMenu.SlugcatPage.colorName` to display on the Rich Presence. This is done from a hook to `Menu.SlugcatSelectMenu.SlugcatPage.Singal` if the... *singal* message is "START", signifying that the gameplay is about to be loaded - RegionCast stores the `colorName` for later use.

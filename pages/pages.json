@@ -22,6 +22,7 @@
         "Partiality-Mods",
         
         "EnumExtender",
+        "SlugBase",
         "Hooking-Properties",
         {
             "Config Machine": [
