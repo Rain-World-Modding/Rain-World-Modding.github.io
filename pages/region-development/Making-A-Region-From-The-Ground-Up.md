@@ -6,7 +6,7 @@ So you want to make a region, but you have no clue where to start! The idea of m
 
 - [Official level editor](level-editor/Official-Level-Editor.html) - This is the tool given to the modding community by the Rain World developers. These are the actual tools used to make Rain World. However much of its features and hotkeys are difficult and quirky to work with at first, but given enough time and use, the editor becomes an extremely powerful tool.
 - Unofficial level editor - This is a tool created by AndrewFM and Mikronaut to edit Rain World rooms before the official editor was released. While it lacks many features needed to make rooms. It does have the incredibly useful feature of being able to edit already exported rooms. As well as changing creature dens into doors, and vice versa.
-- [Dev Tools](dev-tools/Dev-Tools.html) - These are in game tools Rain World uses for editing room visual effects, sounds, and triggers. As well as the regions map, and the various other specific configurations of your room!
+- [Dev Tools](../dev-tools/Dev-Tools.html) - These are in game tools Rain World uses for editing room visual effects, sounds, and triggers. As well as the regions map, and the various other specific configurations of your room!
 - [World File](World-File-Format.html) - This controls how your region (or any other region!) binds rooms together. As well as creature spawns!
 - Room settings text - These files are present for every room that you save a configuration for in the dev tools. It contains the placement of objects, sounds, room effects, and any other setting applied using the dev tools.
 
