@@ -9,8 +9,6 @@ function addNavbar() {
     nav.innerHTML = 
         `<ul>
             <li><a class="active" href="/"> Home </a></li>
-
-            <li><input type="text" id="searchBar" onkeydown="searchSite(event)" placeholder="Search..."></li>
             
             <li style="float:right"><a href="/about.html"> About </a></li>
             
@@ -87,31 +85,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
         addPageInfo();
     }
 });
-
-
-// search stuff:
-
-function showSearchResults(data) {
-     
-}
-
-function searchSite(event) {
-    if (event.keyCode != 13) {
-        return;
-    }
-
-    var searchTerm = document.getElementById("searchBar").value.toLowerCase();
-    
-    let client = new XMLHttpRequest();
-    var url = `https://api.github.com/search/code?accept=application/vnd.github.v3+json&q=${searchTerm}+language:html+repo:Rain-World-Modding/Rain-World-Modding.github.io`;
-    client.open("GET", url);
-
-    client.onload = function () {
-        if (this.status === 200) {
-            var data = JSON.parse(this.responseText);
-
-            showSearchResults(data);
-        }
-    }
-    client.send();
-}
