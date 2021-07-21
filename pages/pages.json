@@ -3,19 +3,6 @@
         "BepInEx"
     ],
 
-    "Utility Mods": [
-        "Warp",
-        "RegionCast",
-        "EnumExtender",
-        {
-            "Config Machine": [
-                "OptionInterface",
-                "GeneratedOI",
-                "Translation-Support"
-            ]
-        }
-    ],
-
     "Dev Tools": [
         "Dev-Tools",
         "Room-Settings",
@@ -25,13 +12,26 @@
         "Triggers"
     ],
 
+    "Utility Mods": [
+        "Warp",
+        "RegionCast"
+    ],
+
     "Making Code Mods": [
         "BepInPlugins",
         "Partiality-Mods",
+        
+        "EnumExtender",
+        "SlugBase",
         "Hooking-Properties",
-        "New-Objects"
+        {
+            "Config Machine": [
+                "OptionInterface",
+                "GeneratedOI",
+                "Translation-Support"
+            ]
+        }
     ],
-    
     
     "Region Development": [
         "Making-A-Region-From-The-Ground-Up",
@@ -46,7 +46,8 @@
                 "Effect-Editor",
                 "Prop-Editor",
                 "Camera-Editor",
-                "Light-Editor"
+                "Light-Editor",
+                "Custom-Palettes,-Tiles-and-Props"
             ]
         }
     ]

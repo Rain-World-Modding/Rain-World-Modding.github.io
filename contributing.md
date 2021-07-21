@@ -46,6 +46,15 @@ You can also take a peak at the source for other markdown articles in this repos
 - Use headers of h2 and h3 where you think they're helpful for understanding the different sections of the article.
 
 ---
+### Previewing HTML before pushing
+
+By using python (tested with python 3.8), you can generate HTML pages for all MD files in the `pages` directory like so:
+![html-prev-demo](https://user-images.githubusercontent.com/51793722/116817765-e9577d80-ab5f-11eb-938d-fc4746b68508.png)
+
+It will compare hashes of the existing HTML content (if present) for the page with the current MD content and regenerate the HTML where necessary.
+A local website host system such as the `tht13.html-preview-vscode` extension for vscode can then be used.
+
+---
 
 Thank you for your interest in the Rain World modding community, and happy editing!
 
