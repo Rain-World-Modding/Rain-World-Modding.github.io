@@ -16,21 +16,22 @@ div.nav {
 
 div.article-box {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     margin: 2% 10% 2% 10%;
-    width: 80%;
+    width: 75%;
+    align-content: center;
 }
 div.article-content {
     background-color: var(--article-content-bg);
-    width: 75%;
+    width: inherit;
     padding-bottom: 2%;
 }
 div.article-details {
     background-color: var(--article-details-bg);
-    width: 24.5%;
-    height: 100%;
-    margin-left: 0.5%;
+    width: inherit;
+    height: 5%;
+    margin-top: 10px;
 }
 
 h1 {
@@ -38,20 +39,24 @@ h1 {
 }
 
 /* page detail bar */
-.article-details h3 {
-    margin: 0;
-    padding: 5% 0 3% 7%;
-    font-size: 1em;
+
+#contrib-outer h3 {
+    padding-left: 5%;
+}
+.article-details img {
+    width: 75px;
 }
 .contributors, .last-updated {
     display: flex;
     flex-wrap: wrap;
     margin: 0;
-    padding: 0 0 3% 7%;
+    padding-left: 7%;
     width: 20%;
 }
 .last-updated {
     font-size: 0.8em;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 /* --- */
 
