@@ -63,8 +63,8 @@ function addPageInfo() {
                     contributors += `<a href='https://github.com/${element['author']['login']}'><img src='${element['author']['avatar_url']}'></a>`;
                 }
             });
-            infoDiv.innerHTML = `<h3>Contributors</h3><div class='contributors'>${contributors}</div>` +
-                `<h3>Last updated</h3><div class='last-updated'>${data[0]['commit']['committer']['date'].substring(0, 10)}</div>`;
+            infoDiv.innerHTML = `<div id="contrib-outer"><h3>Contributors</h3><div class='contributors'>${contributors}</div></div>` +
+                `<div class='last-updated'>Last updated : ${data[0]['commit']['committer']['date'].substring(0, 10)}</div>`;
         }
     }
     client.send();
