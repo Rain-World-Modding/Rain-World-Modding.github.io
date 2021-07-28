@@ -38,9 +38,7 @@ There are two specific map modes, canon, and dev. Canon mode is the maps appeara
 
 ![mapConnections](../../../assets/regionDevelopment/devTools/mapConnections.png)
 
-This mode displays every room tied to the region, their names, and their doors. Lines are drawn between
-
-connected doors. Disconnected doors will show an unconnected diagonal line. Doors that do not have a proper connection in their destination room will point into the center of that room's icon instead of to a door. Properly linked doors will show two lines. One going from each room to the proper door on the other end.
+This mode displays every room tied to the region, their names, and their doors. Lines are drawn between connected doors. Disconnected doors will show an unconnected diagonal line. Doors that do not have a proper connection in their destination room will point into the center of that room's icon instead of to a door. Properly linked doors will show two lines. One going from each room to the proper door on the other end.
 
 The placement of these rooms will not change the map that the player sees in game, nor does it affect room settings that require specific map heights like "AboveCloudsView", and can be aligned to your convenience.
 
@@ -99,7 +97,7 @@ Wip....
 
 ![mapRender](../../../assets/regionDevelopment/devTools/mapRender.png)
 
-Minimaps can be constructed and rendered through the Map Tab. The map tab has four different editing modes: Canonical View, Subregion View, Attractiveness View, and Dev View. For minimap editing, you want to be in the Dev View.
+Minimaps can be constructed and rendered through the Map Tab. The map tab has four different editing modes: Canonical View, Subregion View, Attractiveness View, and Dev View. For minimap editing, you want to be in the Canon View.
 
 While in Dev view, click and drag a room to reposition it. Click and drag anywhere else to scroll the canvas around. While holding the N key, click a room to change what layer it is in. There are three layers, green being the closest, grey being the middle, and red being the furthest back. In general, you should avoid overlapping any rooms that are in the same layer as each other. Overlapping rooms that are in different layers is fine.
 
