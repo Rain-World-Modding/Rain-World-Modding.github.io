@@ -56,9 +56,9 @@ Hooking is the recommended way of modifying the functionality of the game, as yo
 [BepInPlugin("author.my_mod_id", "SomeModName", "0.1.0")]
 public class MyMod : BaseUnityPlugin
 {
-    public MyMod()
+    public void OnEnable()
     {
-        /* This constructor is called when the mod is loaded. */
+        /* This is called when the mod is loaded. */
         
         // subscribe your PlayerUpdateHook to the Player.Update method from the game
         
