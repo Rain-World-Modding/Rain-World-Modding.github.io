@@ -51,9 +51,9 @@ namespace SomeMod
 <pre><code class="language-c#">[BepInPlugin(&quot;author.my_mod_id&quot;, &quot;SomeModName&quot;, &quot;0.1.0&quot;)]
 public class MyMod : BaseUnityPlugin
 {
-    public MyMod()
+    public void OnEnable()
     {
-        /* This constructor is called when the mod is loaded. */
+        /* This is called when the mod is loaded. */
 
         // subscribe your PlayerUpdateHook to the Player.Update method from the game
 
