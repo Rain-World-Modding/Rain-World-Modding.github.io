@@ -1,21 +1,42 @@
-
-var repoUrl = "https://github.com/Rain-World-Modding/Rain-World-Modding.github.io";
-
+const repoUrl = "https://github.com/Rain-World-Modding/Rain-World-Modding.github.io";
 
 function addNavbar() {
-    var nav = document.createElement("DIV");
-    nav.className = "nav";
+  // Create elements
+  const navbar = document.createElement("header");
+  const nav = document.createElement("nav");
+  const homeLink = document.createElement("a");
+  const spacer = document.createElement("div");
+  const aboutLink = document.createElement("a");
+  const steamLink = document.createElement("a");
+  const raindbLink = document.createElement("a");
+  const navElements = [homeLink, spacer, aboutLink, steamLink, raindbLink];
 
-    nav.innerHTML = 
-        `<ul>
-            <li><a class="active" href="/"> Home </a></li>
-            
-            <li style="float:right"><a href="/about.html"> About </a></li>
-            
-            <li style="float:right"><a href="https://store.steampowered.com/app/312520/Rain_World/">Rain World</a></li>
-            <li style="float:right"><a href="https://www.raindb.net">RainDB</a></li>
-        </ul>`;
-    document.body.insertBefore(nav, document.body.firstElementChild);
+  // Append elements
+  navbar.appendChild(nav);
+  navElements.forEach((element) => {
+    nav.appendChild(element);
+  });
+  
+  // Assign classes
+  navbar.className = "navbar";
+  homeLink.className = "active";
+  spacer.className = "spacer";
+
+  // Assign attributes
+  homeLink.textContent = "Home";
+  homeLink.href = "/";
+
+  aboutLink.textContent = "About";
+  aboutLink.href = "/about.html";
+
+  steamLink.textContent = "Rain World";
+  steamLink.href = "https://store.steampowered.com/app/312520/Rain_World/";
+
+  raindbLink.textContent = "RainDB";
+  raindbLink.href = "https://www.raindb.net";
+
+  // Append the navbar to the page
+  document.body.prepend(navbar, document.body.firstChild);
 }
 
 function getPageSourceUrl(repoUrl) {
