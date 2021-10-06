@@ -67,7 +67,7 @@ pre code {
   display: flex;
   flex-flow: column nowrap;
   margin: 0 auto;
-  max-width: 768px;
+  max-width: 720px;
   overflow-x: auto;
   padding: 1rem;
 }
@@ -77,7 +77,7 @@ th,
 td {
   border-collapse: collapse;
   border: solid var(--article-subheading-text) 1px;
-  margin: 1% 18%;
+  margin: 0.5rem 12%;
 }
 th {
   border-bottom: solid var(--article-subheading-text) 3px;
@@ -141,6 +141,9 @@ td {
 
 /* media queries (mobile formatting) */
 @media screen and (max-width: 768px) {
+  table {
+    margin: 1rem 2rem;
+  }
   pre code {
     max-width: 90vw;
   }
