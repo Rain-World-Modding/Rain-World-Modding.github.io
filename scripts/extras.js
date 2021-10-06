@@ -126,6 +126,17 @@ function addPageInfo() {
   client.send();
 }
 
+function addTableContainers() {
+  const articleContent = document.querySelector(".article-content")
+  const tableWrapper = document.createElement("div");
+  tableWrapper.className = "table-container";
+  const tablesList = articleContent.querySelectorAll("table");
+  tablesList.forEach(table => {
+    articleContent.replaceChild(tableWrapper, table);
+    tableWrapper.appendChild(table);
+  })
+}
+
 // add missing navbar or footer once the content is loaded
 document.addEventListener("DOMContentLoaded", function (event) {
   if (document.getElementsByClassName("nav").length == 0) {
@@ -136,5 +147,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
   if (window.location.href.includes("pages")) {
     addPageInfo();
+  }
+  if (document.querySelectorAll("table")) {
+    addTableContainers();
   }
 });

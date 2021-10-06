@@ -145,6 +145,11 @@ td {
   img {
     max-width: 100%;
   }
+  .table-container {
+    margin: 0 auto;
+    max-width: 95vw;
+    overflow-x: scroll;
+  }
   table {
     margin: 1rem 2rem;
   }
