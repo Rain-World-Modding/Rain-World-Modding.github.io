@@ -142,7 +142,9 @@ td {
 
 /* media queries (mobile formatting) */
 @media screen and (max-width: 768px) {
-  
+  img {
+    max-width: 100%;
+  }
   table {
     margin: 1rem 2rem;
   }
