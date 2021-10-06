@@ -71,6 +71,7 @@ a:hover {
 }
 /* end navbar */
 
+
 /* start body */
 .main {
   align-items: center;
@@ -98,6 +99,7 @@ a:hover {
 }
 /* end body */
 
+
 /* start footer */
 footer {
   background-color: var(--back-dark);
@@ -117,6 +119,7 @@ footer a {
   text-decoration: none;
 }
 /* end footer*/
+
 
 /* start media queries */
 @media screen and (max-width: 768px) {

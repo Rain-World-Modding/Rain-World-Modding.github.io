@@ -7,9 +7,12 @@
   --code-font: Monospace;
 }
 
-
 /* start general styles */
-h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--article-subheading-text);
   padding: 0.75% 15% 0 10%;
 }
@@ -23,7 +26,8 @@ p {
   padding: 0.5% 16% 0.5% 11%;
 }
 
-ul, ol {
+ul,
+ol {
   padding: 0.4% 15%;
 }
 ol ol,
@@ -59,17 +63,13 @@ code {
   font-size: 1rem;
   overflow-wrap: anywhere;
 }
-pre {
-  margin: 1% 12%;
-}
 pre code {
   display: flex;
-  flex-direction: column;
-  font-size: 1.2em;
-  justify-content: space-between;
-  max-width: 100%;
+  flex-flow: column nowrap;
+  margin: 0 auto;
+  max-width: 768px;
   overflow-x: auto;
-  padding: 2em;
+  padding: 1rem;
 }
 
 table,
@@ -87,7 +87,6 @@ td {
   padding: 5px 10px;
 }
 /* end general styles */
-
 
 /* start article container */
 .article-box,
@@ -107,7 +106,6 @@ td {
 }
 /* end article container */
 
-
 /* start details container */
 .article-details {
   align-items: center;
@@ -122,6 +120,7 @@ td {
 }
 #contrib-outer h3 {
   padding: 0;
+  text-align: center;
 }
 .contributors {
   display: flex;
@@ -131,7 +130,7 @@ td {
 .contributors img {
   margin: 0;
   max-width: 5rem;
-  padding: 0;
+  padding: 0 1rem;
 }
 .last-updated {
   padding: 1rem 0;
@@ -139,3 +138,10 @@ td {
   width: 100%;
 }
 /* end details container */
+
+/* media queries (mobile formatting) */
+@media screen and (max-width: 768px) {
+  pre code {
+    max-width: 90vw;
+  }
+}
