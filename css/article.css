@@ -30,22 +30,20 @@
 }
 .article-details {
   background-color: var(--article-details-bg);
+  margin: 0 auto;
+  max-width: var(--max-width-desktop);
+  padding: 2rem;
+  width: 100%;
 }
 .article-details img {
-  width: 75px;
+  width: 6rem;
 }
-.contributors,
-.last-updated {
+.contributors {
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
-  padding-left: 7%;
-  width: 20%;
 }
 .last-updated {
-  font-size: 0.8em;
-  padding-bottom: 2%;
-  padding-top: 2%;
+  width: 100%;
 }
 /* end details container */
 

@@ -102,18 +102,18 @@ a:hover {
 /* start footer */
 footer {
   background-color: var(--back-dark);
-  font-size: 0.9rem;
+  display: flex;
   margin-top: auto;
-  padding: 1rem 0;
-  text-align: center;
   width: 100%;
+}
+footer nav {
+  justify-content: center;
+  margin: 0 auto;
+  padding: 3rem 0;
 }
 footer a {
   color: var(--footer-url);
   text-decoration: none;
-}
-footer li {
-  display: inline;
   padding: 0 2rem;
 }
 /* end footer*/
