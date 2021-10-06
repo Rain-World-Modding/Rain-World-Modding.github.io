@@ -41,6 +41,7 @@ li:not(.nav li, footer li) {
 }
 
 img {
+  display: block;
   margin: 0 auto;
   max-width: 65%;
   padding-left: 1rem;
@@ -141,6 +142,7 @@ td {
 
 /* media queries (mobile formatting) */
 @media screen and (max-width: 768px) {
+  
   table {
     margin: 1rem 2rem;
   }

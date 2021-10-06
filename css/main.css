@@ -38,6 +38,7 @@ a:hover {
 /* start navbar */
 .navbar {
   background-color: var(--navbar-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
   width: 100%;
@@ -71,7 +72,6 @@ a:hover {
 }
 /* end navbar */
 
-
 /* start body */
 .main {
   align-items: center;
@@ -99,7 +99,6 @@ a:hover {
 }
 /* end body */
 
-
 /* start footer */
 footer {
   background-color: var(--back-dark);
@@ -120,12 +119,11 @@ footer a {
 }
 /* end footer*/
 
-
 /* start media queries */
 @media screen and (max-width: 768px) {
   footer nav {
-    padding: 2rem;
     flex-direction: column;
+    padding: 2rem;
   }
   footer a {
     padding: 0.5rem 0;
