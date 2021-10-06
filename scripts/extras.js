@@ -1,5 +1,4 @@
-const repoURL =
-  "https://github.com/Rain-World-Modding/Rain-World-Modding.github.io";
+const repoURL = "https://github.com/Rain-World-Modding/Rain-World-Modding.github.io";
 
 function getPageSourceUrl(repoUrl) {
   if (window.location.href.endsWith("/")) {
@@ -126,11 +125,16 @@ function addPageInfo() {
   client.send();
 }
 
+// Add containers to tables to allow for horizontal scroll on mobile
 function addTableContainers() {
+  // Selectors
   const articleContent = document.querySelector(".article-content")
-  const tableWrapper = document.createElement("div");
-  tableWrapper.className = "table-container";
   const tablesList = articleContent.querySelectorAll("table");
+  // Create Wrapper Element
+  const tableWrapper = document.createElement("div");
+  // Assign Wrapper Class
+  tableWrapper.className = "table-container";
+  // Append Wrapper to All Tables
   tablesList.forEach(table => {
     articleContent.replaceChild(tableWrapper, table);
     tableWrapper.appendChild(table);
