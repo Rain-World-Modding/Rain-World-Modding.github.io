@@ -7,51 +7,9 @@
   --code-font: Monospace;
 }
 
-/* article container */
-.article-box,
-.article-content {
-  max-width: var(--max-width-desktop);
-}
-.article-box {
-  align-content: center;
-  display: flex;
-  flex-flow: column wrap;
-  margin: 0 auto;
-  width: 100%;
-}
-.article-content {
-  background-color: var(--article-content-bg);
-}
-/* end article container */
 
-/* details container */
-#contrib-outer h3 {
-  padding-left: 5%;
-}
-.article-details {
-  background-color: var(--article-details-bg);
-  margin: 0 auto;
-  max-width: var(--max-width-desktop);
-  padding: 2rem;
-  width: 100%;
-}
-.article-details img {
-  width: 6rem;
-}
-.contributors {
-  display: flex;
-  flex-wrap: wrap;
-}
-.last-updated {
-  width: 100%;
-}
-/* end details container */
-
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* start general styles */
+h2, h3, h4, h5, h6 {
   color: var(--article-subheading-text);
   padding: 0.75% 15% 0 10%;
 }
@@ -65,8 +23,7 @@ p {
   padding: 0.5% 16% 0.5% 11%;
 }
 
-ul,
-ol {
+ul, ol {
   padding: 0.4% 15%;
 }
 ol ol,
@@ -80,8 +37,9 @@ li:not(.nav li, footer li) {
 }
 
 img {
-  margin: 0 7%;
+  margin: 0 auto;
   max-width: 65%;
+  padding-left: 1rem;
   transition: transform 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 img:hover:not(.article-details img) {
@@ -128,3 +86,56 @@ th,
 td {
   padding: 5px 10px;
 }
+/* end general styles */
+
+
+/* start article container */
+.article-box,
+.article-content,
+.article-details {
+  max-width: var(--max-width-desktop);
+}
+.article-box {
+  align-content: center;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 0 auto;
+  width: 100%;
+}
+.article-content {
+  background-color: var(--article-content-bg);
+}
+/* end article container */
+
+
+/* start details container */
+.article-details {
+  align-items: center;
+  background-color: var(--article-details-bg);
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0 auto;
+  width: 100%;
+}
+#contrib-outer {
+  padding: 0.5rem 4rem;
+}
+#contrib-outer h3 {
+  padding: 0;
+}
+.contributors {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.contributors img {
+  margin: 0;
+  max-width: 5rem;
+  padding: 0;
+}
+.last-updated {
+  padding: 1rem 0;
+  text-align: center;
+  width: 100%;
+}
+/* end details container */
