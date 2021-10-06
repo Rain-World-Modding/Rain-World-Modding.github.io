@@ -1,133 +1,132 @@
-
 :root {
-    --article-subheading-text: #babab0;
-    --article-content-bg: #3d393a4a;
-    --article-details-bg: #2824294a;
-    
-    --code-font: Monospace;
-    --code-bg: #353230;
-    --code-fg: #e0e0f5;
+  --article-content-bg: #3d393a4a;
+  --article-details-bg: #2824294a;
+  --article-subheading-text: #babab0;
+  --code-bg: #353230;
+  --code-fg: #e0e0f5;
+  --code-font: Monospace;
 }
 
-div.nav {
-    
-    position: static;
+/* article container */
+.article-box,
+.article-content {
+  max-width: var(--max-width-desktop);
 }
+.article-box {
+  align-content: center;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 0 auto;
+  width: 100%;
+}
+.article-content {
+  background-color: var(--article-content-bg);
+}
+/* end article container */
 
-div.article-box {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin: 2% 10% 2% 10%;
-    width: 75%;
-    align-content: center;
-}
-div.article-content {
-    background-color: var(--article-content-bg);
-    width: inherit;
-    padding-bottom: 2%;
-}
-div.article-details {
-    background-color: var(--article-details-bg);
-    width: inherit;
-    height: 5%;
-    margin-top: 10px;
-}
-
-h1 {
-    padding: 2% 1% 1% 1%;
-}
-
-/* page detail bar */
-
+/* details container */
 #contrib-outer h3 {
-    padding-left: 5%;
+  padding-left: 5%;
+}
+.article-details {
+  background-color: var(--article-details-bg);
 }
 .article-details img {
-    width: 75px;
+  width: 75px;
 }
-.contributors, .last-updated {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding-left: 7%;
-    width: 20%;
+.contributors,
+.last-updated {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding-left: 7%;
+  width: 20%;
 }
 .last-updated {
-    font-size: 0.8em;
-    padding-top: 2%;
-    padding-bottom: 2%;
+  font-size: 0.8em;
+  padding-bottom: 2%;
+  padding-top: 2%;
 }
-/* --- */
+/* end details container */
 
-
-h2, h3, h4, h5, h6 {
-    padding: 0.75% 15% 0 10%;
-    color: var(--article-subheading-text);
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--article-subheading-text);
+  padding: 0.75% 15% 0 10%;
 }
 hr {
-    width: 85%;
-    color: var(--article-subheading-text);
-    margin-bottom: 1.5%; margin-top: 1.2%;
+  color: var(--article-subheading-text);
+  margin-bottom: 1.5%;
+  margin-top: 1.2%;
+  width: 85%;
 }
 p {
-    padding: 0.5% 16% 0.5% 11%;
+  padding: 0.5% 16% 0.5% 11%;
 }
 
-
-ul, ol {
-    padding: 0.4% 15%;
+ul,
+ol {
+  padding: 0.4% 15%;
 }
-ol ol, ul ul, ol ul, ul ol {
-    padding-left: 3%;
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  padding-left: 3%;
 }
 li:not(.nav li, footer li) {
-    padding: 0.5% 0;
+  padding: 0.5% 0;
 }
 
 img {
-    max-width: 65%;
-    margin: 0 7%;
-    transition: transform 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+  margin: 0 7%;
+  max-width: 65%;
+  transition: transform 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 img:hover:not(.article-details img) {
-    transform: scale(1.5);
-    -wekbit-transform: scale(1.5);
+  -wekbit-transform: scale(1.5);
+  transform: scale(1.5);
 }
 
 iframe {
-    max-width: 65%;
-    padding: 0.6% 18%;
+  max-width: 65%;
+  padding: 0.6% 18%;
 }
 
 code {
-    font-family: var(--code-font);
-    font-size: 1.2em;
-    background-color: var(--code-bg);
-    color: var(--code-fg);
-    padding: 0 0.3em;
+  background-color: var(--code-bg);
+  color: var(--code-fg);
+  font-family: var(--code-font);
+  font-size: 1rem;
+  overflow-wrap: anywhere;
 }
 pre {
-    margin: 1% 12% 1% 12%;
+  margin: 1% 12%;
 }
 pre code {
-    padding: 2em;
-    font-size: 1.2em;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    max-width: 100%;
-    overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2em;
+  justify-content: space-between;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 2em;
 }
 
-table, th, td {
-    margin: 1% 18%;
-    border-collapse: collapse;
-    border: solid var(--article-subheading-text) 1px;
+table,
+th,
+td {
+  border-collapse: collapse;
+  border: solid var(--article-subheading-text) 1px;
+  margin: 1% 18%;
 }
 th {
-    border-bottom: solid var(--article-subheading-text) 3px;
+  border-bottom: solid var(--article-subheading-text) 3px;
 }
-th, td {
-    padding: 5px 10px;
+th,
+td {
+  padding: 5px 10px;
 }

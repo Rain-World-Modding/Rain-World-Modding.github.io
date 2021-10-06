@@ -12,8 +12,6 @@
   box-sizing: border-box;
   color: var(--text-light);
   font-family: "Verdana", sans-serif;
-  font-size: 100%;
-  text-align: left;
 }
 
 body {
