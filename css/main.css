@@ -121,6 +121,15 @@ footer a {
 
 /* start media queries */
 @media screen and (max-width: 768px) {
+  .navbar a {
+    width: 25%;
+  }
+  .navbar nav {
+    justify-content: space-between;
+  }
+  .navbar .spacer {
+    flex-grow: 0;
+  }
   footer nav {
     flex-direction: column;
     padding: 2rem;
