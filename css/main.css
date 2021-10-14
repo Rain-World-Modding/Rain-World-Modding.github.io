@@ -1,117 +1,140 @@
-
 :root {
-	--back-light: #17181A;
-	--back-dark: #000303;
-	--text-light: #FFFFFA;
-	--navbar-bg: #44403c;
-	--url: #bb8877;
-	--url-hover: #bb8844;
-	--footer-url: #997766;
-	
-	font-family: "Verdana", sans-serif;
-	text-align: left;
-
-	background-color: var(--back-light);
-	color: var(--text-light);
+  --back-dark: #000303;
+  --back-light: #17181a;
+  --footer-url: #997766;
+  --max-width-desktop: 1000px;
+  --navbar-bg: #44403c;
+  --text-light: #fffffa;
+  --url-hover: #bb8844;
+  --url: #bb8877;
+  background-color: var(--back-light);
+  box-sizing: border-box;
+  color: var(--text-light);
+  font-family: "Verdana", sans-serif;
 }
 
 body {
-	margin: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+  margin: 0;
+  min-height: 100vh;
 }
 
 h1 {
-	font-family: "Rodondo", "Verdana", sans-serif;
-	text-align: center;
+  font-family: "Rodondo", "Verdana", sans-serif;
+  text-align: center;
+}
+img {
+  max-width: 100%;
+}
+a {
+  color: var(--url);
+}
+a:hover {
+  color: var(--url-hover);
 }
 
-/* nav bar */
-div.nav {
-	padding-top: 0px;
-	background-color: var(--navbar-bg);
-	position: fixed;
-	width: 100%;
-	top: 0;
+/* start navbar */
+.navbar {
+  background-color: var(--navbar-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  width: 100%;
 }
-div.nav ul {
-	overflow: hidden;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	text-align: center;
+.navbar nav {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 auto;
+  max-width: var(--max-width-desktop);
+  width: 100%;
 }
-div.nav li {
-	float: left;
+.navbar a {
+  color: var(--text-light);
+  justify-self: flex-end;
+  padding: 0.6rem 0;
+  text-align: center;
+  text-decoration: none;
+  width: 8rem;
 }
-div.nav li a {
-	display: block;
-	width: 100px;
-	padding: 10px 10px;
-	text-decoration: none;
-	color: var(--text-light);
+.navbar a.active,
+.navbar a:hover {
+  background-color: var(--back-dark);
+  color: var(--text-light);
 }
-div.nav li a.active {
-	background-color: var(--back-dark);
-	color: var(--text-light);
+.navbar a.active {
+  justify-self: flex-start;
 }
-div.nav li a:hover {
-	color: var(--text-light);
-	background-color: var(--back-dark);
+.navbar .spacer {
+  flex-grow: 1;
 }
-div.nav li input {
-	padding: 10px 10px;
-	border: none;
-	background-color: transparent;
-	color: white;
+/* end navbar */
+
+/* start body */
+.main {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0 auto;
+  max-width: var(--max-width-desktop);
+  padding: 0.5rem 4rem 4rem;
 }
-div.nav li input:focus {
-	border-bottom: 2px solid white;
+#site-banner {
+  max-height: 12rem;
 }
-/* end nav bar */
+#page-list {
+  width: 100%;
+}
+#page-list a {
+  align-self: baseline;
+  text-decoration: none;
+}
+#page-list a:hover {
+  text-decoration: underline;
+}
+.license-title {
+  text-align: center;
+}
+/* end body */
 
 /* start footer */
 footer {
-	position: sticky, fixed;
-    bottom: 0;
-    padding: 0.7% 0;
-    text-align: center;
-	font-size: 0.9em;
-	background-color: var(--back-dark);
-	width: 100%;
+  background-color: var(--back-dark);
+  margin-top: auto;
+  width: 100%;
+}
+footer nav {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 3rem 0;
 }
 footer a {
-	text-decoration: none;
-	color: var(--footer-url);
-}
-footer li {
-	display: inline;
-	padding: 0 2.5%;
+  color: var(--footer-url);
+  padding: 0 1rem;
+  text-decoration: none;
 }
 /* end footer*/
 
-div.main {
-	margin: 4%;
-}
-div.main img#main-title {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 45%;
-}
-
-a {
-	color: var(--url);
-}
-a:hover {
-	color: var(--url-hover);
-}
-
-/* for page list on home page */
-div#page-list {
-	padding-left: 10%;
-}
-div#page-list li a {
-	text-decoration: none;
-}
-div#page-list li a:hover {
-	text-decoration: underline;
+/* start media queries */
+@media screen and (max-width: 768px) {
+  .navbar a {
+    width: 25%;
+  }
+  .navbar nav {
+    justify-content: space-between;
+  }
+  .navbar .spacer {
+    flex-grow: 0;
+  }
+  footer nav {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  footer a {
+    padding: 0.5rem 0;
+  }
 }
