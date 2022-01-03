@@ -55,7 +55,7 @@ This method has several upsides and downsides.
 - However, you do not have control on detailed GUI design.
 
 First, we need `ConfigEntry` which you can bind to the `Config` property of `BaseUnityPlugin`.
-Consult [BepInEx Documentation](https://bepinex.github.io/bepinex_docs/master/articles/dev_guide/plugin_tutorial/3_configuration.html) for farther detail.
+Consult [BepInEx Documentation](https://docs.bepinex.dev/articles/dev_guide/plugin_tutorial/4_configuration.html) for farther detail.
 
 ```c#
 public static ConfigEntry<string> cfgText;
