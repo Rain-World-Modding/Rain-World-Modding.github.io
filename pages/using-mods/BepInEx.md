@@ -9,7 +9,7 @@ BepInEx is a plugin framework primarily for Unity games. In the Rain World moddi
 
 The following video tutorial made by LeeMoriya explains how to install both RW BepInEx and BOI (see below), as well as the additional steps required to migrate from Partiality to BepInEx if applicable). <https://youtu.be/brDN_8uN6-U>
 
-RW BepInEx can currently be downloaded from [here](https://drive.google.com/file/d/1WcCCsS3ABBdO1aX-iJGeqeE07YE4Qv88/view). Download this and extact the contents of the zip archive. Place the `BepInEx` folder, and `doorstep_config.ini` and `winhttp.dll` files in your `Rain World` folder.
+RW BepInEx can currently be downloaded from [here](https://beestuff.pythonanywhere.com/audb/api/v2/bepinex/download). Download this and extact the contents of the zip archive. Place the `BepInEx` folder, and `doorstep_config.ini` and `winhttp.dll` files in your `Rain World` folder.
 
 For Linux/MacOS users running Rain World using Steam Proton, follow [the BepInEx instructions](https://docs.bepinex.dev/articles/advanced/steam_interop.html#protonwine). This relies on protontricks (which in turn relies on winetricks and python 3.5+). Installation instructions for this are in [the protontricks README](https://github.com/Matoking/protontricks#installation). 
 At the time of writing this (3rd April 2021), the version of protontricks on PyPI (the version installed by pip/pipx) isn't up to date with the new Proton, so you need the latest development version from the GitHub repo. This is a relatively new issue that may be fixed in the near future; if you find that this is not the case, please mention this in the Rain World Discord or make a pull request to remove this directly.
